@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:neuro_app/Pages/BETA/page13.dart';
 import 'package:neuro_app/Pages/BETA/page14.dart';
 import 'package:neuro_app/Pages/BETA/page15.dart';
+import 'package:neuro_app/Pages/BETA/page16.dart';
 import 'package:neuro_app/Pages/LIOF/page10.dart';
 import 'package:neuro_app/Pages/LIOF/page11.dart';
 import 'package:neuro_app/Pages/LIOF/page12.dart';
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: MainPage(),
       // home: LiofPageControllerWidget(),
-      home: Page15(),
+      home: Page16(),
       // home : OxetPageControllerWidget()
       // home: MainPageControllerWidget(),
 
