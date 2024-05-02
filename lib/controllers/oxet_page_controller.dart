@@ -4,6 +4,8 @@ import 'package:neuro_app/Pages/BETA/page14.dart';
 import 'package:neuro_app/Pages/BETA/page15.dart';
 import 'package:neuro_app/Pages/BETA/page16.dart';
 import 'package:neuro_app/Pages/BETA/page17.dart';
+import 'package:neuro_app/Pages/GABAT/page21.dart';
+import 'package:neuro_app/Pages/GABAT/page22.dart';
 import 'package:neuro_app/Pages/LIOF/page10.dart';
 import 'package:neuro_app/Pages/LIOF/page11.dart';
 import 'package:neuro_app/Pages/LIOF/page12.dart';
@@ -16,6 +18,9 @@ import 'package:neuro_app/Pages/OXET/page3.dart';
 import 'package:neuro_app/Pages/OXET/page4.dart';
 import 'package:neuro_app/Pages/OXET/page5.dart';
 import 'package:neuro_app/Pages/OXET/page6.dart';
+import 'package:neuro_app/Pages/PIRA/page18.dart';
+import 'package:neuro_app/Pages/PIRA/page19.dart';
+import 'package:neuro_app/Pages/PIRA/page20.dart';
 class OxetPageControllerWidget extends StatefulWidget {
    OxetPageControllerWidget({Key? key, required this.displayIndices});
  final List<int> displayIndices;
@@ -153,6 +158,16 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
               return Page16(goToPreviousPage: goToPreviousPage,goToNextPage: goToNextPage,);
             case 16: 
               return Page17(goToPreviousPage: goToPreviousPage, goToNextPage: goToNextPage);
+               case 17:
+              return Page18(goToPreviousPage: goToPreviousPage, goToNextPage: goToNextPage);
+            case 18:
+              return Page19(goToPreviousPage: goToPreviousPage,goToNextPage: goToNextPage,);
+            case 19: 
+              return Page20(goToPreviousPage: goToPreviousPage, goToNextPage: goToNextPage);
+                  case 20:
+              return Page21(goToPreviousPage: goToPreviousPage,goToNextPage: goToNextPage,);
+            case 21: 
+              return Page22(goToPreviousPage: goToPreviousPage, goToNextPage: goToNextPage);
             default:
               return Container(); // Placeholder for any additional pages
           }

@@ -5,6 +5,7 @@ import 'package:neuro_app/Pages/BETA/page14.dart';
 import 'package:neuro_app/Pages/BETA/page15.dart';
 import 'package:neuro_app/Pages/BETA/page16.dart';
 import 'package:neuro_app/Pages/BETA/page17.dart';
+import 'package:neuro_app/Pages/GABAT/page21.dart';
 import 'package:neuro_app/Pages/LIOF/page10.dart';
 import 'package:neuro_app/Pages/LIOF/page11.dart';
 import 'package:neuro_app/Pages/LIOF/page12.dart';
@@ -24,6 +25,7 @@ import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/controllers/liof_page_controller.dart';
 // import 'package:neuro_app/controllers/mainPageController.dart';
 import 'package:neuro_app/controllers/oxet_page_controller.dart';
+import 'package:neuro_app/Pages/GABAT/page22.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,9 +47,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // home: MainPage(),
+      home: MainPage(),
       // home: LiofPageControllerWidget(),
-      home: Page20(),
+      // home: Page22(),
       // home : OxetPageControllerWidget()
       // home: MainPageControllerWidget(),
 

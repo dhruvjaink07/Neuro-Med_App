@@ -207,6 +207,9 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("13");
+                            displayIndices.add(17);
+                            displayIndices.add(18);
+                            displayIndices.add(19);
                           },
                           child: Brand(assetName: "assets/MainPage/PIRA.png"))),
                   // ADES
@@ -281,6 +284,8 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("21");
+                            displayIndices.add(20);
+                            displayIndices.add(21);
                           },
                           child: Brand(assetName: "assets/MainPage/GAB-AT.png"))),
                   // IVE

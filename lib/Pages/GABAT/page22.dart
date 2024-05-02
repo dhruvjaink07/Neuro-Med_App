@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
-class Page20 extends StatefulWidget {
-  const Page20({super.key, required this.goToPreviousPage, required this.goToNextPage});
+class Page22 extends StatefulWidget {
+  const Page22({super.key, required this.goToPreviousPage, required this.goToNextPage, });
    final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
 
   @override
-  State<Page20> createState() => _Page20State();
+  State<Page22> createState() => _Page22State();
 }
 
-class _Page20State extends State<Page20> {
+class _Page22State extends State<Page22> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     bool isOpen = false;
   @override
@@ -22,7 +22,7 @@ class _Page20State extends State<Page20> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/Page20/1.png"),fit: BoxFit.contain)
+          image: DecorationImage(image: AssetImage("assets/Page22/1.png"),fit: BoxFit.contain)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -34,7 +34,7 @@ class _Page20State extends State<Page20> {
                     _scaffoldKey.currentState?.openDrawer();
                   },
                   icon: Image.asset(
-                    "assets/Page20/5.png",
+                    "assets/Page22/5.png",
                     height: 20,
                   ),
                 ),
@@ -43,27 +43,27 @@ class _Page20State extends State<Page20> {
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
                   },
                   icon: Image.asset(
-                    "assets/Page20/6.png",
+                    "assets/Page22/6.png",
                     height: 25,
                   ),
                 ),]),
             Expanded(child: Stack(
               children: [
                  Positioned(
-                              bottom: 100,
+                              bottom: 150,
                               left: 70,
                               child: InkWell(
                                 onTap: (){
-                                  showOverlay(context, "assets/Page20/4.png");
+                                  showOverlay(context, "assets/Page22/4.png");
                                 },
-                                child: Image.asset("assets/Page20/4.png",height: 350,width: 800,fit: BoxFit.fill,))),
+                                child: Image.asset("assets/Page22/4.png",height: 300,width: 800,fit: BoxFit.fill,))),
                  Positioned(
                                    left: isOpen ? 20 :  10, // Adjust this value as needed
                                    bottom: 5,
                                    child: Visibility(
                                      visible: isOpen,
                                      child: Image.asset(
-                                       "assets/Page20/3.png",
+                                       "assets/Page22/3.png",
                                        height: 40,
                                      ),
                                    ),
@@ -78,7 +78,7 @@ class _Page20State extends State<Page20> {
                                        });
                                      },
                                      child: Image.asset(
-                                       "assets/Page20/2.png",
+                                       "assets/Page22/2.png",
                                        height: 45,
                                      ),
                                    ),
@@ -106,7 +106,7 @@ class _Page20State extends State<Page20> {
               child: Image(
                 image: AssetImage(overlayImagePath),
                 height: 430,
-                width: 800,
+                width: 900,
                 fit: BoxFit.fill,
               ),
             ),
