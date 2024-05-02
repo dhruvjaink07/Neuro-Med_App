@@ -4,6 +4,7 @@ import 'package:neuro_app/Pages/BETA/page13.dart';
 import 'package:neuro_app/Pages/BETA/page14.dart';
 import 'package:neuro_app/Pages/BETA/page15.dart';
 import 'package:neuro_app/Pages/BETA/page16.dart';
+import 'package:neuro_app/Pages/BETA/page17.dart';
 import 'package:neuro_app/Pages/LIOF/page10.dart';
 import 'package:neuro_app/Pages/LIOF/page11.dart';
 import 'package:neuro_app/Pages/LIOF/page12.dart';
@@ -16,6 +17,9 @@ import 'package:neuro_app/Pages/OXET/page3.dart';
 import 'package:neuro_app/Pages/OXET/page4.dart';
 import 'package:neuro_app/Pages/OXET/page5.dart';
 import 'package:neuro_app/Pages/OXET/page6.dart';
+import 'package:neuro_app/Pages/PIRA/page18.dart';
+import 'package:neuro_app/Pages/PIRA/page19.dart';
+import 'package:neuro_app/Pages/PIRA/page20.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/controllers/liof_page_controller.dart';
 // import 'package:neuro_app/controllers/mainPageController.dart';
@@ -43,7 +47,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: MainPage(),
       // home: LiofPageControllerWidget(),
-      home: Page16(),
+      home: Page20(),
       // home : OxetPageControllerWidget()
       // home: MainPageControllerWidget(),
 

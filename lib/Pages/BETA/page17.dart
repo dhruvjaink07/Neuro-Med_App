@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
-class Page16 extends StatefulWidget {
-  const Page16({super.key, required this.goToPreviousPage, required this.goToNextPage,});
+class Page17 extends StatefulWidget {
+  const Page17({super.key, required this.goToPreviousPage, required this.goToNextPage,});
  final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
   @override
-  State<Page16> createState() => _Page16State();
+  State<Page17> createState() => _Page17State();
 }
 
-class _Page16State extends State<Page16> {
+class _Page17State extends State<Page17> {
     final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
       bool isOpen = false;
   @override
@@ -20,7 +20,7 @@ class _Page16State extends State<Page16> {
 drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
       body: Container(
         width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page16/1.png"),fit: BoxFit.contain)),
+        decoration: const BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page17/1.png"),fit: BoxFit.contain)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -31,7 +31,7 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                     _scaffoldKey.currentState?.openDrawer();
                   },
                   icon: Image.asset(
-                    "assets/Page16/5.png",
+                    "assets/Page17/5.png",
                     height: 20,
                   ),
                 ),
@@ -40,7 +40,7 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
                   },
                   icon: Image.asset(
-                    "assets/Page16/6.png",
+                    "assets/Page17/6.png",
                     height: 25,
                   ),
                 ),
@@ -50,20 +50,20 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
               child: Stack(
                            children: [
                             Positioned(
-                              bottom: 110,
+                              bottom: 150,
                               left: 70,
                               child: InkWell(
                                 onTap: (){
-                                  showOverlay(context, "assets/Page16/4.png");
+                                  showOverlay(context, "assets/Page17/4.png");
                                 },
-                                child: Image.asset("assets/Page16/4.png",height: 350))),
+                                child: Image.asset("assets/Page17/4.png",height: 300,width: 700,fit: BoxFit.fill,))),
                            Positioned(
                                left: isOpen ? 20 :  10, // Adjust this value as needed
                                bottom: 5,
                                child: Visibility(
                                  visible: isOpen,
                                  child: Image.asset(
-                                   "assets/Page16/3.png",
+                                   "assets/Page17/3.png",
                                    height: 40,
                                  ),
                                ),
@@ -78,7 +78,7 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                                    });
                                  },
                                  child: Image.asset(
-                                   "assets/Page16/2.png",
+                                   "assets/Page17/2.png",
                                    height: 45,
                                  ),
                                ),

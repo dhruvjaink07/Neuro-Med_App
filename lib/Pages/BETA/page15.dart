@@ -3,9 +3,9 @@ import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page15 extends StatefulWidget {
-  const Page15({super.key,});
-//  final VoidCallback goToPreviousPage;
-//     final VoidCallback goToNextPage;
+  const Page15({super.key, required this.goToPreviousPage, required this.goToNextPage,});
+ final VoidCallback goToPreviousPage;
+    final VoidCallback goToNextPage;
   @override
   State<Page15> createState() => _Page15State();
 }

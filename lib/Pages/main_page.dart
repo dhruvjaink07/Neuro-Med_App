@@ -165,6 +165,11 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("9");
+                            displayIndices.add(12);
+                            displayIndices.add(13);
+                            displayIndices.add(14);
+                            displayIndices.add(15);
+                            displayIndices.add(16);
                           },
                           child: Brand(assetName: "assets/MainPage/BETA.png"))),
                   // ZEFR
@@ -288,15 +293,7 @@ class _MainPageState extends State<MainPage> {
                           },
                           child: Brand(assetName: "assets/MainPage/IVE.png"))),
         
-                  Positioned(
-                      bottom: 0,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          print(
-                              "List Items are: ${pages} also the global var is $count");
-                        },
-                        child: Text("Click Me"),
-                      ))
+                  
                 ],
               )),
             ],

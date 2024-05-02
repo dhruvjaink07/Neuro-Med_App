@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:neuro_app/Pages/BETA/page13.dart';
+import 'package:neuro_app/Pages/BETA/page14.dart';
+import 'package:neuro_app/Pages/BETA/page15.dart';
+import 'package:neuro_app/Pages/BETA/page16.dart';
+import 'package:neuro_app/Pages/BETA/page17.dart';
 import 'package:neuro_app/Pages/LIOF/page10.dart';
 import 'package:neuro_app/Pages/LIOF/page11.dart';
 import 'package:neuro_app/Pages/LIOF/page12.dart';
@@ -59,11 +64,16 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
   }
 
   void changePageIndex(int index) {
-    _pageController.animateToPage(
-     widget.displayIndices[index],
-      duration: Duration(milliseconds: 100),
-      curve: Curves.easeInOut,
-    );
+    if (index >= 0 && index < widget.displayIndices.length) {
+      _pageController.animateToPage(
+        widget.displayIndices[index],
+        duration: Duration(milliseconds: 100),
+        curve: Curves.easeInOut,
+      );
+    } else {
+      // Handle out-of-range index error here
+      print('Error: Invalid index provided for page navigation.');
+    }
   }
 
   @override
@@ -128,6 +138,21 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
               return Page11(goToPreviousPage: goToPreviousPage, goToNextPage: goToNextPage);
             case 11:
               return Page12(goToPreviousPage: goToPreviousPage, goToNextPage: goToNextPage);
+            case 12:
+  return Page13(
+    goToPreviousPage: goToPreviousPage,
+    goToNextPage: goToNextPage,
+    changePageIndex: changePageIndex,
+  );
+
+            case 13:
+              return Page14(goToPreviousPage: goToPreviousPage, goToNextPage: goToNextPage);
+            case 14:
+              return Page15(goToPreviousPage: goToPreviousPage, goToNextPage: goToNextPage);
+            case 15:
+              return Page16(goToPreviousPage: goToPreviousPage,goToNextPage: goToNextPage,);
+            case 16: 
+              return Page17(goToPreviousPage: goToPreviousPage, goToNextPage: goToNextPage);
             default:
               return Container(); // Placeholder for any additional pages
           }
