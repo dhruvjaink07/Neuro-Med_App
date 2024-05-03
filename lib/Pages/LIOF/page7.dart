@@ -54,7 +54,6 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                     left: 170,
                     child: InkWell(
                       onTap: () {
-                       widget.changePageIndex(7);
                         print("Test 1");
                       },
                       child: Image.asset("assets/Page7/2.png",height: 250,))),
@@ -67,7 +66,7 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                         top: 175,
                         child: InkWell(
                           onTap: (){
-                             widget.changePageIndex(9);
+                            //  widget.changePageIndex(9);
                             print("Test 2");
                           },
                           child: Image.asset("assets/Page7/4.png",height: 280,))),
@@ -88,7 +87,7 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                             bottom: 95,
                             child: InkWell(
                               onTap: (){
-                                 widget.changePageIndex(11);
+                                //  widget.changePageIndex(11);
                                 print("Test 3");
                               },
                               child: Image.asset("assets/Page7/8.png",height: 240,))),

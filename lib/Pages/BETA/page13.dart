@@ -57,25 +57,25 @@ class _Page13State extends State<Page13> {
             child: Column(
               children: [InkWell(
   onTap: () {
-    widget.changePageIndex(13); // Change to index 13 (Page 14)
+    // widget.changePageIndex(13); 
   },
   child: Image.asset("assets/Page13/2.png", width: 503),
 ),
 
               InkWell(
                 onTap: (){
-                  widget.changePageIndex(14);
+                  // widget.changePageIndex(14);
                 },
                 child: Image.asset("assets/Page13/3.png",width: 495,)),
               const SizedBox(height: 5,),
               InkWell(
                 onTap: (){
-                  widget.changePageIndex(15);
+                  // widget.changePageIndex(15);
                 },
                 child: Image.asset("assets/Page13/4.png",width: 495,)),
               InkWell(
                 onTap: (){
-                  widget.changePageIndex(16);
+                  // widget.changePageIndex(16);
                 },
                 child: Image.asset("assets/Page13/7.png",width: 503,)),
               ],

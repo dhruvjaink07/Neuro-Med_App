@@ -15,6 +15,8 @@ class _MainPageState extends State<MainPage> {
   List numbers = [];
   List<int> displayIndices=[];
     Set<String> pages = Set<String>();
+    @override
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,9 +48,17 @@ class _MainPageState extends State<MainPage> {
                   Positioned(
                       left: 20,
                       top: 5,
-                      child: Image.asset(
-                        "assets/MainPage/refresh button.png",
-                        height: 60,
+                      child: InkWell(
+                        onTap: (){
+setState(() {
+  displayIndices.clear();
+        count = 0;
+});
+                        },
+                        child: Image.asset(
+                          "assets/MainPage/refresh button.png",
+                          height: 60,
+                        ),
                       )),
                   // OXET
                   Positioned(

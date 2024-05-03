@@ -57,15 +57,15 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 IconButton(
-                  onPressed: () => widget.changePageIndex(1),
+                  onPressed: (){},
                   icon: Image.asset("assets/Page1/2.png", height: 120),
                 ),
                 IconButton(
-                  onPressed: () => widget.changePageIndex(3),
+                  onPressed: () {},
                   icon: Image.asset("assets/Page1/3.png", height: 120),
                 ),
                 IconButton(
-                  onPressed: () => widget.changePageIndex(5),
+                  onPressed: (){},
                   icon: Image.asset("assets/Page1/4.png", height: 120),
                 ),
               ],
