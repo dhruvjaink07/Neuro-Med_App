@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:neuro_app/Pages/ADES/page54.dart';
+import 'package:neuro_app/Pages/ATTE/page55.dart';
 import 'package:neuro_app/Pages/BETA/page13.dart';
 import 'package:neuro_app/Pages/BETA/page14.dart';
 import 'package:neuro_app/Pages/BETA/page15.dart';
 import 'package:neuro_app/Pages/BETA/page16.dart';
 import 'package:neuro_app/Pages/BETA/page17.dart';
+import 'package:neuro_app/Pages/CARI/page61.dart';
+import 'package:neuro_app/Pages/CARI/page62.dart';
+import 'package:neuro_app/Pages/ETI/page57.dart';
 import 'package:neuro_app/Pages/GABAT/page21.dart';
+import 'package:neuro_app/Pages/IVE/page56.dart';
 import 'package:neuro_app/Pages/LAMO/page51.dart';
 import 'package:neuro_app/Pages/LIOF/page10.dart';
 import 'package:neuro_app/Pages/LIOF/page11.dart';
@@ -13,6 +19,8 @@ import 'package:neuro_app/Pages/LIOF/page12.dart';
 import 'package:neuro_app/Pages/LIOF/page7.dart';
 import 'package:neuro_app/Pages/LIOF/page8.dart';
 import 'package:neuro_app/Pages/LIOF/page9.dart';
+import 'package:neuro_app/Pages/LURA/page58.dart';
+import 'package:neuro_app/Pages/NEU-D3/page60.dart';
 import 'package:neuro_app/Pages/OXET/page2.dart';
 import 'package:neuro_app/Pages/OXET/page1.dart';
 import 'package:neuro_app/Pages/OXET/page3.dart';
@@ -41,6 +49,7 @@ import 'package:neuro_app/Pages/RASA/page38.dart';
 import 'package:neuro_app/Pages/RASA/page39.dart';
 import 'package:neuro_app/Pages/RASA/page40.dart';
 import 'package:neuro_app/Pages/RASA/page41.dart';
+import 'package:neuro_app/Pages/SIZO/page59.dart';
 import 'package:neuro_app/Pages/SYNA/page42.dart';
 import 'package:neuro_app/Pages/SYNA/page43.dart';
 import 'package:neuro_app/Pages/SYNA/page44.dart';
@@ -80,7 +89,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: MainPage(),
       // home: LiofPageControllerWidget(),
-      home: Page53(),
+      home: Page62(),
       // home : OxetPageControllerWidget()
       // home: MainPageControllerWidget(),
 
