@@ -18,6 +18,10 @@ import 'package:neuro_app/Pages/OXET/page3.dart';
 import 'package:neuro_app/Pages/OXET/page4.dart';
 import 'package:neuro_app/Pages/OXET/page5.dart';
 import 'package:neuro_app/Pages/OXET/page6.dart';
+import 'package:neuro_app/Pages/PANA/page30.dart';
+import 'package:neuro_app/Pages/PANA/page31.dart';
+import 'package:neuro_app/Pages/PANA/page32.dart';
+import 'package:neuro_app/Pages/PANA/page33.dart';
 import 'package:neuro_app/Pages/PARK/page23.dart';
 import 'package:neuro_app/Pages/PARK/page24.dart';
 import 'package:neuro_app/Pages/PARK/page25.dart';
@@ -25,9 +29,19 @@ import 'package:neuro_app/Pages/PARK/page26.dart';
 import 'package:neuro_app/Pages/PARK/page27.dart';
 import 'package:neuro_app/Pages/PARK/page28.dart';
 import 'package:neuro_app/Pages/PARK/page29.dart';
+import 'package:neuro_app/Pages/PAXI/page34.dart';
+import 'package:neuro_app/Pages/PAXI/page35.dart';
+import 'package:neuro_app/Pages/PAXI/page36.dart';
+import 'package:neuro_app/Pages/PAXI/page37.dart';
 import 'package:neuro_app/Pages/PIRA/page18.dart';
 import 'package:neuro_app/Pages/PIRA/page19.dart';
 import 'package:neuro_app/Pages/PIRA/page20.dart';
+import 'package:neuro_app/Pages/RASA/page38.dart';
+import 'package:neuro_app/Pages/RASA/page39.dart';
+import 'package:neuro_app/Pages/RASA/page40.dart';
+import 'package:neuro_app/Pages/RASA/page41.dart';
+import 'package:neuro_app/Pages/SYNA/page42.dart';
+import 'package:neuro_app/Pages/SYNA/page43.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/controllers/liof_page_controller.dart';
 // import 'package:neuro_app/controllers/mainPageController.dart';
@@ -56,7 +70,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: MainPage(),
       // home: LiofPageControllerWidget(),
-      home: Page29(),
+      home: Page43(),
       // home : OxetPageControllerWidget()
       // home: MainPageControllerWidget(),
 
