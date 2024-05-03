@@ -87,9 +87,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // home: MainPage(),
+      home: MainPage(),
       // home: LiofPageControllerWidget(),
-      home: Page62(),
+      // home: Page62(),
       // home : OxetPageControllerWidget()
       // home: MainPageControllerWidget(),
 

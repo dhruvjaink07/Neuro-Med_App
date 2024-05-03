@@ -81,6 +81,8 @@ class _MainPageState extends State<MainPage> {
                             increment();
                             // numbers.add(count);
                             print("Item Added 2");
+                            displayIndices.add(48);
+                            displayIndices.add(49);
                           },
                           child: Brand(assetName: "assets/MainPage/VEN.png",selectionNumber: count))),
         
@@ -93,6 +95,10 @@ class _MainPageState extends State<MainPage> {
                             print("3");
                                  var three = "pana";
                             pages.add(three);
+                            displayIndices.add(29);
+                            displayIndices.add(30);
+                            displayIndices.add(31);
+                            displayIndices.add(32);
                             increment();
                             numbers.add(count);
                           },
@@ -108,6 +114,7 @@ class _MainPageState extends State<MainPage> {
                                  var four = "etr";
                             pages.add(four);
                             increment();
+                            displayIndices.add(56);
                             numbers.add(count);
                           },
                           child: Brand(assetName: "assets/MainPage/ETIR.png",selectionNumber: count))),
@@ -137,6 +144,7 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("6");
+                            displayIndices.add(50);
                           },
                           child: Brand(assetName: "assets/MainPage/LAMO.png"))),
                   // PAXI
@@ -146,6 +154,10 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("7");
+                            displayIndices.add(33);
+                            displayIndices.add(34);
+                            displayIndices.add(35);
+                            displayIndices.add(36);
                           },
                           child: Brand(assetName: "assets/MainPage/PAXI.png"))),
         
@@ -156,6 +168,7 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("8");
+                            displayIndices.add(57);
                           },
                           child: Brand(assetName: "assets/MainPage/LURA.png"))),
                   // BETA
@@ -179,6 +192,8 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("10");
+                            displayIndices.add(51);
+                            displayIndices.add(52);
                           },
                           child: Brand(assetName: "assets/MainPage/ZEFR.png"))),
                   // RASA
@@ -188,6 +203,10 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("11");
+                             displayIndices.add(37);
+                            displayIndices.add(38);
+                            displayIndices.add(39);
+                            displayIndices.add(40);
                           },
                           child: Brand(assetName: "assets/MainPage/RASA.png"))),
         
@@ -198,6 +217,7 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("12");
+                            displayIndices.add(58);
                           },
                           child: Brand(assetName: "assets/MainPage/SIZO.png"))),
                   // PIRA
@@ -219,6 +239,7 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("14");
+                            displayIndices.add(53);
                           },
                           child: Brand(assetName: "assets/MainPage/ADES.png"))),
                   // SYNA
@@ -228,6 +249,9 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("15");
+                            displayIndices.add(41);
+                            displayIndices.add(42);
+                            displayIndices.add(43);
                           },
                           child: Brand(assetName: "assets/MainPage/SYNA.png"))),
         
@@ -238,6 +262,7 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("16");
+                            displayIndices.add(59);
                           },
                           child: Brand(assetName: "assets/MainPage/NEU-D3.png"))),
                   // PARK
@@ -247,6 +272,13 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("17");
+                            displayIndices.add(22);
+                            displayIndices.add(23);
+                            displayIndices.add(24);
+                            displayIndices.add(25);
+                            displayIndices.add(26);
+                            displayIndices.add(27);
+                            displayIndices.add(28);
                           },
                           child: Brand(assetName: "assets/MainPage/PARK.png"))),
                   // ATTE
@@ -256,6 +288,7 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("18");
+                            displayIndices.add(54);
                           },
                           child: Brand(assetName: "assets/MainPage/ATTE.png"))),
                   // TOPI
@@ -265,6 +298,10 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("19");
+                             displayIndices.add(44);
+                            displayIndices.add(45);
+                            displayIndices.add(46);
+                            displayIndices.add(47);
                           },
                           child: Brand(assetName: "assets/MainPage/TOPI.png"))),
         
@@ -275,6 +312,8 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("20");
+                            displayIndices.add(60);
+                            displayIndices.add(61);
                           },
                           child: Brand(assetName: "assets/MainPage/CARI.png"))),
                   // GAB-AT
@@ -295,6 +334,7 @@ class _MainPageState extends State<MainPage> {
                       child: InkWell(
                           onTap: () {
                             print("22");
+                            displayIndices.add(55);
                           },
                           child: Brand(assetName: "assets/MainPage/IVE.png"))),
         
