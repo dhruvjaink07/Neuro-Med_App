@@ -54,7 +54,7 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                          
                             Positioned(
                               right: 0,
-                              bottom: 280,
+                              bottom: 200,
                               child:InkWell(
                                 onTap: (){
                                   showOverlay(context, "assets/Page8/11.png");
