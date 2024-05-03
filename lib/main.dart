@@ -6,6 +6,7 @@ import 'package:neuro_app/Pages/BETA/page15.dart';
 import 'package:neuro_app/Pages/BETA/page16.dart';
 import 'package:neuro_app/Pages/BETA/page17.dart';
 import 'package:neuro_app/Pages/GABAT/page21.dart';
+import 'package:neuro_app/Pages/LAMO/page51.dart';
 import 'package:neuro_app/Pages/LIOF/page10.dart';
 import 'package:neuro_app/Pages/LIOF/page11.dart';
 import 'package:neuro_app/Pages/LIOF/page12.dart';
@@ -42,6 +43,15 @@ import 'package:neuro_app/Pages/RASA/page40.dart';
 import 'package:neuro_app/Pages/RASA/page41.dart';
 import 'package:neuro_app/Pages/SYNA/page42.dart';
 import 'package:neuro_app/Pages/SYNA/page43.dart';
+import 'package:neuro_app/Pages/SYNA/page44.dart';
+import 'package:neuro_app/Pages/TOPI/page45.dart';
+import 'package:neuro_app/Pages/TOPI/page46.dart';
+import 'package:neuro_app/Pages/TOPI/page47.dart';
+import 'package:neuro_app/Pages/TOPI/page48.dart';
+import 'package:neuro_app/Pages/VEN/page49.dart';
+import 'package:neuro_app/Pages/VEN/page50.dart';
+import 'package:neuro_app/Pages/ZEFR/page52.dart';
+import 'package:neuro_app/Pages/ZEFR/page53.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/controllers/liof_page_controller.dart';
 // import 'package:neuro_app/controllers/mainPageController.dart';
@@ -70,7 +80,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: MainPage(),
       // home: LiofPageControllerWidget(),
-      home: Page43(),
+      home: Page53(),
       // home : OxetPageControllerWidget()
       // home: MainPageControllerWidget(),
 
