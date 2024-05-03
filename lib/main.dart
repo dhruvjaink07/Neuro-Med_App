@@ -18,6 +18,13 @@ import 'package:neuro_app/Pages/OXET/page3.dart';
 import 'package:neuro_app/Pages/OXET/page4.dart';
 import 'package:neuro_app/Pages/OXET/page5.dart';
 import 'package:neuro_app/Pages/OXET/page6.dart';
+import 'package:neuro_app/Pages/PARK/page23.dart';
+import 'package:neuro_app/Pages/PARK/page24.dart';
+import 'package:neuro_app/Pages/PARK/page25.dart';
+import 'package:neuro_app/Pages/PARK/page26.dart';
+import 'package:neuro_app/Pages/PARK/page27.dart';
+import 'package:neuro_app/Pages/PARK/page28.dart';
+import 'package:neuro_app/Pages/PARK/page29.dart';
 import 'package:neuro_app/Pages/PIRA/page18.dart';
 import 'package:neuro_app/Pages/PIRA/page19.dart';
 import 'package:neuro_app/Pages/PIRA/page20.dart';
@@ -47,9 +54,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MainPage(),
+      // home: MainPage(),
       // home: LiofPageControllerWidget(),
-      // home: Page22(),
+      home: Page29(),
       // home : OxetPageControllerWidget()
       // home: MainPageControllerWidget(),
 
