@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
@@ -11,8 +12,30 @@ class Page7 extends StatefulWidget {
   State<Page7> createState() => _Page7State();
 }
 
-class _Page7State extends State<Page7> {
+class _Page7State extends State<Page7> with SingleTickerProviderStateMixin {
+    late AnimationController _controller;
+  final Duration _animationDuration = Duration(milliseconds: 1500);
+  final Curve _animationCurve = Curves.easeIn;
+
     final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+    @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: _animationDuration,
+      animationBehavior: AnimationBehavior.preserve
+    );
+
+    // Trigger the ease-in animation directly
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +43,7 @@ class _Page7State extends State<Page7> {
 drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
       body: Container(
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page7/111.png"),fit: BoxFit.contain)),
+        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page7/12.png"),fit: BoxFit.contain)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -47,57 +70,22 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
               ],
             ),
             Expanded(
-              child: Stack(
-                children: [
-                  Positioned(
-                    top: 40,
-                    left: 170,
-                    child: InkWell(
-                      onTap: () {
-                        print("Test 1");
-                      },
-                      child: Image.asset("assets/Page7/2.png",height: 250,))),
-                      Positioned(
-                        left: 30,
-                        top: 200,
-                        child: Image.asset("assets/Page7/3.png",height: 150,)),
-                      Positioned(
-                        right: 143,
-                        top: 175,
-                        child: InkWell(
-                          onTap: (){
-                            //  widget.changePageIndex(9);
-                            print("Test 2");
-                          },
-                          child: Image.asset("assets/Page7/4.png",height: 280,))),
-                          Positioned(
-                          right: 120,
-                          bottom: 220,
-                            child: Image.asset("assets/Page7/7.png",height: 120,)),
-                            Positioned(
-                              right: 0,
-                              bottom: 300,
-                              child:InkWell(
-                                onTap: (){
-                                  showOverlay(context, "assets/Page7/11.png");
-                                },
-                                child: Image.asset("assets/Page7/10.png",height: 200,))),
-                          Positioned(
-                            left: 225,
-                            bottom: 95,
-                            child: InkWell(
-                              onTap: (){
-                                //  widget.changePageIndex(11);
-                                print("Test 3");
-                              },
-                              child: Image.asset("assets/Page7/8.png",height: 240,))),
-                              Positioned(
-                                bottom: 50,
-                                left: 150,
-                                child: Image.asset("assets/Page7/9.png",height: 170,))
-                ],
-              ),
-            )
+              child: Center(
+                      child: AnimatedBuilder(
+                        animation: _controller,
+                        builder: (context, child) {
+              return Transform.scale(
+                scale: _controller.value * 5,
+                child: Image.asset(
+                  'assets/Page7/20.png', // Replace 'your_image.jpg' with your image asset path
+                  width: 200,
+                  height: 200,
+                ),
+              );
+                        },
+                      ),
+                    ),
+            ),
           ],
         ),
       ),
