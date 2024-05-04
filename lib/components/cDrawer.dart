@@ -229,9 +229,12 @@ class MenuDrawer extends StatelessWidget {
   Widget buildMenuItem(String assetsImage, VoidCallback onTap) {
     return InkWell(
       onTap: onTap,
-      child: Image.asset(
-        assetsImage,
-        height: 14,
+      child: Container(
+        margin: EdgeInsets.only(bottom: 3),
+        child: Image.asset(
+          assetsImage,
+          height: 15,
+        ),
       ),
     );
   }
