@@ -1,19 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page3 extends StatefulWidget {
-    final VoidCallback goToPreviousPage;
-    final VoidCallback goToNextPage;
-  const Page3({super.key, required this.goToPreviousPage, required this.goToNextPage});
+    // final VoidCallback goToPreviousPage;
+    // final VoidCallback goToNextPage;
+  const Page3({super.key, });
 
   @override
   State<Page3> createState() => _Page3State();
 }
 
-class _Page3State extends State<Page3> {
+class _Page3State extends State<Page3> with SingleTickerProviderStateMixin{
    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
       bool isOpen = false;
+      late AnimationController _controller;
+  late Animation<double> _animation;
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 700), // Adjust the duration as needed
+    );
+
+    _animation = Tween<double>(
+      begin: 0.5, // Starting scale
+      end: 1.0, // Final scale
+    ).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeOut),
+    );
+
+    _controller.forward(); // Start the animation
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
   
@@ -46,29 +73,68 @@ class _Page3State extends State<Page3> {
                     ))
               ],
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height/1.27,
-            ),
-            Container(
-              height: 100,
-              margin: const EdgeInsets.only(left: 20, top: 15),
-              alignment: Alignment.bottomLeft,
+           
+            Expanded(
               child: Stack(
                 children: [
-                Positioned(
-                    left:   10, // Adjust this value as needed
-                    bottom: 0,
-                    child: Visibility(
-                      visible: isOpen,
+                  Positioned(
+                      top: 50,
+                      right: 50,
                       child: Image.asset(
-                        "assets/Page3/3.png",
-                        height: 40,
+                        "assets/Page3/4.png",
+                        width: 450,
+                      )),
+                     Positioned(
+                      top: 170,
+                      right: 23,
+                      child: ScaleTransition(
+                        scale: _animation,
+                        child: Image.asset(
+                          "assets/Page3/14.png",
+                          height: 230,
+                        ),
+                      )),
+                      Positioned(top:266,left:185,child: Image.asset("assets/Page3/7.png",height: 50,width: 600,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 500))),
+                      Positioned(top: 360,left: 330,child: Image.asset("assets/Page3/8.png",height: 50,width: 500,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 1000),delay: Duration(microseconds: 500))),
+                      Positioned(top: 460,left: 327,child: Image.asset("assets/Page3/9.png",height: 50,width: 500,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 1500),delay: Duration(microseconds: 1000))),
+                      Positioned(top: 548,left: 185,child: Image.asset("assets/Page3/10.png",height: 50,width: 600,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 2000),delay: Duration(microseconds: 1500))),
+                  Positioned(
+                    left: 70,
+                    bottom: 130,
+                    child: ScaleTransition(
+                      scale: _animation,
+                      child: Image.asset("assets/Page3/13.png",height: 330,))),
+               Positioned(
+                        //  left: isOpen ? 25 :  30, // Adjust this value as needed
+                        left: 35,
+                        bottom: 5,
+                        child: Visibility(
+                          visible: isOpen,
+                          child: Image.asset(
+                            "assets/Page3/3.png",
+                            height: 40,
+                          ).animate().fade(begin: -5).slide(
+                              begin: Offset(-1, 0),
+                              curve: Curves.easeInOut,
+                              duration: Duration(milliseconds: 350)),
+                        ),
+                      ),
+                   Positioned(
+                    bottom: 5,
+                    right: 50,
+                    child: InkWell(
+                      onTap: () {
+                        showOverlay(context, "assets/Page2/15.png", 350);
+                      },
+                      child: Image.asset(
+                        "assets/Page2/15.png",
+                        width: 200,
                       ),
                     ),
                   ),
                   Positioned(
-                    left: 0,
-                    bottom: 0,
+                    left: 20,
+                    bottom: 5,
                     child: InkWell(
                       onTap: () {
                         setState(() {
@@ -89,4 +155,33 @@ class _Page3State extends State<Page3> {
       ),
     );
   }
+
+  void showOverlay(
+      BuildContext context, String overlayImagePath, double height) {
+    OverlayEntry? overlayEntry;
+
+    overlayEntry = OverlayEntry(
+      builder: (context) => GestureDetector(
+        onTap: () {
+          overlayEntry!.remove();
+        },
+        child: Material(
+          color: const Color.fromARGB(145, 0, 0, 0),
+          child: Center(
+            child: GestureDetector(
+              onTap:
+                  () {}, // To prevent taps on the image from closing the overlay
+              child: Image(
+                image: AssetImage(overlayImagePath),
+                height: height,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+    Overlay.of(context)!.insert(overlayEntry);
+  }
 }
+

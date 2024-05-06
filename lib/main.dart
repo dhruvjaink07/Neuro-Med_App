@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:neuro_app/Pages/OXET/page2.dart';
+import 'package:neuro_app/Pages/OXET/page3.dart';
+import 'package:neuro_app/Pages/OXET/page4.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/animationTry.dart';
+import 'package:neuro_app/components/chatbubble.dart';
 
 
 void main() async{
@@ -24,8 +28,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MainPage(),
+      // home: SpeechBubble(),
+      // home: MainPage(),
       // home: EaseInAnimationDemo(),
+      home: Page4(),
       // home: LiofPageControllerWidget(),
       // home: Page62(),
       // home : OxetPageControllerWidget()

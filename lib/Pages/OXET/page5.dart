@@ -57,16 +57,22 @@ class _Page5State extends State<Page5> {
               child: Stack(
                 children: [
                 Positioned(
-                    left:   10, // Adjust this value as needed
-                    bottom: 0,
-                    child: Visibility(
-                      visible: isOpen,
-                      child: Image.asset(
-                        "assets/Page5/3.png",
-                        height: 40,
-                      ),
-                    ),
-                  ),
+  left: isOpen ? 20 : 0, // Adjust this value as needed
+  bottom: isOpen ? 0 : -50, // Slide down when isOpen is false
+  child: AnimatedPositioned(
+    duration: Duration(milliseconds:300),
+    curve: Curves.easeInOut,
+    left: isOpen ? 25 : -200, // Slide out to the left
+    bottom: isOpen ? 0 : 0, // Bring down when isOpen is false
+    child: Visibility(
+      visible: isOpen,
+      child: Image.asset(
+        "assets/Page5/3.png",
+        height: 40,
+      ),
+    ),
+  ),
+),
                   Positioned(
                     left: 0,
                     bottom: 0,

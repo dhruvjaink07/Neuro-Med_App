@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
@@ -50,17 +51,18 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
             Expanded(
               child: Stack(
                            children: [
-                           Positioned(
-                               left: isOpen ? 20 :  10, // Adjust this value as needed
-                               bottom: 5,
-                               child: Visibility(
-                                 visible: isOpen,
-                                 child: Image.asset(
-                                   "assets/Page12/3.png",
-                                   height: 40,
-                                 ),
-                               ),
-                             ),
+                                Positioned(
+                //  left: isOpen ? 25 :  30, // Adjust this value as needed
+                left: 35,
+                 bottom: 5,
+                 child: Visibility(
+                   visible: isOpen,
+                   child: Image.asset(
+                     "assets/Page12/3.png",
+                     height: 40,
+                   ).animate().fade(begin: -15).slide(begin: Offset(-1,0),curve: Curves.easeInOut,duration: Duration(milliseconds: 350)),
+                 ),
+               ),
                              Positioned(
                                left: 20,
                                bottom: 5,

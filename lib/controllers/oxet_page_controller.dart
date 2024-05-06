@@ -141,21 +141,21 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
                 goToNextPage: goToNextPage,
                 changePageIndex: changePageIndex,
               );
-            case 1:
-              return Page2(
-                goToPreviousPage: goToPreviousPage,
-                goToNextPage: goToNextPage,
-              );
-            case 2:
-              return Page3(
-                goToPreviousPage: goToPreviousPage,
-                goToNextPage: goToNextPage,
-              );
-            case 3:
-              return Page4(
-                goToPreviousPage: goToPreviousPage,
-                goToNextPage: goToNextPage,
-              );
+            // case 1:
+            //   return Page2(
+            //     goToPreviousPage: goToPreviousPage,
+            //     goToNextPage: goToNextPage,
+            //   );
+            // case 2:
+            //   return Page3(
+            //     goToPreviousPage: goToPreviousPage,
+            //     goToNextPage: goToNextPage,
+            //   );
+            // case 3:
+            //   return Page4(
+            //     goToPreviousPage: goToPreviousPage,
+            //     goToNextPage: goToNextPage,
+            //   );
             case 4:
               return Page5(
                 goToPreviousPage: goToPreviousPage,
