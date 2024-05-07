@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page29 extends StatefulWidget {
-  const Page29({super.key, required this.goToPreviousPage, required this.goToNextPage,});
+  const Page29({super.key, required this.goToPreviousPage, required this.goToNextPage, });
    final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
 
@@ -23,7 +24,7 @@ class _Page29State extends State<Page29> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/Page29/1.png"),fit: BoxFit.contain)
+          image: DecorationImage(image: AssetImage("assets/Page29/BG _2.png"),fit: BoxFit.contain)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -51,32 +52,42 @@ class _Page29State extends State<Page29> {
             Expanded(child: Stack(
               children: [
                  Positioned(
-                              bottom: 70,
+                      top: 40,
+                      right: 20,
+                      child: Image.asset(
+                        "assets/Page23/Logo.png",
+                        height: 80,
+                      )),
+                 Positioned(
+                              bottom: 90,
                               left: 70,
                               child: InkWell(
                                 onTap: (){
-                                  showOverlay(context, "assets/Page29/4.png");
+                                  showOverlay(context, "assets/Page29/4.png",400);
                                 },
-                                child: Image.asset("assets/Page29/4.png",height: 430,width: 550,fit: BoxFit.fill,))),
+                                child: Image.asset("assets/Page29/4.png",height: 400,width: 500,fit: BoxFit.fill,))),
                                 Positioned(
-                              bottom: 70,
+                              bottom: 90,
                               left:550,
                               child: InkWell(
                                 onTap: (){
-                                  showOverlay(context, "assets/Page29/7.png");
+                                  showOverlay(context, "assets/Page29/7.png",400);
                                 },
-                                child: Image.asset("assets/Page29/7.png",height: 430,width: 550,fit: BoxFit.fill,))),
-                 Positioned(
-                                   left: isOpen ? 20 :  10, // Adjust this value as needed
-                                   bottom: 5,
-                                   child: Visibility(
-                                     visible: isOpen,
-                                     child: Image.asset(
-                                       "assets/Page29/3.png",
-                                       height: 40,
-                                     ),
-                                   ),
-                                 ),
+                                child: Image.asset("assets/Page29/7.png",height: 400,width: 500,fit: BoxFit.fill,))),
+                  Positioned(
+                    left: 35,
+                    bottom: 5,
+                    child: Visibility(
+                      visible: isOpen,
+                      child: Image.asset(
+                        "assets/Page28/3.png",
+                        height: 40,
+                      ).animate().fade(begin: -5).slide(
+                          begin: Offset(-1, 0),
+                          curve: Curves.easeInOut,
+                          duration: Duration(milliseconds: 300)),
+                    ),
+                  ),
                                  Positioned(
                                    left: 10,
                                    bottom: 5,
@@ -92,6 +103,19 @@ class _Page29State extends State<Page29> {
                                      ),
                                    ),
                                  ),
+                                 Positioned(
+                    bottom: 5,
+                    right: 50,
+                    child: InkWell(
+                      onTap: () {
+                        showOverlay(context, "assets/Page24/Small.png", 350);
+                      },
+                      child: Image.asset(
+                        "assets/Page24/Small.png",
+                        width: 170,
+                      ),
+                    ),
+                  ),
               ],
             ),),
           ],
@@ -99,7 +123,9 @@ class _Page29State extends State<Page29> {
       ),
     );
   }
-   void showOverlay(BuildContext context, String overlayImagePath) {
+
+  void showOverlay(
+      BuildContext context, String overlayImagePath, double height) {
     OverlayEntry? overlayEntry;
 
     overlayEntry = OverlayEntry(
@@ -111,18 +137,13 @@ class _Page29State extends State<Page29> {
           color: Color.fromARGB(196, 0, 0, 0),
           child: Center(
             child: GestureDetector(
-              onTap: () {}, // To prevent taps on the image from closing the overlay
-              child: Stack(
-                children:[ Positioned(
-                  top: 100,
-                  left: 270,
-                  child: Image(
-                    image: AssetImage(overlayImagePath),
-                    height: 600,
-                    width: 700,
-                    fit: BoxFit.fill,
-                  ),
-                ),]
+              onTap:
+                  () {}, // To prevent taps on the image from closing the overlay
+              child: Image(
+                image: AssetImage(overlayImagePath),
+                height: height,
+                // width: 900,
+                fit: BoxFit.fill,
               ),
             ),
           ),
@@ -131,5 +152,4 @@ class _Page29State extends State<Page29> {
     );
     Overlay.of(context)!.insert(overlayEntry);
   }
-
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
@@ -56,16 +57,19 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                                 onTap: (){
                                   showOverlay(context, "assets/Page16/4.png");
                                 },
-                                child: Image.asset("assets/Page16/4.png",height: 350))),
+                                child: Image.asset("assets/Page16/gif1.gif",height: 350))),
                            Positioned(
-                               left: isOpen ? 20 :  10, // Adjust this value as needed
+                               left: 40, // Adjust this value as needed
                                bottom: 5,
                                child: Visibility(
                                  visible: isOpen,
                                  child: Image.asset(
                                    "assets/Page16/3.png",
                                    height: 40,
-                                 ),
+                                 ).animate().fade(begin: -5).slide(
+                              begin: Offset(-1, 0),
+                              curve: Curves.easeInOut,
+                              duration: Duration(milliseconds: 320)),
                                ),
                              ),
                              Positioned(

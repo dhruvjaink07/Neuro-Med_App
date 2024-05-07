@@ -170,7 +170,6 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
               return Page7(
                 goToPreviousPage: goToPreviousPage,
                 goToNextPage: goToNextPage,
-                changePageIndex: changePageIndex,
               );
             case 7:
               return Page8(
@@ -197,7 +196,6 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
               return Page13(
                 goToPreviousPage: goToPreviousPage,
                 goToNextPage: goToNextPage,
-                changePageIndex: changePageIndex,
               );
 
             case 13:

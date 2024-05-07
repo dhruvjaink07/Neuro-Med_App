@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page15 extends StatefulWidget {
-  const Page15({super.key, required this.goToPreviousPage, required this.goToNextPage,});
+  const Page15({super.key, required this.goToPreviousPage, required this.goToNextPage, });
  final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
   @override
@@ -20,7 +21,7 @@ class _Page15State extends State<Page15> {
 drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
       body: Container(
         width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page15/1.png"),fit: BoxFit.contain)),
+        decoration: const BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page15/bg.png"),fit: BoxFit.contain)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -49,15 +50,29 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
             Expanded(
               child: Stack(
                            children: [
+                            Positioned(
+                      top: 40,
+                      right:80,
+                      child: Image.asset(
+                        "assets/Page15/Logo.png",
+                        width: 430,
+                      )),
+                            Positioned(
+                              top: 260,
+                              left: 80,
+                              child: Image.asset("assets/Page15/4.png",height: 300,).animate().fade(duration: const Duration(milliseconds: 1500))),
                            Positioned(
-                               left: isOpen ? 20 :  10, // Adjust this value as needed
+                               left: 40, // Adjust this value as needed
                                bottom: 5,
                                child: Visibility(
                                  visible: isOpen,
                                  child: Image.asset(
                                    "assets/Page15/3.png",
                                    height: 40,
-                                 ),
+                                 ).animate().fade(begin: -5).slide(
+                              begin: Offset(-1, 0),
+                              curve: Curves.easeInOut,
+                              duration: Duration(milliseconds: 320)),
                                ),
                              ),
                              Positioned(

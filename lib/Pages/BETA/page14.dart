@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
@@ -20,7 +21,7 @@ class _Page14State extends State<Page14> {
 drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
       body: Container(
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page14/1.png"),fit: BoxFit.contain)),
+        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page14/bg3.png"),fit: BoxFit.contain)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -49,6 +50,24 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
             Expanded(
               child: Stack(
                            children: [
+                                 Positioned(
+                      top: 40,
+                      right:80,
+                      child: Image.asset(
+                        "assets/Page14/Logo.png",
+                        width: 430,
+                      )),
+                       Positioned(
+                      top: 240,
+                      left: 100,
+                      child: Image.asset(
+                        "assets/Page14/text.png",
+                        height: 20,
+                        // width: 380,
+                        fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
                            Positioned(
                                left: isOpen ? 20 :  10, // Adjust this value as needed
                                bottom: 5,
@@ -57,7 +76,10 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                                  child: Image.asset(
                                    "assets/Page14/3.png",
                                    height: 40,
-                                 ),
+                                 ).animate().fade(begin: -5).slide(
+                              begin: Offset(-1, 0),
+                              curve: Curves.easeInOut,
+                              duration: Duration(milliseconds: 350)),
                                ),
                              ),
                              Positioned(
@@ -75,6 +97,21 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                                  ),
                                ),
                              ),
+                             Positioned(
+                    bottom: 5,
+                    right: 50,
+                    child: InkWell(
+                      onTap: () {
+                        showOverlay(
+                            context, "assets/Page14/Small.png", );
+                      },
+                      child: Image.asset(
+                        "assets/Page14/Small.png",
+                        width: 170,
+                      ),
+                    ),
+                  ),
+                  
                            ],
                          ),
             ), 
@@ -100,7 +137,7 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
               onTap: () {}, // To prevent taps on the image from closing the overlay
               child: Image(
                 image: AssetImage(overlayImagePath),
-                height: 550,
+                height: 350,
                 fit: BoxFit.cover,
               ),
             ),

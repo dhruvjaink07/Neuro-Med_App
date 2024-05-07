@@ -85,7 +85,7 @@ class _Page2State extends State<Page2> with SingleTickerProviderStateMixin {
                       top: 50,
                       right: 50,
                       child: Image.asset(
-                        "assets/Page2/12.png",
+                        "assets/Page2/Logo.gif",
                         width: 450,
                       )),
                   Positioned(

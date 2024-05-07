@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
@@ -26,7 +27,7 @@ class _Page23State extends State<Page23> {
         width: MediaQuery.of(context).size.width,
         padding: EdgeInsets.all(0),
         decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/Page23/1.png"),fit: BoxFit.contain)
+          image: DecorationImage(image: AssetImage("assets/Page23/BG .png"),fit: BoxFit.contain)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -53,12 +54,16 @@ class _Page23State extends State<Page23> {
                 ),]),
             Expanded(child: Stack(
               children: [
+                Positioned(
+                  top: 120,
+                  left: 200,
+                  child: Image.asset("assets/Page23/Logo.png",height: 110,).animate().fade(duration: const Duration(milliseconds: 1500))),
                  Positioned(
                    bottom: 180,
                    right: -8,
                    child: InkWell(
                      onTap: (){},
-                     child:Image.asset("assets/Page23/8.png",width: 430,height: 190,fit: BoxFit.fill),
+                     child:Image.asset("assets/Page23/8.png",width: 430,height: 190,fit: BoxFit.fill).animate().fade(duration: const Duration(milliseconds: 1500)),
                    ),
                  ),
                 Positioned(
@@ -66,7 +71,7 @@ class _Page23State extends State<Page23> {
                   right: 280,
                   child: InkWell(
                     onTap: (){},
-                    child:Image.asset("assets/Page23/7.png",width: 450,height: 190,fit: BoxFit.fill),
+                    child:Image.asset("assets/Page23/7.png",width: 450,height: 190,fit: BoxFit.fill).animate().fade(duration: const Duration(milliseconds: 1500)),
                   ),
                 ),
                 Positioned(
@@ -74,7 +79,7 @@ class _Page23State extends State<Page23> {
                   left: -15,
                   child: InkWell(
                     onTap: (){},
-                    child:Image.asset("assets/Page23/4.png",width: 430,height:190,fit: BoxFit.fill,),
+                    child:Image.asset("assets/Page23/4.png",width: 430,height:190,fit: BoxFit.fill,).animate().fade(duration: const Duration(milliseconds: 1500)),
                   ),
                 ),
                  
@@ -84,18 +89,18 @@ class _Page23State extends State<Page23> {
                 left: 10,
                     child: InkWell(
                       onTap: (){
-                        showOverlay(context, "assets/Page23/10.png");
+                        showOverlay(context, "assets/Page23/10.png",650);
                       },
-                      child: Image.asset("assets/Page23/2.png",width: 150,)),
+                      child: Image.asset("assets/Page23/2.png",width: 150,).animate().fade(duration: const Duration(milliseconds: 1500))),
               ),
               Positioned(
                 bottom: 20,
                 right: 10,
                 child:      InkWell(
                   onTap: (){
-                    showOverlay(context, "assets/Page23/9.png");
+                    showOverlay(context, "assets/Page23/9.png",650);
                   },
-                  child: Image.asset("assets/Page23/3.png",width: 150,)),)
+                  child: Image.asset("assets/Page23/3.png",width: 150,).animate().fade(duration: const Duration(milliseconds: 1500))),)
               
               ]))
           ],
@@ -103,7 +108,7 @@ class _Page23State extends State<Page23> {
       ),
     );
   }
-   void showOverlay(BuildContext context, String overlayImagePath) {
+   void showOverlay(BuildContext context, String overlayImagePath,double height ) {
     OverlayEntry? overlayEntry;
 
     overlayEntry = OverlayEntry(
@@ -118,7 +123,7 @@ class _Page23State extends State<Page23> {
               onTap: () {}, // To prevent taps on the image from closing the overlay
               child: Image(
                 image: AssetImage(overlayImagePath),
-                height: 500,
+                height: height,
                 width: 850,
                 fit: BoxFit.fill,
               ),

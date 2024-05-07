@@ -1,31 +1,32 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page7 extends StatefulWidget {
-  const Page7({super.key, required this.goToNextPage, required this.goToPreviousPage, required this.changePageIndex});
+  const Page7({
+    super.key, required this.goToNextPage, required this.goToPreviousPage,
+  });
    final VoidCallback goToNextPage;
    final VoidCallback goToPreviousPage;
-     final Function(int) changePageIndex; // Callback to change page index
   @override
   State<Page7> createState() => _Page7State();
 }
 
 class _Page7State extends State<Page7> with SingleTickerProviderStateMixin {
-    late AnimationController _controller;
+  late AnimationController _controller;
   final Duration _animationDuration = Duration(milliseconds: 1500);
   final Curve _animationCurve = Curves.easeIn;
 
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-    @override
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  @override
   void initState() {
     super.initState();
     _controller = AnimationController(
-      vsync: this,
-      duration: _animationDuration,
-      animationBehavior: AnimationBehavior.preserve
-    );
+        vsync: this,
+        duration: _animationDuration,
+        animationBehavior: AnimationBehavior.preserve);
 
     // Trigger the ease-in animation directly
     _controller.forward();
@@ -36,14 +37,17 @@ class _Page7State extends State<Page7> with SingleTickerProviderStateMixin {
     _controller.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
+      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
       body: Container(
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page7/12.png"),fit: BoxFit.contain)),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/Page7/12.png"), fit: BoxFit.contain)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -60,7 +64,8 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                 ),
                 IconButton(
                   onPressed: () {
-                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   icon: Image.asset(
                     "assets/Page1/6.png",
@@ -70,29 +75,44 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
               ],
             ),
             Expanded(
-              child: Center(
-                      child: AnimatedBuilder(
-                        animation: _controller,
-                        builder: (context, child) {
-              return Transform.scale(
-                scale: _controller.value * 5,
-                child: Image.asset(
-                  'assets/Page7/20.png', // Replace 'your_image.jpg' with your image asset path
-                  width: 200,
-                  height: 200,
+              child: Stack(children: [
+                Positioned(
+                  top: 230,
+                  left: 400,
+                  child: AnimatedBuilder(
+                    animation: _controller,
+                    builder: (context, child) {
+                      return Transform.scale(
+                        scale: _controller.value * 5,
+                        child: Image.asset(
+                          'assets/Page7/20.png', // Replace 'your_image.jpg' with your image asset path
+                          width: 200,
+                          height: 200,
+                        ),
+                      );
+                    },
+                  ),
                 ),
-              );
+                Positioned(
+                    right: 0,
+                    bottom: 230,
+                    child: InkWell(
+                        onTap: () {
+                          showOverlay(context, "assets/Page7/11.png");
                         },
-                      ),
-                    ),
+                        child: Image.asset(
+                          "assets/Page7/10.png",
+                          height: 200,
+                        ))),
+              ]),
             ),
           ],
         ),
       ),
-
     );
   }
-   void showOverlay(BuildContext context, String overlayImagePath) {
+
+  void showOverlay(BuildContext context, String overlayImagePath) {
     OverlayEntry? overlayEntry;
 
     overlayEntry = OverlayEntry(
@@ -104,7 +124,8 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
           color: const Color.fromARGB(145, 0, 0, 0),
           child: Center(
             child: GestureDetector(
-              onTap: () {}, // To prevent taps on the image from closing the overlay
+              onTap:
+                  () {}, // To prevent taps on the image from closing the overlay
               child: Image(
                 image: AssetImage(overlayImagePath),
                 height: 550,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
@@ -22,7 +23,7 @@ class _Page27State extends State<Page27> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/Page27/1.png"),fit: BoxFit.contain)
+          image: DecorationImage(image: AssetImage("assets/Page27/BG _1.png"),fit: BoxFit.contain)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -50,24 +51,74 @@ class _Page27State extends State<Page27> {
             Expanded(child: Stack(
               children: [
                  Positioned(
+                      top: 40,
+                      right: 20,
+                      child: Image.asset(
+                        "assets/Page23/Logo.png",
+                        height: 80,
+                      )),
+                  Positioned(
+                      top: 240,
+                      left: 70,
+                      child: Image.asset(
+                        "assets/Page27/Text .png",
+                        height: 20,
+                        // width: 720,
+                        // fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                          Positioned(
+                      top: 280,
+                      left: 70,
+                      child: Image.asset(
+                        "assets/Page27/text 2.png",
+                        height: 15,
+                        // width: 720,
+                        // fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                            Positioned(
+                      right: 20,
+                      top: 230,
+                      child: Image.asset(
+                        "assets/Page24/Once a day .png",
+                        height: 70,
+                      )
+                          .animate()
+                          .scale(duration: const Duration(milliseconds: 1200))),
+                          Positioned(
+                      right: 60,
+                      bottom: 130,
+                      child: Image.asset(
+                        "assets/Page27/Scanner.png",
+                        height: 150,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                 Positioned(
                               bottom: 90,
                               left: 70,
                               child: InkWell(
                                 onTap: (){
-                                  showOverlay(context, "assets/Page27/4.png");
+                                  showOverlay(context, "assets/Page27/4.png",400);
                                 },
                                 child: Image.asset("assets/Page27/4.png",height: 330,width: 750,fit: BoxFit.fill,))),
                  Positioned(
-                                   left: isOpen ? 20 :  10, // Adjust this value as needed
-                                   bottom: 5,
-                                   child: Visibility(
-                                     visible: isOpen,
-                                     child: Image.asset(
-                                       "assets/Page27/3.png",
-                                       height: 40,
-                                     ),
-                                   ),
-                                 ),
+                    left: 35,
+                    bottom: 5,
+                    child: Visibility(
+                      visible: isOpen,
+                      child: Image.asset(
+                        "assets/Page27/3.png",
+                        height: 40,
+                      ).animate().fade(begin: -5).slide(
+                          begin: Offset(-1, 0),
+                          curve: Curves.easeInOut,
+                          duration: Duration(milliseconds: 300)),
+                    ),
+                  ),
                                  Positioned(
                                    left: 10,
                                    bottom: 5,
@@ -83,6 +134,22 @@ class _Page27State extends State<Page27> {
                                      ),
                                    ),
                                  ),
+                                  Positioned(
+                    bottom: 5,
+                    right: 50,
+                    child: InkWell(
+                      onTap: () {
+                        showOverlay(
+                          context,
+                          "assets/Page24/Small.png",350
+                        );
+                      },
+                      child: Image.asset(
+                        "assets/Page24/Small.png",
+                        width: 170,
+                      ),
+                    ),
+                  ),
               ],
             ),),
           ],
@@ -90,7 +157,9 @@ class _Page27State extends State<Page27> {
       ),
     );
   }
-   void showOverlay(BuildContext context, String overlayImagePath) {
+   
+  void showOverlay(
+      BuildContext context, String overlayImagePath, double height) {
     OverlayEntry? overlayEntry;
 
     overlayEntry = OverlayEntry(
@@ -102,11 +171,12 @@ class _Page27State extends State<Page27> {
           color: Color.fromARGB(196, 0, 0, 0),
           child: Center(
             child: GestureDetector(
-              onTap: () {}, // To prevent taps on the image from closing the overlay
+              onTap:
+                  () {}, // To prevent taps on the image from closing the overlay
               child: Image(
                 image: AssetImage(overlayImagePath),
-                height: 430,
-                width: 900,
+                height: height,
+                // width: 900,
                 fit: BoxFit.fill,
               ),
             ),
@@ -116,5 +186,4 @@ class _Page27State extends State<Page27> {
     );
     Overlay.of(context)!.insert(overlayEntry);
   }
-
 }

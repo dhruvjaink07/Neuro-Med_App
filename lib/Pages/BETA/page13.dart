@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page13 extends StatefulWidget {
-  const Page13({Key? key, required this.goToPreviousPage, required this.goToNextPage, required this.changePageIndex});
+  const Page13({Key? key, required this.goToPreviousPage, required this.goToNextPage, });
 
   final VoidCallback goToPreviousPage;
   final VoidCallback goToNextPage;
-  final Function(int) changePageIndex; // Callback to change page index
+
 
   @override
   State<Page13> createState() => _Page13State();
@@ -22,65 +23,39 @@ class _Page13State extends State<Page13> {
       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
       body: Container(
         width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page13/1.png"),fit: BoxFit.contain)),
-        child: Stack(
-          children:[ 
-              Positioned(
-                top: 5,
-                left: 5,
-                child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      _scaffoldKey.currentState?.openDrawer();
-                    },
-                    icon: Image.asset(
-                      "assets/Page1/5.png",
-                      height: 20,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {
-                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
-                    },
-                    icon: Image.asset(
-                      "assets/Page1/6.png",
-                      height: 25,
-                    ),
-                  ),
-                ],
-                            ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Row(
+            children: [
+              IconButton(
+                onPressed: () {
+                  _scaffoldKey.currentState?.openDrawer();
+                },
+                icon: Image.asset(
+                  "assets/Page1/5.png",
+                  height: 20,
+                ),
               ),
-            Positioned(
-            right: 45,
-            top: 75,
-            child: Column(
-              children: [InkWell(
-  onTap: () {
-    // widget.changePageIndex(13); 
-  },
-  child: Image.asset("assets/Page13/2.png", width: 503),
-),
-
-              InkWell(
-                onTap: (){
-                  // widget.changePageIndex(14);
+              IconButton(
+                onPressed: () {
+                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
                 },
-                child: Image.asset("assets/Page13/3.png",width: 495,)),
-              const SizedBox(height: 5,),
-              InkWell(
-                onTap: (){
-                  // widget.changePageIndex(15);
-                },
-                child: Image.asset("assets/Page13/4.png",width: 495,)),
-              InkWell(
-                onTap: (){
-                  // widget.changePageIndex(16);
-                },
-                child: Image.asset("assets/Page13/7.png",width: 503,)),
-              ],
-            ),
-          ),]
+                icon: Image.asset(
+                  "assets/Page1/6.png",
+                  height: 25,
+                ),
+              ),
+            ],
+                        )
+                        ,
+                        SizedBox(height: 50,)
+                        ,
+                        Container(
+                          // alignment: Alignment.center,
+                          margin:const EdgeInsets.only(right: 100),
+                          child: Image.asset("assets/Page13/index.png",).animate().fade(duration: Duration(milliseconds: 1500)))
+          ],
         ),
       ),
     );

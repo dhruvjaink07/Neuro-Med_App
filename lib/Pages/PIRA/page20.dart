@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page20 extends StatefulWidget {
-  const Page20({super.key, required this.goToPreviousPage, required this.goToNextPage});
+  const Page20({super.key, required this.goToPreviousPage, required this.goToNextPage,});
    final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
 
@@ -22,7 +23,7 @@ class _Page20State extends State<Page20> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/Page20/1.png"),fit: BoxFit.contain)
+          image: DecorationImage(image: AssetImage("assets/Page20/BG.png"),fit: BoxFit.contain)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -49,6 +50,24 @@ class _Page20State extends State<Page20> {
                 ),]),
             Expanded(child: Stack(
               children: [
+                Positioned(
+                      top: 20,
+                      right: 80,
+                      child: Image.asset(
+                        "assets/Page20/Logo.png",
+                        width: 430,
+                      )),
+                         Positioned(
+                      top: 240,
+                      left: 70,
+                      child: Image.asset(
+                        "assets/Page20/Text .png",
+                        // height: 25,
+                        width: 750,
+                        fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
                  Positioned(
                               bottom: 100,
                               left: 70,
@@ -56,7 +75,7 @@ class _Page20State extends State<Page20> {
                                 onTap: (){
                                   showOverlay(context, "assets/Page20/4.png");
                                 },
-                                child: Image.asset("assets/Page20/4.png",height: 350,width: 800,fit: BoxFit.fill,))),
+                                child: Image.asset("assets/Page20/gif.gif",height: 350,width: 800,fit: BoxFit.fill,))),
                  Positioned(
                                    left: isOpen ? 20 :  10, // Adjust this value as needed
                                    bottom: 5,

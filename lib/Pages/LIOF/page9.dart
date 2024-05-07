@@ -5,7 +5,9 @@ import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page9 extends StatefulWidget {
-  const Page9({super.key, required this.goToPreviousPage, required this.goToNextPage, });
+  const Page9({
+    super.key, required this.goToPreviousPage, required this.goToNextPage,
+  });
  final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
   @override
@@ -13,16 +15,18 @@ class Page9 extends StatefulWidget {
 }
 
 class _Page9State extends State<Page9> {
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-      bool isOpen = false;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  bool isOpen = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
+      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
       body: Container(
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page9/1.png"),fit: BoxFit.contain)),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/Page9/BG.png"), fit: BoxFit.contain)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -39,7 +43,8 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                 ),
                 IconButton(
                   onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   icon: Image.asset(
                     "assets/Page9/6.png",
@@ -51,66 +56,128 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
             Expanded(
               child: Stack(
                 children: [
-                
-                         
-                            Positioned(
-                              right: 0,
-                              bottom: 280,
-                              child:InkWell(
-                                onTap: (){
-                                  showOverlay(context, "assets/Page9/11.png");
-                                },
-                                child: Image.asset("assets/Page9/10.png",height: 200,))),
-
-                                Positioned(
-                                  left: 60,
-                                  top: 325,
-                                  child: Row(
-                                    children: [Image.asset("assets/Page9/4.png",height: 300,),const SizedBox(width: 30,),Image.asset("assets/Page9/7.png",height: 300,)],
-                                  ),
-                                ),
-                         Stack(
-             children: [
-               Positioned(
-                //  left: isOpen ? 25 :  30, // Adjust this value as needed
-                left: 35,
-                 bottom: 5,
-                 child: Visibility(
-                   visible: isOpen,
-                   child: Image.asset(
-                     "assets/Page9/3.png",
-                     height: 40,
-                   ).animate().fade(begin: -5).slide(begin: Offset(-1,0),curve: Curves.easeInOut,duration: Duration(milliseconds: 350)),
-                 ),
-               ),
-               Positioned(
-                 left: 20,
-                 bottom: 5,
-                 child: InkWell(
-                   onTap: () {
-                     setState(() {
-                       isOpen = !isOpen;
-                     });
-                   },
-                   child: Image.asset(
-                     "assets/Page9/2.png",
-                     height: 45,
-                   ),
-                 ),
-               ),
-             ],
-           )
+                  Positioned(
+                      top: 28,
+                      right: 190,
+                      child: Image.asset(
+                        "assets/Page9/Logo.png",
+                        width: 300,
+                      )),
+                  Positioned(
+                      top: 240,
+                      left: 100,
+                      child: Image.asset(
+                        "assets/Page9/text .png",
+                        height: 25,
+                        width: 650,
+                        fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                  Positioned(
+                      top: 280,
+                      left: 90,
+                      child: Image.asset(
+                        "assets/Page8/text 2.png",
+                        height: 16,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                  Positioned(
+                      right: 0,
+                      bottom: 200,
+                      child: InkWell(
+                          onTap: () {
+                            showOverlay(context, "assets/Page9/11.png",550);
+                          },
+                          child: Image.asset(
+                            "assets/Page9/10.png",
+                            height: 200,
+                          ))),
+                  Positioned(
+                    left: 60,
+                    top: 300,
+                        child: InkWell(
+                          onTap: (){
+                            showOverlay(context, "assets/Page9/4.png",550);
+                          },
+                          child: Image.asset(
+                            "assets/Page9/gif1.gif",
+                            height: 330,
+                          ),
+                        ),
+                  ),
+                  Positioned(
+                    
+                         right: 80,
+                    top: 300,child: 
+                  InkWell(
+                    onTap: (){
+                      showOverlay(context, "assets/Page9/7.png",550);
+                    },
+                    child: Image.asset(
+                            "assets/Page9/gif2.gif",
+                            height: 330,
+                          ),
+                  )),
+                  Stack(
+                    children: [
+                      Positioned(
+                        //  left: isOpen ? 25 :  30, // Adjust this value as needed
+                        left: 35,
+                        bottom: 5,
+                        child: Visibility(
+                          visible: isOpen,
+                          child: Image.asset(
+                            "assets/Page9/3.png",
+                            height: 40,
+                          ).animate().fade(begin: -5).slide(
+                              begin: Offset(-1, 0),
+                              curve: Curves.easeInOut,
+                              duration: Duration(milliseconds: 350)),
+                        ),
+                      ),
+                      Positioned(
+                        left: 20,
+                        bottom: 5,
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              isOpen = !isOpen;
+                            });
+                          },
+                          child: Image.asset(
+                            "assets/Page9/2.png",
+                            height: 45,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Positioned(
+                    bottom: 5,
+                    right: 50,
+                    child: InkWell(
+                      onTap: () {
+                        showOverlay(
+                            context, "assets/Page9/Small logo .png",300);
+                      },
+                      child: Image.asset(
+                        "assets/Page9/Small logo .png",
+                        width: 170,
+                      ),
+                    ),
+                  ),
                 ],
               ),
-            ), 
-           
+            ),
           ],
         ),
       ),
-
     );
   }
-   void showOverlay(BuildContext context, String overlayImagePath) {
+
+  void showOverlay(BuildContext context, String overlayImagePath,double height) {
     OverlayEntry? overlayEntry;
 
     overlayEntry = OverlayEntry(
@@ -122,10 +189,11 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
           color: const Color.fromARGB(145, 0, 0, 0),
           child: Center(
             child: GestureDetector(
-              onTap: () {}, // To prevent taps on the image from closing the overlay
+              onTap:
+                  () {}, // To prevent taps on the image from closing the overlay
               child: Image(
                 image: AssetImage(overlayImagePath),
-                height: 550,
+                height: height,
                 fit: BoxFit.cover,
               ),
             ),
