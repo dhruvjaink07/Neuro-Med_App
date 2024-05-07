@@ -1,42 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page6 extends StatefulWidget {
-    final VoidCallback goToPreviousPage;
-      final VoidCallback goToNextPage;
-  const Page6({super.key, required this.goToPreviousPage, required this.goToNextPage, });
+  final VoidCallback goToPreviousPage;
+  final VoidCallback goToNextPage;
+  const Page6({
+    super.key,
+    required this.goToPreviousPage,
+    required this.goToNextPage,
+  });
 
   @override
   State<Page6> createState() => _Page6State();
 }
 
 class _Page6State extends State<Page6> {
-   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-      bool isOpen = false;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  bool isOpen = false;
 
-      @override
+  @override
   void dispose() {
-    count =0;
+    count = 0;
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
-  
     return Scaffold(
       key: _scaffoldKey,
       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
       body: Container(
-          decoration: const BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/Page6/11.png"), fit: BoxFit.contain)),
-                child: Column(
-                  children: [
-                     Row(
+                image: AssetImage("assets/Page6/7.png"), fit: BoxFit.contain)),
+        child: Column(
+          children: [
+            Row(
               children: [
                 IconButton(
                     onPressed: () {
-                          _scaffoldKey.currentState?.openDrawer();
+                      _scaffoldKey.currentState?.openDrawer();
                     },
                     icon: Image.asset(
                       "assets/Page6/5.png",
@@ -44,7 +50,8 @@ class _Page6State extends State<Page6> {
                     )),
                 IconButton(
                     onPressed: () {
-                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => MainPage()));
                     },
                     icon: Image.asset(
                       "assets/Page6/6.png",
@@ -52,35 +59,66 @@ class _Page6State extends State<Page6> {
                     ))
               ],
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height/1.27,
-            ),
-            Container(
-              height: 100,
-              margin: const EdgeInsets.only(left: 20, top: 15),
-              alignment: Alignment.bottomLeft,
+            Expanded(
               child: Stack(
                 children: [
-               Positioned(
-  left: isOpen ? 30 : 10, // Adjust this value as needed
-  bottom: isOpen ? 0 : -50, // Slide down when isOpen is false
-  child: AnimatedPositioned(
-    duration: Duration(milliseconds: 300),
-    curve: Curves.easeInOut,
-    left: isOpen ? 30 : -100, // Slide out to the left
-    bottom: isOpen ? 0 : 0, // Bring down when isOpen is false
-    child: Visibility(
-      visible: isOpen,
-      child: Image.asset(
-        "assets/Page6/3.png",
-        height: 40,
-      ),
-    ),
-  ),
-),
                   Positioned(
-                    left: 0,
-                    bottom: 0,
+                      top: 30,
+                      right: 80,
+                      child: Image.asset(
+                        "assets/Page6/11.png",
+                        width: 450,
+                        height: 130,
+                        fit: BoxFit.fill,
+                      )),
+                  Positioned(
+                      left: 100,
+                      bottom: 130,
+                      child: Image.asset(
+                        "assets/Page6/8.png",
+                        width: 800,
+                        height: 330,
+                        fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                  Positioned(
+                      right: 40,
+                      bottom: 100,
+                      child: Image.asset(
+                        "assets/Page6/9.png",
+                        height: 400,
+                        width: 250,
+                        fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                  Positioned(
+                      left: 100,
+                      bottom: 230,
+                      child: Image.asset(
+                        "assets/Page6/10.png",
+                        height: 270,
+                      )
+                          .animate()
+                          .scale(duration: const Duration(milliseconds: 1500))),
+                  Positioned(
+                    left: 35,
+                    bottom: 5, // Slide down when isOpen is false
+                    child: Visibility(
+                      visible: isOpen,
+                      child: Image.asset(
+                        "assets/Page6/3.png",
+                        height: 40,
+                      ).animate().fade(begin: -10).slide(
+                          begin: const Offset(-1, 0),
+                          curve: Curves.easeInOut,
+                          duration: const Duration(milliseconds: 300)),
+                    ),
+                  ),
+                  Positioned(
+                    left: 20,
+                    bottom: 5,
                     child: InkWell(
                       onTap: () {
                         setState(() {
@@ -93,12 +131,53 @@ class _Page6State extends State<Page6> {
                       ),
                     ),
                   ),
+                  Positioned(
+                    bottom: 5,
+                    right: 50,
+                    child: InkWell(
+                      onTap: () {
+                        showOverlay(context, "assets/Page5/12.png", 350);
+                      },
+                      child: Image.asset(
+                        "assets/Page5/12.png",
+                        width: 200,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             )
-                  ],
-                ),
+          ],
+        ),
       ),
     );
+  }
+
+  void showOverlay(
+      BuildContext context, String overlayImagePath, double height) {
+    OverlayEntry? overlayEntry;
+
+    overlayEntry = OverlayEntry(
+      builder: (context) => GestureDetector(
+        onTap: () {
+          overlayEntry!.remove();
+        },
+        child: Material(
+          color: const Color.fromARGB(145, 0, 0, 0),
+          child: Center(
+            child: GestureDetector(
+              onTap:
+                  () {}, // To prevent taps on the image from closing the overlay
+              child: Image(
+                image: AssetImage(overlayImagePath),
+                height: height,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+    Overlay.of(context)!.insert(overlayEntry);
   }
 }

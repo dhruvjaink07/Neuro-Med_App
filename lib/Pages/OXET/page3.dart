@@ -5,9 +5,9 @@ import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page3 extends StatefulWidget {
-    // final VoidCallback goToPreviousPage;
-    // final VoidCallback goToNextPage;
-  const Page3({super.key, });
+    final VoidCallback goToPreviousPage;
+    final VoidCallback goToNextPage;
+  const Page3({super.key, required this.goToPreviousPage, required this.goToNextPage, });
 
   @override
   State<Page3> createState() => _Page3State();
@@ -23,7 +23,7 @@ class _Page3State extends State<Page3> with SingleTickerProviderStateMixin{
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 700), // Adjust the duration as needed
+      duration: Duration(milliseconds: 1500), // Adjust the duration as needed
     );
 
     _animation = Tween<double>(
@@ -94,10 +94,10 @@ class _Page3State extends State<Page3> with SingleTickerProviderStateMixin{
                           height: 230,
                         ),
                       )),
-                      Positioned(top:266,left:185,child: Image.asset("assets/Page3/7.png",height: 50,width: 600,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 500))),
-                      Positioned(top: 360,left: 330,child: Image.asset("assets/Page3/8.png",height: 50,width: 500,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 1000),delay: Duration(microseconds: 500))),
-                      Positioned(top: 460,left: 327,child: Image.asset("assets/Page3/9.png",height: 50,width: 500,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 1500),delay: Duration(microseconds: 1000))),
-                      Positioned(top: 548,left: 185,child: Image.asset("assets/Page3/10.png",height: 50,width: 600,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 2000),delay: Duration(microseconds: 1500))),
+                      Positioned(top:266,left:185,child: Image.asset("assets/Page3/7.png",height: 50,width: 600,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 1500))),
+                      Positioned(top: 360,left: 330,child: Image.asset("assets/Page3/8.png",height: 50,width: 500,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 1500))),
+                      Positioned(top: 460,left: 327,child: Image.asset("assets/Page3/9.png",height: 50,width: 500,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 1500),)),
+                      Positioned(top: 548,left: 185,child: Image.asset("assets/Page3/10.png",height: 50,width: 600,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds:1500))),
                   Positioned(
                     left: 70,
                     bottom: 130,

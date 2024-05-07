@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
@@ -56,7 +59,7 @@ class _Page1State extends State<Page1> with SingleTickerProviderStateMixin {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/Page1/11.png"),
+            image: AssetImage("assets/Page1/8.png"),
             fit: BoxFit.contain,
           ),
         ),
@@ -87,29 +90,42 @@ class _Page1State extends State<Page1> with SingleTickerProviderStateMixin {
                 ),
               ],
             ),
-            SizedBox(
-              height: height / 1.35,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                AnimatedOpacity(
-                  opacity: 1,
-                  duration: _animationDuration,
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: Image.asset("assets/Page1/2.png", height: 120),
-                  ),
+            Expanded(
+              child: Stack(children: [
+                Positioned(
+                  right: 10,
+                  child: Image.asset("assets/Page1/9.png",height: 120,).animate().fade(duration: const Duration(milliseconds: 1500))),
+                Positioned(
+                    top: 50,
+                    left: 130,
+                    child: Image.asset(
+                      "assets/Page1/7.png",
+                      height: 540,
+                    )
+                        .animate()
+                        .fade(duration: const Duration(milliseconds: 1500))),
+                Positioned(
+                  bottom: 20,
+                  left: 10,
+                  child: Image.asset("assets/Page1/2.png", height: 140)
+                      .animate()
+                      .fade(duration: const Duration(milliseconds: 1500)),
                 ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Image.asset("assets/Page1/3.png", height: 120),
+                Positioned(
+                  bottom: 20,
+                  left: 350,
+                  child: Image.asset("assets/Page1/3.png", height: 140)
+                      .animate()
+                      .fade(duration: const Duration(milliseconds: 1500)),
                 ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Image.asset("assets/Page1/4.png", height: 120),
+                Positioned(
+                  bottom: 20,
+                  right: 10,
+                  child: Image.asset("assets/Page1/4.png", height: 140)
+                      .animate()
+                      .fade(duration: const Duration(milliseconds: 1500)),
                 ),
-              ],
+              ]),
             )
           ],
         ),

@@ -5,25 +5,29 @@ import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page4 extends StatefulWidget {
-    // final VoidCallback goToPreviousPage;
-    //  final VoidCallback goToNextPage;
-  const Page4({super.key, });
+  final VoidCallback goToPreviousPage;
+  final VoidCallback goToNextPage;
+  const Page4({
+    super.key,
+    required this.goToPreviousPage,
+    required this.goToNextPage,
+  });
 
   @override
   State<Page4> createState() => _Page4State();
 }
 
-class _Page4State extends State<Page4> with SingleTickerProviderStateMixin{
-   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-      bool isOpen = false;
-      late AnimationController _controller;
+class _Page4State extends State<Page4> with SingleTickerProviderStateMixin {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  bool isOpen = false;
+  late AnimationController _controller;
   late Animation<double> _animation;
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1000), // Adjust the duration as needed
+      duration: Duration(milliseconds: 1500), // Adjust the duration as needed
     );
 
     _animation = Tween<double>(
@@ -41,23 +45,23 @@ class _Page4State extends State<Page4> with SingleTickerProviderStateMixin{
     _controller.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
-  
     return Scaffold(
       key: _scaffoldKey,
       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
       body: Container(
-          decoration: const BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("assets/Page4/4.png"), fit: BoxFit.contain)),
-                child: Column(
-                  children: [
-                     Row(
+        child: Column(
+          children: [
+            Row(
               children: [
                 IconButton(
                     onPressed: () {
-                          _scaffoldKey.currentState?.openDrawer();
+                      _scaffoldKey.currentState?.openDrawer();
                     },
                     icon: Image.asset(
                       "assets/Page4/5.png",
@@ -65,7 +69,8 @@ class _Page4State extends State<Page4> with SingleTickerProviderStateMixin{
                     )),
                 IconButton(
                     onPressed: () {
-                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => MainPage()));
                     },
                     icon: Image.asset(
                       "assets/Page4/6.png",
@@ -73,40 +78,52 @@ class _Page4State extends State<Page4> with SingleTickerProviderStateMixin{
                     ))
               ],
             ),
-
             Expanded(
               child: Stack(
                 children: [
                   Positioned(
-                    top: 28,
-                    right: 80,
-                    child: Image.asset("assets/Page4/7.png",height: 100,width: 450,fit: BoxFit.fitWidth,)),
-                    Positioned(
+                      top: 28,
+                      right: 80,
+                      child: Image.asset(
+                        "assets/Page4/7.png",
+                        height: 100,
+                        width: 450,
+                        fit: BoxFit.fitWidth,
+                      )),
+                  Positioned(
                       top: 290,
-                      left: 130,
+                      left: 180,
                       child: ScaleTransition(
-                        scale: _animation,
-                        child: Image.asset("assets/Page4/9.png",fit: BoxFit.contain,)),height: 330,),
-                      Positioned(
-                        top: 230,
-                        left: 150,
-                        child: ScaleTransition(
                           scale: _animation,
-                          child: Image.asset("assets/Page4/12.png",height: 30,))),
-                Positioned(
-                left: 35,
-                bottom:  5 ,// Slide down when isOpen is false
-                child: Visibility(
-                  visible: isOpen,
-                  child: Image.asset(
-                    "assets/Page4/3.png",
-                    height: 40,
-                  ).animate().fade(begin: -5).slide(
-                              begin: Offset(-1, 0),
-                              curve: Curves.easeInOut,
-                              duration: Duration(milliseconds: 500)),
-                ),
-              ),
+                          child: Image.asset(
+                            "assets/Page4/9.png",
+                            fit: BoxFit.fill,
+                            height: 300,
+                            width: 680,
+                          ))),
+                  Positioned(
+                      top: 230,
+                      left: 240,
+                      child: ScaleTransition(
+                          scale: _animation,
+                          child: Image.asset(
+                            "assets/Page4/12.png",
+                            width: 550,
+                          ))),
+                          Positioned(
+                    left: 35,
+                    bottom: 5, // Slide down when isOpen is false
+                    child: Visibility(
+                      visible: isOpen,
+                      child: Image.asset(
+                        "assets/Page4/3.png",
+                        height: 40,
+                      ).animate().fade(begin: -10).slide(
+                          begin: const Offset(-1, 0),
+                          curve: Curves.easeInOut,
+                          duration: const Duration(milliseconds: 350)),
+                    ),
+                  ),
                   Positioned(
                     left: 20,
                     bottom: 5,
@@ -138,11 +155,12 @@ class _Page4State extends State<Page4> with SingleTickerProviderStateMixin{
                 ],
               ),
             )
-                  ],
-                ),
+          ],
+        ),
       ),
     );
   }
+
   void showOverlay(
       BuildContext context, String overlayImagePath, double height) {
     OverlayEntry? overlayEntry;
@@ -171,4 +189,3 @@ class _Page4State extends State<Page4> with SingleTickerProviderStateMixin{
     Overlay.of(context)!.insert(overlayEntry);
   }
 }
-

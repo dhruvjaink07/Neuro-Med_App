@@ -34,11 +34,11 @@ class _MainPageState extends State<MainPage> {
               setState(() {
                 count = 0;
               });
-              // Navigator.pushReplacement(
-              //     context,
-              //     MaterialPageRoute(
-              //         builder: (context) => OxetPageControllerWidget(
-              //             displayIndices: displayIndices)));
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => OxetPageControllerWidget(
+                          displayIndices: displayIndices)));
             }
           }
         },
