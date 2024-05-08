@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page34 extends StatefulWidget {
-  const Page34({super.key, required this.goToPreviousPage, required this.goToNextPage,});
-   final VoidCallback goToPreviousPage;
-    final VoidCallback goToNextPage;
+  const Page34({super.key, });
+  //  final VoidCallback goToPreviousPage;
+  //   final VoidCallback goToNextPage;
 
   @override
   State<Page34> createState() => _Page34State();
@@ -22,7 +23,7 @@ class _Page34State extends State<Page34> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/Page34/1.png"),fit: BoxFit.contain)
+          image: DecorationImage(image: AssetImage("assets/Page34/BG _3.png"),fit: BoxFit.contain)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -47,27 +48,13 @@ class _Page34State extends State<Page34> {
                     height: 25,
                   ),
                 ),]),
-            Expanded(child: Stack(
-              children: [
-                    Positioned(
-                left: 405,
-                top: 15,
-                child: InkWell(
-                  onTap: (){},
-                  child: Image.asset("assets/Page34/2.png",height: 200,))),
-                    Positioned(
-                left: 150,
-                bottom: 70,
-                child: InkWell(
-                  onTap: (){},
-                  child: Image.asset("assets/Page34/3.png",height: 200,))),
-               Positioned(
-                right: 160,
-                bottom: 70,
-                child: InkWell(child: Image.asset("assets/Page34/4.png",height: 200,))),
-                 
-              ],
-            ),),
+            Expanded(child: 
+            Center(
+              child: Container(
+                margin: EdgeInsets.only(bottom: 30),
+                child: Image.asset("assets/Page34/all mood .png").animate().scale(duration: const Duration(milliseconds: 1500))),
+            )
+            ),
           ],
         ),
       ),

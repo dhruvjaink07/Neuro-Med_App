@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page31 extends StatefulWidget {
-  const Page31({super.key, required this.goToPreviousPage, required this.goToNextPage,});
-   final VoidCallback goToPreviousPage;
-    final VoidCallback goToNextPage;
+  const Page31({super.key, });
+  //  final VoidCallback goToPreviousPage;
+  //   final VoidCallback goToNextPage;
 
   @override
   State<Page31> createState() => _Page31State();
@@ -22,7 +23,7 @@ class _Page31State extends State<Page31> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/Page31/1.png"),fit: BoxFit.contain)
+          image: DecorationImage(image: AssetImage("assets/Page31/BG .png"),fit: BoxFit.contain)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -49,18 +50,68 @@ class _Page31State extends State<Page31> {
                 ),]),
             Expanded(child: Stack(
               children: [
-               
-                 Positioned(
-                                   left: isOpen ? 20 :  10, // Adjust this value as needed
-                                   bottom: 5,
-                                   child: Visibility(
-                                     visible: isOpen,
-                                     child: Image.asset(
-                                       "assets/Page31/3.png",
-                                       height: 40,
-                                     ),
-                                   ),
-                                 ),
+                Positioned(
+                      top: 40,
+                      right: 65,
+                      child: Image.asset(
+                        "assets/Page30/Logo .png",
+                        height: 100,
+                      )),
+                        Positioned(
+                      top: 240,
+                      left: 80,
+                      child: Image.asset(
+                        "assets/Page31/text .png",
+                        height: 20,
+                        // width: 720,
+                        // fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                          Positioned(
+                            top: 350,
+                            left: 320,
+                            child: Image.asset("assets/Page31/object .png",height: 230,) .animate()
+                          .scale(duration: const Duration(milliseconds: 1500))),
+                            Positioned(
+                              top: 286,
+                              left: 100,
+                              child: Image.asset("assets/Page31/1 2.png",height: 120,) .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                                     Positioned(
+                              top: 293,
+                              right: 103,
+                              child: Image.asset("assets/Page31/2 2.png",height: 120,) .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                                    Positioned(
+                              bottom:  170,
+                              right: 100,
+                              child: Image.asset("assets/Page31/3 2.png",height: 110,) .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                                      Positioned(
+                              bottom:  175,
+                              left:115,
+                              child: Image.asset("assets/Page31/4.png",height: 70,) .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                               Positioned(
+                              bottom:  50,
+                              left:460,
+                              child: Image.asset("assets/Page31/Asset 13.png",height: 100,) .animate()
+                          .fade(duration: const Duration(milliseconds: 1500)))
+,                Positioned(
+                    left: 35,
+                    bottom: 5,
+                    child: Visibility(
+                      visible: isOpen,
+                      child: Image.asset(
+                        "assets/Page31/3.png",
+                        height: 40,
+                      ).animate().fade(begin: -5).slide(
+                          begin: Offset(-1, 0),
+                          curve: Curves.easeInOut,
+                          duration: Duration(milliseconds: 300)),
+                    ),
+                  ),
                                  Positioned(
                                    left: 10,
                                    bottom: 5,
@@ -76,6 +127,19 @@ class _Page31State extends State<Page31> {
                                      ),
                                    ),
                                  ),
+                                 Positioned(
+                    bottom: 5,
+                    right: 50,
+                    child: InkWell(
+                      onTap: () {
+                        showOverlay(context, "assets/Page30/logo.png", 350);
+                      },
+                      child: Image.asset(
+                        "assets/Page30/logo.png",
+                        width: 170,
+                      ),
+                    ),
+                  ),
               ],
             ),),
           ],
@@ -83,7 +147,8 @@ class _Page31State extends State<Page31> {
       ),
     );
   }
-   void showOverlay(BuildContext context, String overlayImagePath) {
+  void showOverlay(
+      BuildContext context, String overlayImagePath, double height) {
     OverlayEntry? overlayEntry;
 
     overlayEntry = OverlayEntry(
@@ -95,11 +160,12 @@ class _Page31State extends State<Page31> {
           color: Color.fromARGB(196, 0, 0, 0),
           child: Center(
             child: GestureDetector(
-              onTap: () {}, // To prevent taps on the image from closing the overlay
+              onTap:
+                  () {}, // To prevent taps on the image from closing the overlay
               child: Image(
                 image: AssetImage(overlayImagePath),
-                height: 430,
-                width: 900,
+                height: height,
+                // width: 900,
                 fit: BoxFit.fill,
               ),
             ),
@@ -109,5 +175,4 @@ class _Page31State extends State<Page31> {
     );
     Overlay.of(context)!.insert(overlayEntry);
   }
-
 }

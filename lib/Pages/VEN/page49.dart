@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page49 extends StatefulWidget {
-  const Page49({super.key, required this.goToPreviousPage, required this.goToNextPage,});
-   final VoidCallback goToPreviousPage;
-    final VoidCallback goToNextPage;
+  const Page49({super.key, });
+  //  final VoidCallback goToPreviousPage;
+  //   final VoidCallback goToNextPage;
 
   @override
   State<Page49> createState() => _Page49State();
@@ -22,7 +23,7 @@ class _Page49State extends State<Page49> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/Page49/1.png"),fit: BoxFit.contain)
+          image: DecorationImage(image: AssetImage("assets/Page49/BG _14.png"),fit: BoxFit.contain)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -49,25 +50,55 @@ class _Page49State extends State<Page49> {
                 ),]),
             Expanded(child: Stack(
               children: [
+                 Positioned(
+                      top: 30,
+                      right: 60,
+                      child: Image.asset(
+                        "assets/Page49/logo.png",
+                        height: 100,
+                      )),
+                       Positioned(
+                      top: 230,
+                      left: 80,
+                      child: Image.asset(
+                        "assets/Page49/Text.png",
+                        height: 45,
+                        // width: 720,
+                        // fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                          Positioned(
+                            right: 20,
+                            top: 170,
+                            child: Image.asset("assets/Page49/Map .png",height: 200,) .animate()
+                          .scale(duration: const Duration(milliseconds: 1500))),
                    Positioned(
                 left: 70,
-                bottom: 120,
+                bottom: 140,
                 child: InkWell(
                   onTap: (){
                     showOverlay(context,"assets/Page49/4.png");
                   },
-                  child: Image.asset("assets/Page49/4.png",width: 650,))),
+                  child: Image.asset("assets/Page49/4.png",width: 660,))),
+                  Positioned(
+                    top: 350,
+                    right: 80,
+                    child: Image.asset("assets/Page49/Object .png",height: 170,).animate().scale(duration: const Duration(milliseconds: 1500))),
                  Positioned(
-                                   left: isOpen ? 20 :  10, // Adjust this value as needed
-                                   bottom: 5,
-                                   child: Visibility(
-                                     visible: isOpen,
-                                     child: Image.asset(
-                                       "assets/Page49/3.png",
-                                       height: 40,
-                                     ),
-                                   ),
-                                 ),
+                    left: 30,
+                    bottom: 5,
+                    child: Visibility(
+                      visible: isOpen,
+                      child: Image.asset(
+                        "assets/Page49/3.png",
+                        height: 40,
+                      ).animate().fade(begin: -5).slide(
+                          begin: Offset(-1, 0),
+                          curve: Curves.easeInOut,
+                          duration: Duration(milliseconds: 300)),
+                    ),
+                  ),
                                  Positioned(
                                    left: 10,
                                    bottom: 5,

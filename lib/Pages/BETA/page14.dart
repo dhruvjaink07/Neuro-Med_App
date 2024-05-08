@@ -4,7 +4,9 @@ import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page14 extends StatefulWidget {
-  const Page14({super.key, required this.goToPreviousPage, required this.goToNextPage,});
+  const Page14({
+    super.key, required this.goToPreviousPage, required this.goToNextPage,
+  });
  final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
   @override
@@ -12,16 +14,19 @@ class Page14 extends StatefulWidget {
 }
 
 class _Page14State extends State<Page14> {
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-      bool isOpen = false;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  bool isOpen = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
+      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
       body: Container(
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page14/bg3.png"),fit: BoxFit.contain)),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/Page14/BG.png"),
+                fit: BoxFit.contain)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -38,7 +43,8 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                 ),
                 IconButton(
                   onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   icon: Image.asset(
                     "assets/Page1/6.png",
@@ -49,61 +55,71 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
             ),
             Expanded(
               child: Stack(
-                           children: [
-                                 Positioned(
+                children: [
+                  Positioned(
                       top: 40,
-                      right:80,
+                      right: 80,
                       child: Image.asset(
                         "assets/Page14/Logo.png",
                         width: 430,
                       )),
-                       Positioned(
-                      top: 240,
-                      left: 100,
+                  //  Positioned(
+                  // top: 240,
+                  // left: 100,
+                  // child: Image.asset(
+                  //   "assets/Page14/text.png",
+                  //   height: 20,
+                  //   // width: 380,
+                  //   fit: BoxFit.fill,
+                  // )
+                  //     .animate()
+                  //     .fade(duration: const Duration(milliseconds: 1500))),
+                  Positioned(
+                    top: 300,
+                    left: 70,
+                    child: InkWell(
+                      onTap: (){
+                        showOverlay(context,"assets/Page14/4.png" );
+                      },
+                      child: Image.asset("assets/Page14/gif.gif"))),
+                  Positioned(
+                    left: 40, // Adjust this value as needed
+                    bottom: 5,
+                    child: Visibility(
+                      visible: isOpen,
                       child: Image.asset(
-                        "assets/Page14/text.png",
-                        height: 20,
-                        // width: 380,
-                        fit: BoxFit.fill,
-                      )
-                          .animate()
-                          .fade(duration: const Duration(milliseconds: 1500))),
-                           Positioned(
-                               left: isOpen ? 20 :  10, // Adjust this value as needed
-                               bottom: 5,
-                               child: Visibility(
-                                 visible: isOpen,
-                                 child: Image.asset(
-                                   "assets/Page14/3.png",
-                                   height: 40,
-                                 ).animate().fade(begin: -5).slide(
-                              begin: Offset(-1, 0),
-                              curve: Curves.easeInOut,
-                              duration: Duration(milliseconds: 350)),
-                               ),
-                             ),
-                             Positioned(
-                               left: 20,
-                               bottom: 5,
-                               child: InkWell(
-                                 onTap: () {
-                                   setState(() {
-                                     isOpen = !isOpen;
-                                   });
-                                 },
-                                 child: Image.asset(
-                                   "assets/Page14/2.png",
-                                   height: 45,
-                                 ),
-                               ),
-                             ),
-                             Positioned(
+                        "assets/Page17/3.png",
+                        height: 40,
+                      ).animate().fade(begin: -5).slide(
+                          begin: Offset(-1, 0),
+                          curve: Curves.easeInOut,
+                          duration: Duration(milliseconds: 320)),
+                    ),
+                  ),
+                  Positioned(
+                    left: 20,
+                    bottom: 5,
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          isOpen = !isOpen;
+                        });
+                      },
+                      child: Image.asset(
+                        "assets/Page14/2.png",
+                        height: 45,
+                      ),
+                    ),
+                  ),
+                  Positioned(
                     bottom: 5,
                     right: 50,
                     child: InkWell(
                       onTap: () {
                         showOverlay(
-                            context, "assets/Page14/Small.png", );
+                          context,
+                          "assets/Page14/Small.png",
+                        );
                       },
                       child: Image.asset(
                         "assets/Page14/Small.png",
@@ -111,18 +127,16 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                       ),
                     ),
                   ),
-                  
-                           ],
-                         ),
-            ), 
-           
+                ],
+              ),
+            ),
           ],
         ),
       ),
-
     );
   }
-   void showOverlay(BuildContext context, String overlayImagePath) {
+
+  void showOverlay(BuildContext context, String overlayImagePath) {
     OverlayEntry? overlayEntry;
 
     overlayEntry = OverlayEntry(
@@ -134,7 +148,8 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
           color: const Color.fromARGB(145, 0, 0, 0),
           child: Center(
             child: GestureDetector(
-              onTap: () {}, // To prevent taps on the image from closing the overlay
+              onTap:
+                  () {}, // To prevent taps on the image from closing the overlay
               child: Image(
                 image: AssetImage(overlayImagePath),
                 height: 350,

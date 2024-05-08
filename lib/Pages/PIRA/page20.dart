@@ -4,7 +4,7 @@ import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page20 extends StatefulWidget {
-  const Page20({super.key, required this.goToPreviousPage, required this.goToNextPage,});
+  const Page20({super.key, required this.goToPreviousPage, required this.goToNextPage, });
    final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
 

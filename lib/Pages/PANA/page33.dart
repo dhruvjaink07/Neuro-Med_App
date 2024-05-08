@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page33 extends StatefulWidget {
-  const Page33({super.key, required this.goToPreviousPage, required this.goToNextPage,});
-   final VoidCallback goToPreviousPage;
-    final VoidCallback goToNextPage;
+  const Page33({super.key, });
+  //  final VoidCallback goToPreviousPage;
+  //   final VoidCallback goToNextPage;
 
   @override
   State<Page33> createState() => _Page33State();
@@ -22,7 +23,7 @@ class _Page33State extends State<Page33> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/Page33/1.png"),fit: BoxFit.contain)
+          image: DecorationImage(image: AssetImage("assets/Page33/BG _2.png"),fit: BoxFit.contain)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -49,14 +50,43 @@ class _Page33State extends State<Page33> {
                 ),]),
             Expanded(child: Stack(
               children: [
+                   Positioned(
+                      top: 40,
+                      right: 65,
+                      child: Image.asset(
+                        "assets/Page30/Logo .png",
+                        height: 100,
+                      )),
+                      Positioned(
+                      top: 240,
+                      left: 80,
+                      child: Image.asset(
+                        "assets/Page33/text .png",
+                        height: 20,
+                        // width: 720,
+                        // fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                            Positioned(
+                      bottom: 100,
+                      left: 70,
+                      child: Image.asset(
+                        "assets/Page32/text 2.png",
+                        height: 16,
+                        // width: 720,
+                        // fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
                Positioned(
-                left: 80,
-                bottom: 150,
+                left: 70,
+                bottom: 140,
                 child: InkWell(
                   onTap: (){
-                    showOverlay(context,"assets/Page33/4.png");
+                    showOverlay(context,"assets/Page33/4.png",370);
                   },
-                  child: Image.asset("assets/Page33/4.png",height: 300,))),
+                  child: Image.asset("assets/Page33/4.png",height: 310,))),
                  Positioned(
                                    left: isOpen ? 20 :  10, // Adjust this value as needed
                                    bottom: 5,
@@ -83,6 +113,19 @@ class _Page33State extends State<Page33> {
                                      ),
                                    ),
                                  ),
+                                 Positioned(
+                    bottom: 5,
+                    right: 50,
+                    child: InkWell(
+                      onTap: () {
+                        showOverlay(context, "assets/Page30/logo.png", 350);
+                      },
+                      child: Image.asset(
+                        "assets/Page30/logo.png",
+                        width: 170,
+                      ),
+                    ),
+                  ),
               ],
             ),),
           ],
@@ -90,7 +133,8 @@ class _Page33State extends State<Page33> {
       ),
     );
   }
-   void showOverlay(BuildContext context, String overlayImagePath) {
+   void showOverlay(
+      BuildContext context, String overlayImagePath, double height) {
     OverlayEntry? overlayEntry;
 
     overlayEntry = OverlayEntry(
@@ -102,11 +146,12 @@ class _Page33State extends State<Page33> {
           color: Color.fromARGB(196, 0, 0, 0),
           child: Center(
             child: GestureDetector(
-              onTap: () {}, // To prevent taps on the image from closing the overlay
+              onTap:
+                  () {}, // To prevent taps on the image from closing the overlay
               child: Image(
                 image: AssetImage(overlayImagePath),
-                height: 430,
-                width: 900,
+                height: height,
+                // width: 900,
                 fit: BoxFit.fill,
               ),
             ),
@@ -116,5 +161,4 @@ class _Page33State extends State<Page33> {
     );
     Overlay.of(context)!.insert(overlayEntry);
   }
-
 }

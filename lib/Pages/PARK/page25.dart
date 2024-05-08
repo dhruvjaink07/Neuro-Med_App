@@ -5,7 +5,7 @@ import 'package:neuro_app/components/cDrawer.dart';
 
 class Page25 extends StatefulWidget {
   const Page25({
-    super.key, required this.goToPreviousPage, required this.goToNextPage,
+    super.key, required this.goToPreviousPage, required this.goToNextPage, 
   });
    final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
@@ -81,7 +81,7 @@ class _Page25State extends State<Page25> {
                             showOverlay(context, "assets/Page25/4.png", 400);
                           },
                           child: Image.asset(
-                            "assets/Page25/4.png",
+                            "assets/Page25/gif.gif",
                             height: 350,
                             width: 750,
                             fit: BoxFit.fill,

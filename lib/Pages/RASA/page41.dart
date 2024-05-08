@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page41 extends StatefulWidget {
-  const Page41({super.key, required this.goToPreviousPage, required this.goToNextPage,});
-   final VoidCallback goToPreviousPage;
-    final VoidCallback goToNextPage;
+  const Page41({super.key, });
+  //  final VoidCallback goToPreviousPage;
+  //   final VoidCallback goToNextPage;
 
   @override
   State<Page41> createState() => _Page41State();
@@ -22,7 +23,7 @@ class _Page41State extends State<Page41> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/Page41/1.png"),fit: BoxFit.contain)
+          image: DecorationImage(image: AssetImage("assets/Page41/BG _8.png"),fit: BoxFit.contain)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -48,17 +49,64 @@ class _Page41State extends State<Page41> {
                   ),
                 ),]),
                   Expanded(child: Stack(children: [
-                        Positioned(
-                                   left: isOpen ? 20 :  10, // Adjust this value as needed
-                                   bottom: 5,
-                                   child: Visibility(
-                                     visible: isOpen,
-                                     child: Image.asset(
-                                       "assets/Page41/3.png",
-                                       height: 40,
-                                     ),
-                                   ),
-                                 ),
+                     Positioned(
+                      top: 35,
+                      right: 150,
+                      child: Image.asset(
+                        "assets/Page38/Logo.png",
+                        height: 110,
+                      )),
+                      Positioned(
+                      top: 240,
+                      left: 100,
+                      child: Image.asset(
+                        "assets/Page41/text .png",
+                        height: 50,
+                        // width: 720,
+                        // fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                          Positioned(
+                      top: 220,
+                      right: 20,
+                      child: Image.asset(
+                        "assets/Page39/once a day .png",
+                        height: 110,
+                        // width: 720,
+                        // fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                          Positioned(
+                            top: 320,
+                            left: 100,
+                            child: Image.asset("assets/Page41/Strong .png",height: 70,) .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                            Positioned(
+                            top: 420,
+                            left: 100,
+                            child: Image.asset("assets/Page41/Good level .png",height: 70,) .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                            Positioned(
+                            top: 520,
+                            left: 100,
+                            child: Image.asset("assets/Page41/Wear.png",width: 680,) .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                         Positioned(
+                    left: 35,
+                    bottom: 5,
+                    child: Visibility(
+                      visible: isOpen,
+                      child: Image.asset(
+                        "assets/Page41/3.png",
+                        height: 40,
+                      ).animate().fade(begin: -5).slide(
+                          begin: Offset(-1, 0),
+                          curve: Curves.easeInOut,
+                          duration: Duration(milliseconds: 300)),
+                    ),
+                  ),
                                  Positioned(
                                    left: 10,
                                    bottom: 5,

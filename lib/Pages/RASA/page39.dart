@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page39 extends StatefulWidget {
-  const Page39({super.key, required this.goToPreviousPage, required this.goToNextPage,});
-   final VoidCallback goToPreviousPage;
-    final VoidCallback goToNextPage;
+  const Page39({super.key,});
+  //  final VoidCallback goToPreviousPage;
+  //   final VoidCallback goToNextPage;
 
   @override
   State<Page39> createState() => _Page39State();
@@ -22,7 +23,7 @@ class _Page39State extends State<Page39> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/Page39/1.png"),fit: BoxFit.contain)
+          image: DecorationImage(image: AssetImage("assets/Page39/BG.png"),fit: BoxFit.contain)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -48,17 +49,54 @@ class _Page39State extends State<Page39> {
                   ),
                 ),]),
                   Expanded(child: Stack(children: [
+                    Positioned(
+                      top: 35,
+                      right: 150,
+                      child: Image.asset(
+                        "assets/Page38/Logo.png",
+                        height: 110,
+                      )),
+                      Positioned(
+                      top: 240,
+                      left: 80,
+                      child: Image.asset(
+                        "assets/Page39/text .png",
+                        height: 20,
+                        // width: 720,
+                        // fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                          Positioned(
+                      top: 220,
+                      right: 20,
+                      child: Image.asset(
+                        "assets/Page39/once a day .png",
+                        height: 110,
+                        // width: 720,
+                        // fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                          Positioned(
+                            top: 260,
+                            left: 80,
+                            child: Image.asset("assets/Page39/Object .png",height: 380,).animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
                         Positioned(
-                                   left: isOpen ? 20 :  10, // Adjust this value as needed
-                                   bottom: 5,
-                                   child: Visibility(
-                                     visible: isOpen,
-                                     child: Image.asset(
-                                       "assets/Page39/3.png",
-                                       height: 40,
-                                     ),
-                                   ),
-                                 ),
+                    left: 35,
+                    bottom: 5,
+                    child: Visibility(
+                      visible: isOpen,
+                      child: Image.asset(
+                        "assets/Page39/3.png",
+                        height: 40,
+                      ).animate().fade(begin: -5).slide(
+                          begin: Offset(-1, 0),
+                          curve: Curves.easeInOut,
+                          duration: Duration(milliseconds: 300)),
+                    ),
+                  ),
                                  Positioned(
                                    left: 10,
                                    bottom: 5,

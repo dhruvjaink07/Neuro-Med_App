@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page42 extends StatefulWidget {
-  const Page42({super.key, required this.goToPreviousPage, required this.goToNextPage,});
-   final VoidCallback goToPreviousPage;
-    final VoidCallback goToNextPage;
+  const Page42({super.key,});
+  //  final VoidCallback goToPreviousPage;
+  //   final VoidCallback goToNextPage;
 
   @override
   State<Page42> createState() => _Page42State();
@@ -22,7 +23,7 @@ class _Page42State extends State<Page42> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/Page42/1.png"),fit: BoxFit.contain)
+          image: DecorationImage(image: AssetImage("assets/Page42/BG _9.png"),fit: BoxFit.contain)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -48,26 +49,53 @@ class _Page42State extends State<Page42> {
                   ),
                 ),]),
             Expanded(child: Stack(
+              
               children: [
+                 Positioned(
+                      top: 20,
+                      right: 150,
+                      child: Image.asset(
+                        "assets/Page42/logo.png",
+                        height: 120,
+                      )),
+                        Positioned(
+                      top: 240,
+                      left: 90,
+                      child: Image.asset(
+                        "assets/Page42/text .png",
+                        height: 40,
+                        // width: 720,
+                        // fit: BoxFit.fill,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                          Positioned(
+                            bottom: 100,
+                            right: 80,
+                            child: Image.asset("assets/Page42/Indian Data.png",height: 180,) .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
                    Positioned(
                 left: 80,
-                bottom: 90,
+                bottom: 100,
                 child: InkWell(
                   onTap: (){
-                    showOverlay(context,"assets/Page42/4.png");
+                    showOverlay(context,"assets/Page42/4.png",450);
                   },
                   child: Image.asset("assets/Page42/4.png",width: 680,))),
-                 Positioned(
-                                   left: isOpen ? 20 :  10, // Adjust this value as needed
-                                   bottom: 5,
-                                   child: Visibility(
-                                     visible: isOpen,
-                                     child: Image.asset(
-                                       "assets/Page42/3.png",
-                                       height: 40,
-                                     ),
-                                   ),
-                                 ),
+          Positioned(
+                    left: 35,
+                    bottom: 5,
+                    child: Visibility(
+                      visible: isOpen,
+                      child: Image.asset(
+                        "assets/Page42/3.png",
+                        height: 40,
+                      ).animate().fade(begin: -5).slide(
+                          begin: Offset(-1, 0),
+                          curve: Curves.easeInOut,
+                          duration: Duration(milliseconds: 300)),
+                    ),
+                  ),
                                  Positioned(
                                    left: 10,
                                    bottom: 5,
@@ -83,6 +111,20 @@ class _Page42State extends State<Page42> {
                                      ),
                                    ),
                                  ),
+                                 Positioned(
+                    bottom: 5,
+                    right: 50,
+                    child: InkWell(
+                      onTap: () {
+                        showOverlay(context, "assets/Page42/logo2.png", 350);
+                      },
+                      child: Image.asset(
+                        "assets/Page42/logo2.png",
+                        width: 170,
+                      ),
+                    ),
+                  ),
+                  
               ],
             ),),
           ],
@@ -90,7 +132,8 @@ class _Page42State extends State<Page42> {
       ),
     );
   }
-   void showOverlay(BuildContext context, String overlayImagePath) {
+    void showOverlay(
+      BuildContext context, String overlayImagePath, double height) {
     OverlayEntry? overlayEntry;
 
     overlayEntry = OverlayEntry(
@@ -102,11 +145,12 @@ class _Page42State extends State<Page42> {
           color: Color.fromARGB(196, 0, 0, 0),
           child: Center(
             child: GestureDetector(
-              onTap: () {}, // To prevent taps on the image from closing the overlay
+              onTap:
+                  () {}, // To prevent taps on the image from closing the overlay
               child: Image(
                 image: AssetImage(overlayImagePath),
-                height: 430,
-                width: 900,
+                height: height,
+                // width: 900,
                 fit: BoxFit.fill,
               ),
             ),
@@ -116,5 +160,4 @@ class _Page42State extends State<Page42> {
     );
     Overlay.of(context)!.insert(overlayEntry);
   }
-
 }

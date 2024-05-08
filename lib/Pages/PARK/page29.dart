@@ -5,7 +5,7 @@ import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page29 extends StatefulWidget {
-  const Page29({super.key, required this.goToPreviousPage, required this.goToNextPage, });
+  const Page29({super.key, required this.goToPreviousPage, required this.goToNextPage,});
    final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
 
@@ -60,20 +60,20 @@ class _Page29State extends State<Page29> {
                       )),
                  Positioned(
                               bottom: 90,
-                              left: 70,
+                              left: 90,
                               child: InkWell(
                                 onTap: (){
                                   showOverlay(context, "assets/Page29/4.png",400);
                                 },
                                 child: Image.asset("assets/Page29/4.png",height: 400,width: 500,fit: BoxFit.fill,))),
                                 Positioned(
-                              bottom: 90,
-                              left:550,
+                              bottom:100,
+                              left:500,
                               child: InkWell(
                                 onTap: (){
                                   showOverlay(context, "assets/Page29/7.png",400);
                                 },
-                                child: Image.asset("assets/Page29/7.png",height: 400,width: 500,fit: BoxFit.fill,))),
+                                child: Image.asset("assets/Page29/gif.gif",height: 400,width: 500,fit: BoxFit.fill,))),
                   Positioned(
                     left: 35,
                     bottom: 5,

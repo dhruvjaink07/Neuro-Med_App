@@ -4,7 +4,9 @@ import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page16 extends StatefulWidget {
-  const Page16({super.key, required this.goToPreviousPage, required this.goToNextPage,});
+  const Page16({
+    super.key, required this.goToPreviousPage, required this.goToNextPage,
+  });
  final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
   @override
@@ -12,16 +14,18 @@ class Page16 extends StatefulWidget {
 }
 
 class _Page16State extends State<Page16> {
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-      bool isOpen = false;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  bool isOpen = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
+      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
       body: Container(
         width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page16/1.png"),fit: BoxFit.contain)),
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/Page16/1.png"), fit: BoxFit.contain)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -38,7 +42,8 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                 ),
                 IconButton(
                   onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   icon: Image.asset(
                     "assets/Page16/6.png",
@@ -49,55 +54,55 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
             ),
             Expanded(
               child: Stack(
-                           children: [
-                            Positioned(
-                              bottom: 110,
-                              left: 70,
-                              child: InkWell(
-                                onTap: (){
-                                  showOverlay(context, "assets/Page16/4.png");
-                                },
-                                child: Image.asset("assets/Page16/gif1.gif",height: 350))),
-                           Positioned(
-                               left: 40, // Adjust this value as needed
-                               bottom: 5,
-                               child: Visibility(
-                                 visible: isOpen,
-                                 child: Image.asset(
-                                   "assets/Page16/3.png",
-                                   height: 40,
-                                 ).animate().fade(begin: -5).slide(
-                              begin: Offset(-1, 0),
-                              curve: Curves.easeInOut,
-                              duration: Duration(milliseconds: 320)),
-                               ),
-                             ),
-                             Positioned(
-                               left: 15,
-                               bottom: 5,
-                               child: InkWell(
-                                 onTap: () {
-                                   setState(() {
-                                     isOpen = !isOpen;
-                                   });
-                                 },
-                                 child: Image.asset(
-                                   "assets/Page16/2.png",
-                                   height: 45,
-                                 ),
-                               ),
-                             ),
-                           ],
-                         ),
-            ), 
-           
+                children: [
+                  Positioned(
+                      bottom: 110,
+                      left: 40,
+                      child: InkWell(
+                          onTap: () {
+                            showOverlay(context, "assets/Page16/4.png");
+                          },
+                          child: Image.asset("assets/Page16/gif.gif",
+                              height: 350))),
+                  Positioned(
+                    left: 40, // Adjust this value as needed
+                    bottom: 5,
+                    child: Visibility(
+                      visible: isOpen,
+                      child: Image.asset(
+                        "assets/Page16/3.png",
+                        height: 40,
+                      ).animate().fade(begin: -5).slide(
+                          begin: Offset(-1, 0),
+                          curve: Curves.easeInOut,
+                          duration: Duration(milliseconds: 320)),
+                    ),
+                  ),
+                  Positioned(
+                    left: 15,
+                    bottom: 5,
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          isOpen = !isOpen;
+                        });
+                      },
+                      child: Image.asset(
+                        "assets/Page16/2.png",
+                        height: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
-
     );
   }
-   void showOverlay(BuildContext context, String overlayImagePath) {
+
+  void showOverlay(BuildContext context, String overlayImagePath) {
     OverlayEntry? overlayEntry;
 
     overlayEntry = OverlayEntry(
@@ -109,7 +114,8 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
           color: Color.fromARGB(196, 0, 0, 0),
           child: Center(
             child: GestureDetector(
-              onTap: () {}, // To prevent taps on the image from closing the overlay
+              onTap:
+                  () {}, // To prevent taps on the image from closing the overlay
               child: Image(
                 image: AssetImage(overlayImagePath),
                 height: 450,
