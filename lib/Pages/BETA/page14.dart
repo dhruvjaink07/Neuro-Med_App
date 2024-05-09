@@ -23,7 +23,7 @@ class _Page14State extends State<Page14> {
       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
       body: Container(
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("assets/Page14/BG.png"),
                 fit: BoxFit.contain)),
@@ -37,7 +37,7 @@ class _Page14State extends State<Page14> {
                     _scaffoldKey.currentState?.openDrawer();
                   },
                   icon: Image.asset(
-                    "assets/Page1/5.png",
+                    "assets/menu/5.png",
                     height: 20,
                   ),
                 ),
@@ -47,7 +47,7 @@ class _Page14State extends State<Page14> {
                         MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   icon: Image.asset(
-                    "assets/Page1/6.png",
+                    "assets/menu/6.png",
                     height: 25,
                   ),
                 ),
@@ -57,7 +57,7 @@ class _Page14State extends State<Page14> {
               child: Stack(
                 children: [
                   Positioned(
-                      top: 40,
+                      top: 30,
                       right: 80,
                       child: Image.asset(
                         "assets/Page14/Logo.png",
@@ -90,7 +90,7 @@ class _Page14State extends State<Page14> {
                     child: Visibility(
                       visible: isOpen,
                       child: Image.asset(
-                        "assets/Page17/3.png",
+                        "assets/Page14/3.png",
                         height: 40,
                       ).animate().fade(begin: -5).slide(
                           begin: Offset(-1, 0),
@@ -108,7 +108,7 @@ class _Page14State extends State<Page14> {
                         });
                       },
                       child: Image.asset(
-                        "assets/Page14/2.png",
+                        "assets/menu/2.png",
                         height: 45,
                       ),
                     ),

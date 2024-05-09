@@ -58,7 +58,7 @@ class _Page7State extends State<Page7> with SingleTickerProviderStateMixin {
                     _scaffoldKey.currentState?.openDrawer();
                   },
                   icon: Image.asset(
-                    "assets/Page1/5.png",
+                    "assets/menu/5.png",
                     height: 20,
                   ),
                 ),
@@ -68,7 +68,7 @@ class _Page7State extends State<Page7> with SingleTickerProviderStateMixin {
                         MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   icon: Image.asset(
-                    "assets/Page1/6.png",
+                    "assets/menu/6.png",
                     height: 25,
                   ),
                 ),

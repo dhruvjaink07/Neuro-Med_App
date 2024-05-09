@@ -60,7 +60,7 @@ class _Page3State extends State<Page3> with SingleTickerProviderStateMixin{
                           _scaffoldKey.currentState?.openDrawer();
                     },
                     icon: Image.asset(
-                      "assets/Page3/5.png",
+                      "assets/menu/5.png",
                       height: 20,
                     )),
                 IconButton(
@@ -68,7 +68,7 @@ class _Page3State extends State<Page3> with SingleTickerProviderStateMixin{
                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
                     },
                     icon: Image.asset(
-                      "assets/Page3/6.png",
+                      "assets/menu/6.png",
                       height: 25,
                     ))
               ],
@@ -78,11 +78,11 @@ class _Page3State extends State<Page3> with SingleTickerProviderStateMixin{
               child: Stack(
                 children: [
                   Positioned(
-                      top: 50,
-                      right: 50,
+                      top: 47,
+                      right: 100,
                       child: Image.asset(
                         "assets/Page3/4.png",
-                        width: 450,
+                        height: 100,
                       ).animate().shimmer(
                           duration: const Duration(milliseconds: 1500),
                           size: 0.08)),
@@ -98,7 +98,7 @@ class _Page3State extends State<Page3> with SingleTickerProviderStateMixin{
                       )),
                       Positioned(top:266,left:185,child: Image.asset("assets/Page3/7.png",height: 50,width: 600,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 1500))),
                       Positioned(top: 360,left: 330,child: Image.asset("assets/Page3/8.png",height: 50,width: 500,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 1500))),
-                      Positioned(top: 460,left: 327,child: Image.asset("assets/Page3/9.png",height: 50,width: 500,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 1500),)),
+                      Positioned(top: 455,left: 327,child: Image.asset("assets/Page3/9.png",height: 50,width: 500,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 1500),)),
                       Positioned(top: 548,left: 185,child: Image.asset("assets/Page3/10.png",height: 50,width: 600,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds:1500))),
                   Positioned(
                     left: 70,
@@ -126,10 +126,10 @@ class _Page3State extends State<Page3> with SingleTickerProviderStateMixin{
                     right: 50,
                     child: InkWell(
                       onTap: () {
-                        showOverlay(context, "assets/Page2/15.png", 350);
+                        showOverlay(context, "assets/Page3/12.png", 350);
                       },
                       child: Image.asset(
-                        "assets/Page2/15.png",
+                        "assets/Page3/12.png",
                         width: 200,
                       ),
                     ),
@@ -144,7 +144,7 @@ class _Page3State extends State<Page3> with SingleTickerProviderStateMixin{
                         });
                       },
                       child: Image.asset(
-                        "assets/Page3/2.png",
+                        "assets/menu/2.png",
                         height: 45,
                       ),
                     ),

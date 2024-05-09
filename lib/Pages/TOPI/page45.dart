@@ -36,7 +36,7 @@ class _Page45State extends State<Page45> {
                   _scaffoldKey.currentState?.openDrawer();
                 },
                 icon: Image.asset(
-                  "assets/Page45/5.png",
+                  "assets/menu/5.png",
                   height: 20,
                 ),
               ),
@@ -46,7 +46,7 @@ class _Page45State extends State<Page45> {
                       MaterialPageRoute(builder: (context) => MainPage()));
                 },
                 icon: Image.asset(
-                  "assets/Page45/6.png",
+                  "assets/menu/6.png",
                   height: 25,
                 ),
               ),

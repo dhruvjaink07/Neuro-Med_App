@@ -35,7 +35,7 @@ class _Page59State extends State<Page59> {
                     _scaffoldKey.currentState?.openDrawer();
                   },
                   icon: Image.asset(
-                    "assets/Page59/5.png",
+                    "assets/menu/5.png",
                     height: 20,
                   ),
                 ),
@@ -44,7 +44,7 @@ class _Page59State extends State<Page59> {
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
                   },
                   icon: Image.asset(
-                    "assets/Page59/6.png",
+                    "assets/menu/6.png",
                     height: 25,
                   ),
                 ),]),
@@ -114,7 +114,7 @@ class _Page59State extends State<Page59> {
                                        });
                                      },
                                      child: Image.asset(
-                                       "assets/Page59/2.png",
+                                       "assets/menu/2.png",
                                        height: 45,
                                      ),
                                    ),
@@ -124,10 +124,10 @@ class _Page59State extends State<Page59> {
                     right: 50,
                     child: InkWell(
                       onTap: () {
-                        showOverlay(context, "assets/Page30/logo.png", 350);
+                        showOverlay(context, "assets/Page59/Small logo .png", 350);
                       },
                       child: Image.asset(
-                        "assets/Page30/logo.png",
+                        "assets/Page59/Small logo .png",
                         width: 170,
                       ),
                     ),

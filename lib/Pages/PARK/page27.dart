@@ -23,7 +23,7 @@ class _Page27State extends State<Page27> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/Page27/BG _1.png"),fit: BoxFit.contain)
+          image: DecorationImage(image: AssetImage("assets/Page27/png.png"),fit: BoxFit.contain)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -35,7 +35,7 @@ class _Page27State extends State<Page27> {
                     _scaffoldKey.currentState?.openDrawer();
                   },
                   icon: Image.asset(
-                    "assets/Page27/5.png",
+                    "assets/menu/5.png",
                     height: 20,
                   ),
                 ),
@@ -44,7 +44,7 @@ class _Page27State extends State<Page27> {
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
                   },
                   icon: Image.asset(
-                    "assets/Page27/6.png",
+                    "assets/menu/6.png",
                     height: 25,
                   ),
                 ),]),
@@ -52,7 +52,7 @@ class _Page27State extends State<Page27> {
               children: [
                  Positioned(
                       top: 40,
-                      right: 20,
+                      right: 57,
                       child: Image.asset(
                         "assets/Page23/Logo.png",
                         height: 80,
@@ -131,7 +131,7 @@ class _Page27State extends State<Page27> {
                                        });
                                      },
                                      child: Image.asset(
-                                       "assets/Page27/2.png",
+                                       "assets/menu/2.png",
                                        height: 45,
                                      ),
                                    ),

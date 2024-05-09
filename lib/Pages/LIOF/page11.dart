@@ -26,7 +26,7 @@ class _Page11State extends State<Page11> {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/Page11/BG.png"),
+                image: AssetImage("assets/Page11/bg.png"),
                 fit: BoxFit.contain)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -38,7 +38,7 @@ class _Page11State extends State<Page11> {
                     _scaffoldKey.currentState?.openDrawer();
                   },
                   icon: Image.asset(
-                    "assets/Page11/5.png",
+                    "assets/menu/5.png",
                     height: 20,
                   ),
                 ),
@@ -48,7 +48,7 @@ class _Page11State extends State<Page11> {
                         MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   icon: Image.asset(
-                    "assets/Page11/6.png",
+                    "assets/menu/6.png",
                     height: 25,
                   ),
                 ),
@@ -70,7 +70,7 @@ class _Page11State extends State<Page11> {
                       top: 240,
                       left: 100,
                       child: Image.asset(
-                        "assets/Page11/text .png",
+                        "assets/Page11/Text .png",
                         height: 20,
                         // width: 380,
                         fit: BoxFit.fill,
@@ -136,7 +136,7 @@ class _Page11State extends State<Page11> {
                             });
                           },
                           child: Image.asset(
-                            "assets/Page11/2.png",
+                            "assets/menu/2.png",
                             height: 45,
                           ),
                         ),

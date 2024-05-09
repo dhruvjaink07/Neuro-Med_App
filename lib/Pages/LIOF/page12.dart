@@ -38,7 +38,7 @@ class _Page12State extends State<Page12> {
                     _scaffoldKey.currentState?.openDrawer();
                   },
                   icon: Image.asset(
-                    "assets/Page11/5.png",
+                    "assets/menu/5.png",
                     height: 20,
                   ),
                 ),
@@ -48,7 +48,7 @@ class _Page12State extends State<Page12> {
                         MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   icon: Image.asset(
-                    "assets/Page11/6.png",
+                    "assets/menu/6.png",
                     height: 25,
                   ),
                 ),
@@ -91,7 +91,7 @@ class _Page12State extends State<Page12> {
                               child:Image.asset("assets/Page12/tasty.png",height: 180,).animate().scale(duration: const Duration(milliseconds: 1500),)),
                               Positioned(
                                 bottom: 70,
-                                left: 60,
+                                left: 100,
                                 child: Image.asset("assets/Page12/text.png",height: 120,).animate().fade(duration: Duration(milliseconds: 1500))),
                   Positioned(
                     //  left: isOpen ? 25 :  30, // Adjust this value as needed
@@ -118,7 +118,7 @@ class _Page12State extends State<Page12> {
                         });
                       },
                       child: Image.asset(
-                        "assets/Page12/2.png",
+                        "assets/menu/2.png",
                         height: 45,
                       ),
                     ),

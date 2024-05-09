@@ -26,7 +26,7 @@ class _Page10State extends State<Page10> {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/Page10/BG _1.png"),
+                image: AssetImage("assets/Page10/bg.png"),
                 fit: BoxFit.contain)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -38,7 +38,7 @@ class _Page10State extends State<Page10> {
                     _scaffoldKey.currentState?.openDrawer();
                   },
                   icon: Image.asset(
-                    "assets/Page10/5.png",
+                    "assets/menu/5.png",
                     height: 20,
                   ),
                 ),
@@ -48,7 +48,7 @@ class _Page10State extends State<Page10> {
                         MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   icon: Image.asset(
-                    "assets/Page10/6.png",
+                    "assets/menu/6.png",
                     height: 25,
                   ),
                 ),
@@ -138,7 +138,7 @@ class _Page10State extends State<Page10> {
                             });
                           },
                           child: Image.asset(
-                            "assets/Page10/2.png",
+                            "assets/menu/2.png",
                             height: 45,
                           ),
                         ),
@@ -151,10 +151,10 @@ class _Page10State extends State<Page10> {
                     child: InkWell(
                       onTap: () {
                         showOverlay(
-                            context, "assets/Page9/Small logo .png", 300);
+                            context, "assets/Page10/Small logo .png", 300);
                       },
                       child: Image.asset(
-                        "assets/Page9/Small logo .png",
+                        "assets/Page10/Small logo .png",
                         width: 170,
                       ),
                     ),

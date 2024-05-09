@@ -35,7 +35,7 @@ class _Page49State extends State<Page49> {
                     _scaffoldKey.currentState?.openDrawer();
                   },
                   icon: Image.asset(
-                    "assets/Page49/5.png",
+                    "assets/menu/5.png",
                     height: 20,
                   ),
                 ),
@@ -44,7 +44,7 @@ class _Page49State extends State<Page49> {
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
                   },
                   icon: Image.asset(
-                    "assets/Page49/6.png",
+                    "assets/menu/6.png",
                     height: 25,
                   ),
                 ),]),
@@ -54,7 +54,7 @@ class _Page49State extends State<Page49> {
                       top: 30,
                       right: 60,
                       child: Image.asset(
-                        "assets/Page49/logo.png",
+                        "assets/Page49/Logo.png",
                         height: 100,
                       ).animate().shimmer(
                           duration: const Duration(milliseconds: 1500),
@@ -111,7 +111,7 @@ class _Page49State extends State<Page49> {
                                        });
                                      },
                                      child: Image.asset(
-                                       "assets/Page49/2.png",
+                                       "assets/menu/2.png",
                                        height: 45,
                                      ),
                                    ),

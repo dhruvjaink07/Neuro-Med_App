@@ -36,7 +36,7 @@ class _Page16State extends State<Page16> {
                     _scaffoldKey.currentState?.openDrawer();
                   },
                   icon: Image.asset(
-                    "assets/Page16/5.png",
+                    "assets/menu/5.png",
                     height: 20,
                   ),
                 ),
@@ -46,7 +46,7 @@ class _Page16State extends State<Page16> {
                         MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   icon: Image.asset(
-                    "assets/Page16/6.png",
+                    "assets/menu/6.png",
                     height: 25,
                   ),
                 ),
@@ -56,7 +56,7 @@ class _Page16State extends State<Page16> {
               child: Stack(
                 children: [
                    Positioned(
-                      top: 30,
+                      top: 25,
                       right: 40,
                       // LOG0
                       child: Image.asset(
@@ -98,7 +98,7 @@ class _Page16State extends State<Page16> {
                         });
                       },
                       child: Image.asset(
-                        "assets/Page16/2.png",
+                        "assets/menu/2.png",
                         height: 45,
                       ),
                     ),

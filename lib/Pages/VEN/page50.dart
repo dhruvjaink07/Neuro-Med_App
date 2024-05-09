@@ -38,7 +38,7 @@ class _Page50State extends State<Page50> {
                   _scaffoldKey.currentState?.openDrawer();
                 },
                 icon: Image.asset(
-                  "assets/Page50/5.png",
+                  "assets/menu/5.png",
                   height: 20,
                 ),
               ),
@@ -48,7 +48,7 @@ class _Page50State extends State<Page50> {
                       MaterialPageRoute(builder: (context) => MainPage()));
                 },
                 icon: Image.asset(
-                  "assets/Page50/6.png",
+                  "assets/menu/6.png",
                   height: 25,
                 ),
               ),
@@ -60,7 +60,7 @@ class _Page50State extends State<Page50> {
                       top: 30,
                       right: 60,
                       child: Image.asset(
-                        "assets/Page49/logo.png",
+                        "assets/Page49/Logo.png",
                         height: 100,
                       ).animate().shimmer(
                           duration: const Duration(milliseconds: 1500),
@@ -110,7 +110,7 @@ class _Page50State extends State<Page50> {
                         });
                       },
                       child: Image.asset(
-                        "assets/Page50/2.png",
+                        "assets/menu/2.png",
                         height: 45,
                       ),
                     ),

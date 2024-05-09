@@ -62,7 +62,7 @@ class _Page2State extends State<Page2> with SingleTickerProviderStateMixin {
                     _scaffoldKey.currentState?.openDrawer();
                   },
                   icon: Image.asset(
-                    "assets/Page1/5.png",
+                    "assets/menu/5.png",
                     height: 20,
                   ),
                 ),
@@ -72,7 +72,7 @@ class _Page2State extends State<Page2> with SingleTickerProviderStateMixin {
                         MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   icon: Image.asset(
-                    "assets/Page1/6.png",
+                    "assets/menu/6.png",
                     height: 25,
                   ),
                 ),
@@ -82,11 +82,11 @@ class _Page2State extends State<Page2> with SingleTickerProviderStateMixin {
               child: Stack(
                 children: [
                   Positioned(
-                      top: 50,
-                      right: 50,
+                      top: 47,
+                      right: 100,
                       child: Image.asset(
                         "assets/Page2/12.png",
-                        width: 450,
+                      height: 100,
                       ).animate().shimmer(
                           duration: const Duration(milliseconds: 1500),
                           size: 0.08)),
@@ -166,7 +166,7 @@ class _Page2State extends State<Page2> with SingleTickerProviderStateMixin {
                             });
                           },
                           child: Image.asset(
-                            "assets/Page2/2.png",
+                            "assets/menu/2.png",
                             height: 45,
                           ),
                         ),

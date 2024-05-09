@@ -26,7 +26,7 @@ class _Page21State extends State<Page21> {
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/Page21/BG.png"),
+                image: AssetImage("assets/Page21/Bg1.png"),
                 fit: BoxFit.contain)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -37,7 +37,7 @@ class _Page21State extends State<Page21> {
                   _scaffoldKey.currentState?.openDrawer();
                 },
                 icon: Image.asset(
-                  "assets/Page21/5.png",
+                  "assets/menu/5.png",
                   height: 20,
                 ),
               ),
@@ -47,7 +47,7 @@ class _Page21State extends State<Page21> {
                       MaterialPageRoute(builder: (context) => MainPage()));
                 },
                 icon: Image.asset(
-                  "assets/Page21/6.png",
+                  "assets/menu/6.png",
                   height: 25,
                 ),
               ),
@@ -57,7 +57,7 @@ class _Page21State extends State<Page21> {
                 children: [
                   Positioned(
                       top: 40,
-                      right: 20,
+                      right: 30,
                       child: Image.asset(
                         "assets/Page21/Logo.png",
                         height: 70,
@@ -97,7 +97,7 @@ class _Page21State extends State<Page21> {
                     child: Visibility(
                       visible: isOpen,
                       child: Image.asset(
-                        "assets/Page18/3.png",
+                        "assets/Page21/3.png",
                         height: 40,
                       ).animate().fade(begin: -5).slide(
                           begin: Offset(-1, 0),
@@ -115,7 +115,7 @@ class _Page21State extends State<Page21> {
                         });
                       },
                       child: Image.asset(
-                        "assets/Page21/2.png",
+                        "assets/menu/2.png",
                         height: 45,
                       ),
                     ),

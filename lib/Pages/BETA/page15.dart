@@ -32,7 +32,7 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                     _scaffoldKey.currentState?.openDrawer();
                   },
                   icon: Image.asset(
-                    "assets/Page15/5.png",
+                    "assets/menu/5.png",
                     height: 20,
                   ),
                 ),
@@ -41,7 +41,7 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
                   },
                   icon: Image.asset(
-                    "assets/Page15/6.png",
+                    "assets/menu/6.png",
                     height: 25,
                   ),
                 ),
@@ -51,7 +51,7 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
               child: Stack(
                            children: [
                             Positioned(
-                      top: 40,
+                      top: 30,
                       right:80,
                       child: Image.asset(
                         "assets/Page15/Logo.png",
@@ -87,7 +87,7 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                                    });
                                  },
                                  child: Image.asset(
-                                   "assets/Page15/2.png",
+                                   "assets/menu/2.png",
                                    height: 45,
                                  ),
                                ),

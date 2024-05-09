@@ -24,7 +24,7 @@ class _Page29State extends State<Page29> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/Page29/BG _2.png"),fit: BoxFit.contain)
+          image: DecorationImage(image: AssetImage("assets/Page29/bg.png"),fit: BoxFit.contain)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -36,7 +36,7 @@ class _Page29State extends State<Page29> {
                     _scaffoldKey.currentState?.openDrawer();
                   },
                   icon: Image.asset(
-                    "assets/Page29/5.png",
+                    "assets/menu/5.png",
                     height: 20,
                   ),
                 ),
@@ -45,7 +45,7 @@ class _Page29State extends State<Page29> {
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
                   },
                   icon: Image.asset(
-                    "assets/Page29/6.png",
+                    "assets/menu/6.png",
                     height: 25,
                   ),
                 ),]),
@@ -53,7 +53,7 @@ class _Page29State extends State<Page29> {
               children: [
                  Positioned(
                       top: 40,
-                      right: 20,
+                      right: 57,
                       child: Image.asset(
                         "assets/Page23/Logo.png",
                         height: 80,
@@ -65,7 +65,7 @@ class _Page29State extends State<Page29> {
                               left: 90,
                               child: InkWell(
                                 onTap: (){
-                                  showOverlay(context, "assets/Page29/4.png",400);
+                                  showOverlay(context, "assets/Page29/8.png",450);
                                 },
                                 child: Image.asset("assets/Page29/4.png",height: 400,width: 500,fit: BoxFit.fill,))),
                                 Positioned(
@@ -73,7 +73,7 @@ class _Page29State extends State<Page29> {
                               left:500,
                               child: InkWell(
                                 onTap: (){
-                                  showOverlay(context, "assets/Page29/7.png",400);
+                                  showOverlay(context, "assets/Page29/9.png",450);
                                 },
                                 child: Image.asset("assets/Page29/gif.gif",height: 400,width: 500,fit: BoxFit.fill,))),
                   Positioned(
@@ -82,7 +82,7 @@ class _Page29State extends State<Page29> {
                     child: Visibility(
                       visible: isOpen,
                       child: Image.asset(
-                        "assets/Page28/3.png",
+                        "assets/Page29/3.png",
                         height: 40,
                       ).animate().fade(begin: -5).slide(
                           begin: Offset(-1, 0),
@@ -100,7 +100,7 @@ class _Page29State extends State<Page29> {
                                        });
                                      },
                                      child: Image.asset(
-                                       "assets/Page29/2.png",
+                                       "assets/menu/2.png",
                                        height: 45,
                                      ),
                                    ),

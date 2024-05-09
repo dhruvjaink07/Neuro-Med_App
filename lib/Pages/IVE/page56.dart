@@ -38,7 +38,7 @@ class _Page56State extends State<Page56> {
                   _scaffoldKey.currentState?.openDrawer();
                 },
                 icon: Image.asset(
-                  "assets/Page56/5.png",
+                  "assets/menu/5.png",
                   height: 20,
                 ),
               ),
@@ -48,7 +48,7 @@ class _Page56State extends State<Page56> {
                       MaterialPageRoute(builder: (context) => MainPage()));
                 },
                 icon: Image.asset(
-                  "assets/Page56/6.png",
+                  "assets/menu/6.png",
                   height: 25,
                 ),
               ),
@@ -81,7 +81,7 @@ class _Page56State extends State<Page56> {
                       top: 280,
                       left: 80,
                       child: Image.asset(
-                        "assets/Page56/Text 2.png",
+                        "assets/Page56/text 2.png",
                         height: 17,
                         // width: 720,
                         // fit: BoxFit.fill,
@@ -185,7 +185,7 @@ class _Page56State extends State<Page56> {
                         });
                       },
                       child: Image.asset(
-                        "assets/Page56/2.png",
+                        "assets/menu/2.png",
                         height: 45,
                       ),
                     ),

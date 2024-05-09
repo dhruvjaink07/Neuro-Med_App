@@ -35,7 +35,7 @@ class _Page55State extends State<Page55> {
                     _scaffoldKey.currentState?.openDrawer();
                   },
                   icon: Image.asset(
-                    "assets/Page55/5.png",
+                    "assets/menu/5.png",
                     height: 20,
                   ),
                 ),
@@ -44,7 +44,7 @@ class _Page55State extends State<Page55> {
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
                   },
                   icon: Image.asset(
-                    "assets/Page55/6.png",
+                    "assets/menu/6.png",
                     height: 25,
                   ),
                 ),]),
@@ -117,7 +117,7 @@ class _Page55State extends State<Page55> {
                                        });
                                      },
                                      child: Image.asset(
-                                       "assets/Page55/2.png",
+                                       "assets/menu/2.png",
                                        height: 45,
                                      ),
                                    ),

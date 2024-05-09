@@ -64,7 +64,7 @@ class _Page4State extends State<Page4> with SingleTickerProviderStateMixin {
                       _scaffoldKey.currentState?.openDrawer();
                     },
                     icon: Image.asset(
-                      "assets/Page4/5.png",
+                      "assets/menu/5.png",
                       height: 20,
                     )),
                 IconButton(
@@ -73,7 +73,7 @@ class _Page4State extends State<Page4> with SingleTickerProviderStateMixin {
                           MaterialPageRoute(builder: (context) => MainPage()));
                     },
                     icon: Image.asset(
-                      "assets/Page4/6.png",
+                      "assets/menu/6.png",
                       height: 25,
                     ))
               ],
@@ -136,7 +136,7 @@ class _Page4State extends State<Page4> with SingleTickerProviderStateMixin {
                         });
                       },
                       child: Image.asset(
-                        "assets/Page4/2.png",
+                        "assets/menu/2.png",
                         height: 45,
                       ),
                     ),
