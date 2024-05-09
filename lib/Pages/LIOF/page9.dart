@@ -24,7 +24,7 @@ class _Page9State extends State<Page9> {
       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
       body: Container(
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("assets/Page9/Bg.png"), fit: BoxFit.contain)),
         child: Column(
@@ -97,29 +97,29 @@ class _Page9State extends State<Page9> {
                             height: 200,
                           ))),
                   Positioned(
-                    left: 60,
-                    top: 300,
+                    left: 40,
+                    top: 310,
                         child: InkWell(
                           onTap: (){
                             showOverlay(context, "assets/Page9/4.png",550);
                           },
                           child: Image.asset(
                             "assets/Page9/gif1.gif",
-                            height: 330,
+                            height: 300,
                           ),
                         ),
                   ),
                   Positioned(
                     
-                         right: 80,
-                    top: 300,child: 
+                         right: 30,
+                    top: 313,child: 
                   InkWell(
                     onTap: (){
                       showOverlay(context, "assets/Page9/7.png",550);
                     },
                     child: Image.asset(
                             "assets/Page9/gif2.gif",
-                            height: 330,
+                            height: 300,
                           ),
                   )),
                   Stack(

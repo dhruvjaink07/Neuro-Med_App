@@ -23,7 +23,7 @@ class _Page8State extends State<Page8> {
       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
       body: Container(
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("assets/Page8/Bg.png"), fit: BoxFit.contain)),
         child: Column(
@@ -92,7 +92,7 @@ class _Page8State extends State<Page8> {
                             height: 200,
                           ).animate().animate().fade(duration: const Duration(milliseconds: 1500)))),
                   Positioned(
-                      bottom: 120,
+                      bottom: 10,
                       left: 70,
                       child: InkWell(
                           onTap: () {
@@ -100,9 +100,9 @@ class _Page8State extends State<Page8> {
                           },
                           child: Image.asset(
                             "assets/Page8/gif.gif",
-                            width: 830,
-                            height: 290,
-                            fit: BoxFit.fill,
+                            // width: 830,
+                            height:480,
+                            // fit: BoxFit.fill,
                           ))),
                   Stack(
                     children: [

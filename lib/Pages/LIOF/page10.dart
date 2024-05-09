@@ -106,7 +106,7 @@ class _Page10State extends State<Page10> {
                         showOverlay(context, "assets/Page10/4.png", 550);
                       },
                       child: Image.asset(
-                        "assets/Page10/gif1.gif",
+                        "assets/Page10/gif.gif",
                         height: 330,
                       ),
                     ),

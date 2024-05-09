@@ -8,9 +8,39 @@ class MenuDrawer extends StatelessWidget {
   });
 
   final double screenHeight;
+ // Preload the images during initialization
+  static final List<String> preloadedImages = [
+    "assets/menu/OXET.png",
+    "assets/menu/LIOF.png",
+    "assets/menu/BETA.png",
+    "assets/menu/PIRA.png",
+    "assets/menu/PARK.png",
+    "assets/menu/GAB-AT.png",
+    "assets/menu/PANA.png",
+    "assets/menu/PAXI.png",
+    "assets/menu/RASA.png",
+    "assets/menu/SYNA.png",
+    "assets/menu/TOPI.png",
+    "assets/menu/VEN.png",
+    "assets/menu/LAMO.png",
+    "assets/menu/ZEFR.png",
+    "assets/menu/ADES.png",
+    "assets/menu/ATTE.png",
+    "assets/menu/IVE.png",
+    "assets/menu/ETIR.png",
+    "assets/menu/LURA.png",
+    "assets/menu/SIZO.png",
+    "assets/menu/NEU-D3.png",
+    "assets/menu/CARI.png",
+  ];
 
   @override
   Widget build(BuildContext context) {
+      // Preload images when this widget is built
+    for (var imagePath in preloadedImages) {
+      precacheImage(AssetImage(imagePath), context);
+    }
+
     return SizedBox(
        width: 86, // Adjust drawer width
       child: Drawer(
@@ -48,7 +78,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [0, 1, 2, 3, 4, 5])));
+                            displayIndices: const [0, 1, 2, 3, 4, 5])));
                   
               }),
               // SizedBox(height: 20,),
@@ -57,7 +87,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [6,7,8,9,10,11])));
+                            displayIndices: const [6,7,8,9,10,11])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/BETA.png", () {
@@ -65,7 +95,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [12,13,14,15,16])));
+                            displayIndices: const [12,13,14,15,16])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/PIRA.png", () {
@@ -73,7 +103,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [17,18,19])));
+                            displayIndices: const [17,18,19])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/PARK.png", () {
@@ -81,7 +111,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [22,23,24,25,26,27,28])));
+                            displayIndices: const [22,23,24,25,26,27,28])));
               }),
               //  SizedBox(height: 14,),
               buildMenuItem("assets/menu/GAB-AT.png", () {
@@ -89,7 +119,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [20,21])));
+                            displayIndices: const [20,21])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/PANA.png", () {
@@ -97,7 +127,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [29,30,31,32])));
+                            displayIndices: const [29,30,31,32])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/PAXI.png", () {
@@ -105,7 +135,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [33,34,35,36])));
+                            displayIndices: const [33,34,35,36])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/RASA.png", () {
@@ -113,7 +143,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [37,38,39,40])));
+                            displayIndices: const [37,38,39,40])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/SYNA.png", () {
@@ -121,7 +151,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [41,42,43])));
+                            displayIndices: const [41,42,43])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/TOPI.png", () {
@@ -129,7 +159,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [44,45,46,47])));
+                            displayIndices: const [44,45,46,47])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/VEN.png", () {
@@ -137,7 +167,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [48,49])));
+                            displayIndices: const [48,49])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/LAMO.png", () {
@@ -145,7 +175,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [50])));
+                            displayIndices: const [50])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/ZEFR.png", () {
@@ -153,7 +183,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [51,52])));
+                            displayIndices: const [51,52])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/ADES.png", () {
@@ -161,7 +191,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [53])));
+                            displayIndices: const [53])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/ATTE.png", () {
@@ -169,7 +199,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [54])));
+                            displayIndices: const [54])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/IVE.png", () {
@@ -177,7 +207,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [55])));
+                            displayIndices: const [55])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/ETIR.png", () {
@@ -185,7 +215,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [56])));
+                            displayIndices: const [56])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/LURA.png", () {
@@ -193,7 +223,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [57])));
+                            displayIndices: const [57])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/SIZO.png", () {
@@ -201,7 +231,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [58])));
+                            displayIndices: const [58])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/NEU-D3.png", () {
@@ -209,7 +239,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [59])));
+                            displayIndices: const [59])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/CARI.png", () {
@@ -217,7 +247,7 @@ class MenuDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: [60,61])));
+                            displayIndices: const [60,61])));
               }),
             ],
           ),
@@ -230,7 +260,7 @@ class MenuDrawer extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.only(bottom: 3),
+        margin: const EdgeInsets.only(bottom: 3),
         child: Image.asset(
           assetsImage,
           height: 15,

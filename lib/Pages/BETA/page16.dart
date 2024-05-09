@@ -66,14 +66,14 @@ class _Page16State extends State<Page16> {
                           duration: const Duration(milliseconds: 1500),
                           size: 0.08)),
                   Positioned(
-                      bottom: 110,
-                      left: 40,
+                      bottom: 90,
+                      left: 60,
                       child: InkWell(
                           onTap: () {
                             showOverlay(context, "assets/Page16/4.png");
                           },
                           child: Image.asset("assets/Page16/gif.gif",
-                              height: 350))),
+                              height: 420))),
                   Positioned(
                     left: 40, // Adjust this value as needed
                     bottom: 5,

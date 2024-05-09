@@ -43,7 +43,7 @@ class _Page45State extends State<Page45> {
               IconButton(
                 onPressed: () {
                   Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => MainPage()));
+                      MaterialPageRoute(builder: (context) => const MainPage()));
                 },
                 icon: Image.asset(
                   "assets/menu/6.png",
@@ -93,7 +93,7 @@ class _Page45State extends State<Page45> {
           overlayEntry!.remove();
         },
         child: Material(
-          color: Color.fromARGB(196, 0, 0, 0),
+          color: const Color.fromARGB(196, 0, 0, 0),
           child: Center(
             child: GestureDetector(
               onTap:
@@ -109,6 +109,6 @@ class _Page45State extends State<Page45> {
         ),
       ),
     );
-    Overlay.of(context)!.insert(overlayEntry);
+    Overlay.of(context).insert(overlayEntry);
   }
 }
