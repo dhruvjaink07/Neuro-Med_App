@@ -57,7 +57,9 @@ class _Page29State extends State<Page29> {
                       child: Image.asset(
                         "assets/Page23/Logo.png",
                         height: 80,
-                      )),
+                      ).animate().shimmer(
+                          duration: const Duration(milliseconds: 1500),
+                          size: 0.08)),
                  Positioned(
                               bottom: 90,
                               left: 90,

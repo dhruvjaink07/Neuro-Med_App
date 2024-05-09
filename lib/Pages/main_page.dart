@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/controllers/oxet_page_controller.dart';
 
@@ -15,13 +15,21 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+    // bool oxetClicked = false; // Add a boolean flag to track Oxet image click
+
   List numbers = [];
-  List<int> displayIndices = [];
+  // List<int> displayIndices = [];
+    Set<int> displayIndices = Set<int>();
+     // Define a Set to track tapped images
+  Set<String> tappedImages = Set<String>();
+
+  //  Set<String> tappedImages = Set<String>();
   Set<String> pages = Set<String>();
   @override
   Map<String, int> selectedImages =
       {}; // Map to store selected images and their numbers
   int currentNumber = 1; // Variable to track the current number
+  int continueNumber = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +46,7 @@ class _MainPageState extends State<MainPage> {
                   context,
                   MaterialPageRoute(
                       builder: (context) => OxetPageControllerWidget(
-                          displayIndices: displayIndices)));
+                          displayIndices: displayIndices.toList())));
             }
           }
         },
@@ -72,6 +80,9 @@ class _MainPageState extends State<MainPage> {
                             setState(() {
                               displayIndices.clear();
                               count = 0;
+                              selectedImages.clear();
+                              currentNumber =1; 
+                              tappedImages.clear();
                             });
                           },
                           child: Image.asset(
@@ -85,6 +96,9 @@ class _MainPageState extends State<MainPage> {
                         left: 460,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                            // Check if the image is already tapped
+                  if (!tappedImages.contains("Oxet")) {
                               var imageName = "Oxet";
                               pages.add(imageName);
                               displayIndices.add(0);
@@ -97,8 +111,12 @@ class _MainPageState extends State<MainPage> {
                               setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                continueNumber++;
+                                tappedImages.add("Oxet");
+                                oxetClicked = true; // Mark Oxet image as clicked
                               });
                               print("Item Added 1");
+                              }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/OXET.png",
@@ -112,17 +130,22 @@ class _MainPageState extends State<MainPage> {
                         right: 205,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                 // Check if the image is already tapped
+                  if (!tappedImages.contains("Ven")) {
                               var imageName = "Ven";
                               pages.add(imageName);
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                 tappedImages.add("Ven");
                               });
                               increment();
                               // numbers.add(count);
                               print("Item Added 2");
                               displayIndices.add(48);
                               displayIndices.add(49);
+                                 }
                             },
                             child: Brand(
                                 assetName: "assets/MainPage/VEN.png",
@@ -137,12 +160,15 @@ class _MainPageState extends State<MainPage> {
                         right: 340,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                 if (!tappedImages.contains("Pana")) {
                               print("3");
                               var imageName = "Pana";
                               pages.add(imageName);
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add("Pana");
                               });
                               displayIndices.add(29);
                               displayIndices.add(30);
@@ -150,6 +176,7 @@ class _MainPageState extends State<MainPage> {
                               displayIndices.add(32);
                               increment();
                               numbers.add(count);
+                                 }
                             },
                             child: Brand(
                                 assetName: "assets/MainPage/PANA.png",
@@ -162,16 +189,20 @@ class _MainPageState extends State<MainPage> {
                         right: 63,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                  if (!tappedImages.contains("Etr")) {
                               print("4");
                               var imageName = "Etr";
                               pages.add(imageName);
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add("Etr");
                               });
                               increment();
                               displayIndices.add(56);
                               numbers.add(count);
+                                 }
                             },
                             child: Brand(
                                 assetName: "assets/MainPage/ETIR.png",
@@ -184,12 +215,15 @@ class _MainPageState extends State<MainPage> {
                         left: 460,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                if (!tappedImages.contains("Liof")) {
                               print("5");
                               increment();
                               var imageName = "Liof";
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add("Liof");
                               });
                               displayIndices.add(6);
                               displayIndices.add(7);
@@ -198,6 +232,7 @@ class _MainPageState extends State<MainPage> {
                               displayIndices.add(10);
                               displayIndices.add(11);
                               pages.add(imageName);
+                                 }
                             },
                             child: Brand(
                                 assetName: "assets/MainPage/LIOF.png",
@@ -209,15 +244,18 @@ class _MainPageState extends State<MainPage> {
                         right: 205,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                  if (!tappedImages.contains("Lamo")) {
                               print("6");
                               var imageName = "Lamo";
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add("Lamo");
                               });
                               pages.add(imageName);
                               displayIndices.add(50);
-          
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/LAMO.png",
@@ -230,17 +268,21 @@ class _MainPageState extends State<MainPage> {
                         right: 340,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                 if (!tappedImages.contains("Paxi")) {
                               print("7");
                               var imageName = "Paxi";
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add("Paxi");
                               });
                               displayIndices.add(33);
                               displayIndices.add(34);
                               displayIndices.add(35);
                               displayIndices.add(36);
                               pages.add(imageName);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/PAXI.png",
@@ -254,14 +296,18 @@ class _MainPageState extends State<MainPage> {
                         right: 63,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                  if (!tappedImages.contains("Lura")) {
                               print("8");
                               var imageName = "Lura";
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add("Lura");
                               });
                               displayIndices.add(57);
                               pages.add(imageName);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/LURA.png",
@@ -274,11 +320,14 @@ class _MainPageState extends State<MainPage> {
                         left: 460,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                 if (!tappedImages.contains("Beta")) {
                               print("9");
                               var imageName = "Beta";
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add(imageName);
                               });
                               displayIndices.add(12);
                               displayIndices.add(13);
@@ -286,6 +335,7 @@ class _MainPageState extends State<MainPage> {
                               displayIndices.add(15);
                               displayIndices.add(16);
                               pages.add(imageName);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/BETA.png",
@@ -298,15 +348,19 @@ class _MainPageState extends State<MainPage> {
                         right: 205,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                  if (!tappedImages.contains("Zefr")) {
                               print("10");
                               var imageName = "Zefr";
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add(imageName);
                               });
                               displayIndices.add(51);
                               displayIndices.add(52);
                               pages.add(imageName);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/ZEFR.png",
@@ -319,17 +373,21 @@ class _MainPageState extends State<MainPage> {
                         right: 340,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                 if (!tappedImages.contains("Rasa")) {
                               print("11");
                               var imageName = "Rasa";
                               pages.add(imageName);
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add(imageName);
                               });
                               displayIndices.add(37);
                               displayIndices.add(38);
                               displayIndices.add(39);
                               displayIndices.add(40);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/RASA.png",
@@ -343,6 +401,8 @@ class _MainPageState extends State<MainPage> {
                         right: 63,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                  if (!tappedImages.contains("Sizo")) {
                               print("12");
                                   var imageName = "Sizo";
                                   
@@ -350,8 +410,10 @@ class _MainPageState extends State<MainPage> {
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add(imageName);
                               });
                               displayIndices.add(58);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/SIZO.png",
@@ -364,16 +426,20 @@ class _MainPageState extends State<MainPage> {
                         left: 460,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                  if (!tappedImages.contains("Pira")) {
                               print("13");
                                   var imageName = "Pira";
                               pages.add(imageName);
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add(imageName);
                               });
                               displayIndices.add(17);
                               displayIndices.add(18);
                               displayIndices.add(19);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/PIRA.png",
@@ -386,14 +452,18 @@ class _MainPageState extends State<MainPage> {
                         right: 205,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                            if (!tappedImages.contains("Ades")) {
                               print("14");
                                   var imageName = "Ades";
                               pages.add(imageName);
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add(imageName);
                               });
                               displayIndices.add(53);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/ADES.png",
@@ -406,15 +476,19 @@ class _MainPageState extends State<MainPage> {
                         right: 340,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                  if (!tappedImages.contains("Syna")) {
                               print("15");    var imageName = "Syna";
                               pages.add(imageName);
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add(imageName);
                               });
                               displayIndices.add(41);
                               displayIndices.add(42);
                               displayIndices.add(43);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/SYNA.png",
@@ -428,14 +502,18 @@ class _MainPageState extends State<MainPage> {
                         right: 63,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                  if (!tappedImages.contains("Neu-d3")) {
                               print("16");
                                   var imageName = "Neu-d3";
                               pages.add(imageName);
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add(imageName);
                               });
                               displayIndices.add(59);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/NEU-D3.png",
@@ -448,12 +526,15 @@ class _MainPageState extends State<MainPage> {
                         left: 460,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                 if (!tappedImages.contains("Park")) {
                               print("17");
                                   var imageName = "Park";
                               pages.add(imageName);
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add(imageName);
                               });
                               displayIndices.add(22);
                               displayIndices.add(23);
@@ -462,6 +543,7 @@ class _MainPageState extends State<MainPage> {
                               displayIndices.add(26);
                               displayIndices.add(27);
                               displayIndices.add(28);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/PARK.png",
@@ -474,14 +556,18 @@ class _MainPageState extends State<MainPage> {
                         right: 205,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                  if (!tappedImages.contains("Atte")) {
                               print("18");
                                     var imageName = "Atte";
                               pages.add(imageName);
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add(imageName);
                               });
                               displayIndices.add(54);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/ATTE.png",
@@ -493,17 +579,21 @@ class _MainPageState extends State<MainPage> {
                         right: 340,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                 if (!tappedImages.contains("Topi")) {
                               print("19");
                                     var imageName = "Topi";
                               pages.add(imageName);
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add(imageName);
                               });
                               displayIndices.add(44);
                               displayIndices.add(45);
                               displayIndices.add(46);
                               displayIndices.add(47);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/TOPI.png",imageName: "Topi",
@@ -515,15 +605,19 @@ class _MainPageState extends State<MainPage> {
                         right: 63,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                 if (!tappedImages.contains("Cari")) {
                               print("20");
                                     var imageName = "Cari";
                               pages.add(imageName);
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add(imageName);
                               });
                               displayIndices.add(60);
                               displayIndices.add(61);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/CARI.png",
@@ -535,15 +629,19 @@ class _MainPageState extends State<MainPage> {
                         left: 460,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                  if (!tappedImages.contains("Gab-At")) {
                               print("21");
                                     var imageName = "Gab-At";
                               pages.add(imageName);
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add(imageName);
                               });
                               displayIndices.add(20);
                               displayIndices.add(21);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/GAB-AT.png",
@@ -555,14 +653,18 @@ class _MainPageState extends State<MainPage> {
                         right: 205,
                         child: InkWell(
                             onTap: () {
+                              bool oxetClicked = false;
+                                 if (!tappedImages.contains("Ive")) {
                               print("22");
                                     var imageName = "Ive";
                               pages.add(imageName);
                                 setState(() {
                                 selectedImages[imageName] = currentNumber;
                                 currentNumber++;
+                                tappedImages.add(imageName);
                               });
                               displayIndices.add(55);
+                                 }
                             },
                             child: Brand(
                               assetName: "assets/MainPage/IVE.png",
@@ -586,7 +688,7 @@ class _MainPageState extends State<MainPage> {
 }
 
 
-class Brand extends StatelessWidget {
+class Brand extends StatefulWidget {
   Brand({
     Key? key,
     required this.assetName,
@@ -599,31 +701,49 @@ class Brand extends StatelessWidget {
   final Map<String, int> selectedImages;
 
   @override
+  _BrandState createState() => _BrandState();
+}
+
+class _BrandState extends State<Brand> {
+  bool isTapped = false;
+
+  @override
   Widget build(BuildContext context) {
-    int? selectionNumber = selectedImages[imageName]; // Get the number for this image
+    int? selectionNumber = widget.selectedImages[widget.imageName]; // Get the number for this image
     return Stack(
       children: [
         Image.asset(
-          assetName,
+          widget.assetName,
           height: 70,
+          // color: isTapped ? Colors.grey : null, // Color image when tapped
         ),
-        if (selectionNumber != null && selectionNumber > 0)
+        if (selectionNumber != null && selectionNumber > 0 && !isTapped)
           Positioned(
             bottom: 34,
             left: 2,
-            child: Container(
-              padding: EdgeInsets.all(7),
-              decoration: BoxDecoration(
-                color: Colors.red, // Change color to red
-                shape: BoxShape.circle, // Make it a circle
-              ),
-              child: Center(
-                child: Text(
-                  '$selectionNumber',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w800,
+            child: InkWell(
+              onTap: () {
+                setState(() {
+                  isTapped = true; // Disable further taps
+                });
+                // Handle tap action here if needed
+              },
+              child: Container(
+                padding: EdgeInsets.only(top: 3, bottom: 7, right: 5, left: 5),
+                decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage("assets/MainPage/numberBg.png")),
+                ),
+                child: Center(
+                  child: FittedBox(
+                    fit: BoxFit.contain,
+                    child: Text(
+                      (selectionNumber >= 10) ? '$selectionNumber' : '0$selectionNumber',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
                   ),
                 ),
               ),

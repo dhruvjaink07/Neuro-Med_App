@@ -83,7 +83,9 @@ class _Page3State extends State<Page3> with SingleTickerProviderStateMixin{
                       child: Image.asset(
                         "assets/Page3/4.png",
                         width: 450,
-                      )),
+                      ).animate().shimmer(
+                          duration: const Duration(milliseconds: 1500),
+                          size: 0.08)),
                      Positioned(
                       top: 170,
                       right: 23,

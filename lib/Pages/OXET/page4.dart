@@ -89,7 +89,9 @@ class _Page4State extends State<Page4> with SingleTickerProviderStateMixin {
                         height: 100,
                         width: 450,
                         fit: BoxFit.fitWidth,
-                      )),
+                      ).animate().shimmer(
+                          duration: const Duration(milliseconds: 1500),
+                          size: 0.08)),
                   Positioned(
                       top: 290,
                       left: 180,

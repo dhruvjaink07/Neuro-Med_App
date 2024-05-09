@@ -5,10 +5,10 @@ import 'package:neuro_app/components/cDrawer.dart';
 
 class Page58 extends StatefulWidget {
   const Page58({
-    super.key,
+    super.key, required this.goToPreviousPage, required this.goToNextPage,
   });
-  //  final VoidCallback goToPreviousPage;
-  //   final VoidCallback goToNextPage;
+   final VoidCallback goToPreviousPage;
+    final VoidCallback goToNextPage;
 
   @override
   State<Page58> createState() => _Page58State();
@@ -62,7 +62,9 @@ class _Page58State extends State<Page58> {
                       child: Image.asset(
                         "assets/Page58/Logo.png",
                         height: 120,
-                      )),
+                      ).animate().shimmer(
+                          duration: const Duration(milliseconds: 1500),
+                          size: 0.08)),
                   Positioned(
                       top: 235,
                       left: 80,

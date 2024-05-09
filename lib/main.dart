@@ -63,7 +63,7 @@ import 'package:neuro_app/Pages/VEN/page50.dart';
 import 'package:neuro_app/Pages/ZEFR/page52.dart';
 import 'package:neuro_app/Pages/ZEFR/page53.dart';
 import 'package:neuro_app/Pages/main_page.dart';
-import 'package:neuro_app/animationTry.dart';
+import 'package:neuro_app/Pages/splashScreen.dart';
 import 'package:neuro_app/components/chatbubble.dart';
 
 
@@ -87,15 +87,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // home: SpeechBubble(),
-      // home: const MainPage(),
-      // home: EaseInAnimationDemo(),
-      home: const Page58(),
-      // home: LiofPageControllerWidget(),
-      // home: Page62(),
-      // home : OxetPageControllerWidget()
-      // home: MainPageControllerWidget(),
-
+      home: const SplashScreen(),
+// home: Page5(),
     );
   }
 }

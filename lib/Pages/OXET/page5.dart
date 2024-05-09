@@ -8,7 +8,7 @@ class Page5 extends StatefulWidget {
   final VoidCallback goToPreviousPage;
   final VoidCallback goToNextPage;
   const Page5({
-    super.key, required this.goToPreviousPage, required this.goToNextPage,
+    super.key, required this.goToPreviousPage, required this.goToNextPage, 
   });
 
   @override
@@ -61,7 +61,9 @@ class _Page5State extends State<Page5> {
                         height: 100,
                         width: 450,
                         fit: BoxFit.fitWidth,
-                      )),
+                      ).animate().shimmer(
+                          duration: const Duration(milliseconds: 1500),
+                          size: 0.08)),
                   Positioned(
                       top: 230,
                       left: 210,
@@ -78,6 +80,10 @@ class _Page5State extends State<Page5> {
                         "assets/Page5/7.png",
                         height: 45,
                       ).animate().fade(duration: Duration(milliseconds: 1500))),
+                      Positioned(
+                        top: 330,
+                        left: 120,
+                        child: Image.asset("assets/Page5/globe.gif")),
                   Positioned(
                       top: 360,
                       right: 110,

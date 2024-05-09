@@ -4,9 +4,9 @@ import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page49 extends StatefulWidget {
-  const Page49({super.key, });
-  //  final VoidCallback goToPreviousPage;
-  //   final VoidCallback goToNextPage;
+  const Page49({super.key, required this.goToPreviousPage, required this.goToNextPage, });
+   final VoidCallback goToPreviousPage;
+    final VoidCallback goToNextPage;
 
   @override
   State<Page49> createState() => _Page49State();
@@ -56,7 +56,9 @@ class _Page49State extends State<Page49> {
                       child: Image.asset(
                         "assets/Page49/logo.png",
                         height: 100,
-                      )),
+                      ).animate().shimmer(
+                          duration: const Duration(milliseconds: 1500),
+                          size: 0.08)),
                        Positioned(
                       top: 230,
                       left: 80,
@@ -80,7 +82,7 @@ class _Page49State extends State<Page49> {
                   onTap: (){
                     showOverlay(context,"assets/Page49/4.png");
                   },
-                  child: Image.asset("assets/Page49/4.png",width: 660,))),
+                  child: Image.asset("assets/Page49/gif.gif",width: 660,))),
                   Positioned(
                     top: 350,
                     right: 80,

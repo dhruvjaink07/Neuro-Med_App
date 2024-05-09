@@ -70,7 +70,9 @@ class _Page6State extends State<Page6> {
                         width: 450,
                         height: 130,
                         fit: BoxFit.fill,
-                      )),
+                      ).animate().shimmer(
+                          duration: const Duration(milliseconds: 1500),
+                          size: 0.08)),
                   Positioned(
                       left: 100,
                       bottom: 130,

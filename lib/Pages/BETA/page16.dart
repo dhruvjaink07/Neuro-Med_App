@@ -5,7 +5,7 @@ import 'package:neuro_app/components/cDrawer.dart';
 
 class Page16 extends StatefulWidget {
   const Page16({
-    super.key, required this.goToPreviousPage, required this.goToNextPage,
+    super.key, required this.goToPreviousPage, required this.goToNextPage, 
   });
  final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
@@ -25,7 +25,7 @@ class _Page16State extends State<Page16> {
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/Page16/1.png"), fit: BoxFit.contain)),
+                image: AssetImage("assets/Page16/Betacap plus bg.png"), fit: BoxFit.contain)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -55,6 +55,16 @@ class _Page16State extends State<Page16> {
             Expanded(
               child: Stack(
                 children: [
+                   Positioned(
+                      top: 30,
+                      right: 40,
+                      // LOG0
+                      child: Image.asset(
+                        "assets/Page16/Betacap plus logo.png",
+                        height: 100,
+                      ).animate().shimmer(
+                          duration: const Duration(milliseconds: 1500),
+                          size: 0.08)),
                   Positioned(
                       bottom: 110,
                       left: 40,

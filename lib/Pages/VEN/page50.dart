@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -7,10 +6,10 @@ import 'package:neuro_app/components/cDrawer.dart';
 
 class Page50 extends StatefulWidget {
   const Page50({
-    super.key,
+    super.key, required this.goToPreviousPage, required this.goToNextPage,
   });
-  //  final VoidCallback goToPreviousPage;
-  //   final VoidCallback goToNextPage;
+   final VoidCallback goToPreviousPage;
+    final VoidCallback goToNextPage;
 
   @override
   State<Page50> createState() => _Page50State();
@@ -63,7 +62,9 @@ class _Page50State extends State<Page50> {
                       child: Image.asset(
                         "assets/Page49/logo.png",
                         height: 100,
-                      )),
+                      ).animate().shimmer(
+                          duration: const Duration(milliseconds: 1500),
+                          size: 0.08)),
                   Positioned(
                       top: 230,
                       left: 100,

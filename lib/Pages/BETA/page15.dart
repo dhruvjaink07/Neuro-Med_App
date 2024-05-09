@@ -4,7 +4,7 @@ import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page15 extends StatefulWidget {
-  const Page15({super.key, required this.goToPreviousPage, required this.goToNextPage, });
+  const Page15({super.key, required this.goToPreviousPage, required this.goToNextPage,  });
  final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
   @override
@@ -56,7 +56,9 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
                       child: Image.asset(
                         "assets/Page15/Logo.png",
                         width: 430,
-                      )),
+                      ).animate().shimmer(
+                          duration: const Duration(milliseconds: 1500),
+                          size: 0.08)),
                             Positioned(
                               top: 260,
                               left: 80,
