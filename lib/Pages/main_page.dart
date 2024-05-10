@@ -42,11 +42,13 @@ class _MainPageState extends State<MainPage> {
               setState(() {
                 count = 0;
               });
+              if(displayIndices.isNotEmpty){
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                       builder: (context) => OxetPageControllerWidget(
                           displayIndices: displayIndices.toList())));
+              }
             }
           }
         },
@@ -705,7 +707,7 @@ class Brand extends StatefulWidget {
 }
 
 class _BrandState extends State<Brand> {
-  bool isTapped = false;
+  // bool isTapped = false;
 
   @override
   Widget build(BuildContext context) {
@@ -717,15 +719,15 @@ class _BrandState extends State<Brand> {
           height: 70,
           // color: isTapped ? Colors.grey : null, // Color image when tapped
         ),
-        if (selectionNumber != null && selectionNumber > 0 && !isTapped)
+        if (selectionNumber != null && selectionNumber > 0)
           Positioned(
             bottom: 34,
             left: 2,
             child: InkWell(
               onTap: () {
-                setState(() {
-                  isTapped = true; // Disable further taps
-                });
+                // setState(() {
+                //   isTapped = true; // Disable further taps
+                // });
                 // Handle tap action here if needed
               },
               child: Container(
