@@ -22,104 +22,108 @@ class _Page60State extends State<Page60> {
     return Scaffold(
       key: _scaffoldKey,
       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/Page60/BG.png"),
-                fit: BoxFit.contain)),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Row(children: [
-              IconButton(
-                onPressed: () {
-                  _scaffoldKey.currentState?.openDrawer();
-                },
-                icon: Image.asset(
-                  "assets/menu/5.png",
-                  height: 20,
+      body: Center(
+        child: Container(
+          // width: MediaQuery.of(context).size.width,
+              height: 768,
+              width: 1024,
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/Page60/BG.png"),
+                  fit: BoxFit.contain)),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Row(children: [
+                IconButton(
+                  onPressed: () {
+                    _scaffoldKey.currentState?.openDrawer();
+                  },
+                  icon: Image.asset(
+                    "assets/menu/5.png",
+                    height: 20,
+                  ),
                 ),
-              ),
-              IconButton(
-                onPressed: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => MainPage()));
-                },
-                icon: Image.asset(
-                  "assets/menu/6.png",
-                  height: 25,
+                IconButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => MainPage()));
+                  },
+                  icon: Image.asset(
+                    "assets/menu/6.png",
+                    height: 25,
+                  ),
                 ),
-              ),
-            ]),
-            Expanded(
-              child: Stack(
-                children: [
-                  Positioned(
-                      top: 40,
-                      right: 70,
-                      // LOGO
-                      child: Image.asset(
-                        "assets/Page60/Neuro logo .png",
-                        height: 100,
-                      ).animate().shimmer(
-                          duration: const Duration(milliseconds: 1500),
-                          size: 0.08)),
-                  Positioned(
-                      top: 250,
-                      left: 70,
-                      child: Image.asset(
-                        "assets/Page60/Act as.png",
-                        height: 130,
-                      )
-                          .animate()
-                          .fade(duration: const Duration(milliseconds: 1500))),
-                  Positioned(
-                      top: 390,
-                      left: 70,
-                      child: Image.asset(
-                        "assets/Page60/Promotes .png",
-                        height: 130,
-                      )
-                          .animate()
-                          .fade(duration: const Duration(milliseconds: 1500))),
-                  Positioned(
-                      top: 530,
-                      left: 70,
-                      child: Image.asset(
-                        "assets/Page60/treats.png",
-                        height: 130,
-                      )
-                          .animate()
-                          .fade(duration: const Duration(milliseconds: 1500))),
-                  Positioned(
-                      top: 230,
-                      right: 100,
-                      child: Image.asset(
-                        "assets/Page60/Object .png",
-                        height: 400,
-                      )
-                          .animate()
-                          .scale(duration: const Duration(milliseconds: 1500))),
-                  Positioned(
-                    left: 10,
-                    bottom: 5,
-                    child: InkWell(
-                      onTap: () {
-                        setState(() {
-                          isOpen = !isOpen;
-                        });
-                      },
-                      child: Image.asset(
-                        "assets/menu/2.png",
-                        height: 45,
+              ]),
+              Expanded(
+                child: Stack(
+                  children: [
+                    Positioned(
+                        top: 40,
+                        right: 70,
+                        // LOGO
+                        child: Image.asset(
+                          "assets/Page60/Neuro logo .png",
+                          height: 100,
+                        ).animate().shimmer(
+                            duration: const Duration(milliseconds: 1500),
+                            size: 0.08)),
+                    Positioned(
+                        top: 250,
+                        left: 70,
+                        child: Image.asset(
+                          "assets/Page60/Act as.png",
+                          height: 130,
+                        )
+                            .animate()
+                            .fade(duration: const Duration(milliseconds: 1500))),
+                    Positioned(
+                        top: 390,
+                        left: 70,
+                        child: Image.asset(
+                          "assets/Page60/Promotes .png",
+                          height: 130,
+                        )
+                            .animate()
+                            .fade(duration: const Duration(milliseconds: 1500))),
+                    Positioned(
+                        top: 530,
+                        left: 70,
+                        child: Image.asset(
+                          "assets/Page60/treats.png",
+                          height: 130,
+                        )
+                            .animate()
+                            .fade(duration: const Duration(milliseconds: 1500))),
+                    Positioned(
+                        top: 230,
+                        right: 100,
+                        child: Image.asset(
+                          "assets/Page60/Object .png",
+                          height: 400,
+                        )
+                            .animate()
+                            .scale(duration: const Duration(milliseconds: 1500))),
+                    Positioned(
+                      left: 10,
+                      bottom: 5,
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            isOpen = !isOpen;
+                          });
+                        },
+                        child: Image.asset(
+                          "assets/menu/2.png",
+                          height: 45,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

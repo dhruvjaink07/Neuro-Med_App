@@ -22,63 +22,67 @@ class _Page45State extends State<Page45> {
     return Scaffold(
       key: _scaffoldKey,
       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/Page45/1.png"), fit: BoxFit.contain)),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Row(children: [
-              IconButton(
-                onPressed: () {
-                  _scaffoldKey.currentState?.openDrawer();
-                },
-                icon: Image.asset(
-                  "assets/menu/5.png",
-                  height: 20,
+      body: Center(
+        child: Container(
+              height: 768,
+                width: 1024,
+          // width: MediaQuery.of(context).size.width,
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/Page45/1.png"), fit: BoxFit.contain)),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Row(children: [
+                IconButton(
+                  onPressed: () {
+                    _scaffoldKey.currentState?.openDrawer();
+                  },
+                  icon: Image.asset(
+                    "assets/menu/5.png",
+                    height: 20,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => const MainPage()));
+                  },
+                  icon: Image.asset(
+                    "assets/menu/6.png",
+                    height: 25,
+                  ),
+                ),
+              ]),
+              Expanded(
+                child: Stack(
+                  children: [
+                    Positioned(
+                        top: 260,
+                        left: 150,
+                        child: Image.asset(
+                          "assets/Page45/2.png",
+                          height: 350,
+                        )
+                            .animate()
+                            .scale(duration: const Duration(milliseconds: 1500))),
+                    Positioned(
+                        top: 260,
+                        left: 400,
+                        child: Image.asset("assets/Page45/3.png", height: 350)
+                            .animate()
+                            .scale(duration: const Duration(milliseconds: 1500))),
+                    Positioned(
+                        top: 260,
+                        left: 650,
+                        child: Image.asset("assets/Page45/4.png", height: 305)
+                            .animate()
+                            .scale(duration: const Duration(milliseconds: 1500)))
+                  ],
                 ),
               ),
-              IconButton(
-                onPressed: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => const MainPage()));
-                },
-                icon: Image.asset(
-                  "assets/menu/6.png",
-                  height: 25,
-                ),
-              ),
-            ]),
-            Expanded(
-              child: Stack(
-                children: [
-                  Positioned(
-                      top: 260,
-                      left: 150,
-                      child: Image.asset(
-                        "assets/Page45/2.png",
-                        height: 350,
-                      )
-                          .animate()
-                          .scale(duration: const Duration(milliseconds: 1500))),
-                  Positioned(
-                      top: 260,
-                      left: 400,
-                      child: Image.asset("assets/Page45/3.png", height: 350)
-                          .animate()
-                          .scale(duration: const Duration(milliseconds: 1500))),
-                  Positioned(
-                      top: 260,
-                      left: 650,
-                      child: Image.asset("assets/Page45/4.png", height: 305)
-                          .animate()
-                          .scale(duration: const Duration(milliseconds: 1500)))
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

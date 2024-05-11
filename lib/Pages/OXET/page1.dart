@@ -56,78 +56,82 @@ class _Page1State extends State<Page1> with SingleTickerProviderStateMixin {
     return Scaffold(
       key: _scaffoldKey,
       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/Page1/8.png"),
-            fit: BoxFit.contain,
-          ),
-        ),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                IconButton(
-                  onPressed: () {
-                    _scaffoldKey.currentState?.openDrawer();
-                  },
-                  icon: Image.asset(
-                    "assets/menu/5.png",
-                    height: 20,
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => MainPage()),
-                    );
-                  },
-                  icon: Image.asset(
-                    "assets/menu/6.png",
-                    height: 25,
-                  ),
-                ),
-              ],
+      body: Center(
+        child: Container(
+           height: 768,
+              width: 1024,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/Page1/8.png"),
+              fit: BoxFit.contain,
             ),
-            Expanded(
-              child: Stack(children: [
-                Positioned(
-                  right: 10,
-                  child: Image.asset("assets/Page1/9.png",height: 120,).animate().fade(duration: const Duration(milliseconds: 1500))),
-                Positioned(
-                    top: 50,
-                    left: 130,
-                    child: Image.asset(
-                      "assets/Page1/7.png",
-                      height: 540,
-                    )
+          ),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      _scaffoldKey.currentState?.openDrawer();
+                    },
+                    icon: Image.asset(
+                      "assets/menu/5.png",
+                      height: 20,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => MainPage()),
+                      );
+                    },
+                    icon: Image.asset(
+                      "assets/menu/6.png",
+                      height: 25,
+                    ),
+                  ),
+                ],
+              ),
+              Expanded(
+                child: Stack(children: [
+                  Positioned(
+                    right: 10,
+                    child: Image.asset("assets/Page1/9.png",height: 120,).animate().fade(duration: const Duration(milliseconds: 1500))),
+                  Positioned(
+                      top: 50,
+                      left: 130,
+                      child: Image.asset(
+                        "assets/Page1/7.png",
+                        height: 540,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                  Positioned(
+                    bottom: 20,
+                    left: 10,
+                    child: Image.asset("assets/Page1/2.png", height: 140)
                         .animate()
-                        .fade(duration: const Duration(milliseconds: 1500))),
-                Positioned(
-                  bottom: 20,
-                  left: 10,
-                  child: Image.asset("assets/Page1/2.png", height: 140)
-                      .animate()
-                      .fade(duration: const Duration(milliseconds: 1500)),
-                ),
-                Positioned(
-                  bottom: 20,
-                  left: 350,
-                  child: Image.asset("assets/Page1/3.png", height: 140)
-                      .animate()
-                      .fade(duration: const Duration(milliseconds: 1500)),
-                ),
-                Positioned(
-                  bottom: 20,
-                  right: 10,
-                  child: Image.asset("assets/Page1/4.png", height: 140)
-                      .animate()
-                      .fade(duration: const Duration(milliseconds: 1500)),
-                ),
-              ]),
-            )
-          ],
+                        .fade(duration: const Duration(milliseconds: 1500)),
+                  ),
+                  Positioned(
+                    bottom: 20,
+                    left: 350,
+                    child: Image.asset("assets/Page1/3.png", height: 140)
+                        .animate()
+                        .fade(duration: const Duration(milliseconds: 1500)),
+                  ),
+                  Positioned(
+                    bottom: 20,
+                    right: 10,
+                    child: Image.asset("assets/Page1/4.png", height: 140)
+                        .animate()
+                        .fade(duration: const Duration(milliseconds: 1500)),
+                  ),
+                ]),
+              )
+            ],
+          ),
         ),
       ),
     );

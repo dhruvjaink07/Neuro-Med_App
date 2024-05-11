@@ -21,118 +21,122 @@ class _Page14State extends State<Page14> {
     return Scaffold(
       key: _scaffoldKey,
       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/Page14/BG.png"),
-                fit: BoxFit.contain)),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                IconButton(
-                  onPressed: () {
-                    _scaffoldKey.currentState?.openDrawer();
-                  },
-                  icon: Image.asset(
-                    "assets/menu/5.png",
-                    height: 20,
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => MainPage()));
-                  },
-                  icon: Image.asset(
-                    "assets/menu/6.png",
-                    height: 25,
-                  ),
-                ),
-              ],
-            ),
-            Expanded(
-              child: Stack(
+      body: Center(
+        child: Container(
+           height: 768,
+            width: 1024,
+          // width: MediaQuery.of(context).size.width,
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/Page14/BG.png"),
+                  fit: BoxFit.contain)),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Row(
                 children: [
-                  Positioned(
-                      top: 30,
-                      right: 80,
-                      child: Image.asset(
-                        "assets/Page14/Logo.png",
-                        width: 430,
-                      ).animate().shimmer(
-                          duration: const Duration(milliseconds: 1500),
-                          size: 0.08)),
-                  //  Positioned(
-                  // top: 240,
-                  // left: 100,
-                  // child: Image.asset(
-                  //   "assets/Page14/text.png",
-                  //   height: 20,
-                  //   // width: 380,
-                  //   fit: BoxFit.fill,
-                  // )
-                  //     .animate()
-                  //     .fade(duration: const Duration(milliseconds: 1500))),
-                  Positioned(
-                    top: 300,
-                    left: 70,
-                    child: InkWell(
-                      onTap: (){
-                        showOverlay(context,"assets/Page14/4.png" );
-                      },
-                      child: Image.asset("assets/Page14/gif.gif"))),
-                  Positioned(
-                    left: 40, // Adjust this value as needed
-                    bottom: 5,
-                    child: Visibility(
-                      visible: isOpen,
-                      child: Image.asset(
-                        "assets/Page14/3.png",
-                        height: 40,
-                      ).animate().fade(begin: -5).slide(
-                          begin: Offset(-1, 0),
-                          curve: Curves.easeInOut,
-                          duration: Duration(milliseconds: 320)),
+                  IconButton(
+                    onPressed: () {
+                      _scaffoldKey.currentState?.openDrawer();
+                    },
+                    icon: Image.asset(
+                      "assets/menu/5.png",
+                      height: 20,
                     ),
                   ),
-                  Positioned(
-                    left: 20,
-                    bottom: 5,
-                    child: InkWell(
-                      onTap: () {
-                        setState(() {
-                          isOpen = !isOpen;
-                        });
-                      },
-                      child: Image.asset(
-                        "assets/menu/2.png",
-                        height: 45,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 5,
-                    right: 50,
-                    child: InkWell(
-                      onTap: () {
-                        showOverlay(
-                          context,
-                          "assets/Page14/Small.png",
-                        );
-                      },
-                      child: Image.asset(
-                        "assets/Page14/Small.png",
-                        width: 170,
-                      ),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => MainPage()));
+                    },
+                    icon: Image.asset(
+                      "assets/menu/6.png",
+                      height: 25,
                     ),
                   ),
                 ],
               ),
-            ),
-          ],
+              Expanded(
+                child: Stack(
+                  children: [
+                    Positioned(
+                        top: 30,
+                        right: 80,
+                        child: Image.asset(
+                          "assets/Page14/Logo.png",
+                          width: 430,
+                        ).animate().shimmer(
+                            duration: const Duration(milliseconds: 1500),
+                            size: 0.08)),
+                    //  Positioned(
+                    // top: 240,
+                    // left: 100,
+                    // child: Image.asset(
+                    //   "assets/Page14/text.png",
+                    //   height: 20,
+                    //   // width: 380,
+                    //   fit: BoxFit.fill,
+                    // )
+                    //     .animate()
+                    //     .fade(duration: const Duration(milliseconds: 1500))),
+                    Positioned(
+                      top: 300,
+                      left: 70,
+                      child: InkWell(
+                        onTap: (){
+                          showOverlay(context,"assets/Page14/4.png" );
+                        },
+                        child: Image.asset("assets/Page14/gif.gif"))),
+                    Positioned(
+                      left: 40, // Adjust this value as needed
+                      bottom: 5,
+                      child: Visibility(
+                        visible: isOpen,
+                        child: Image.asset(
+                          "assets/Page14/3.png",
+                          height: 40,
+                        ).animate().fade(begin: -5).slide(
+                            begin: Offset(-1, 0),
+                            curve: Curves.easeInOut,
+                            duration: Duration(milliseconds: 320)),
+                      ),
+                    ),
+                    Positioned(
+                      left: 20,
+                      bottom: 5,
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            isOpen = !isOpen;
+                          });
+                        },
+                        child: Image.asset(
+                          "assets/menu/2.png",
+                          height: 45,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 5,
+                      right: 50,
+                      child: InkWell(
+                        onTap: () {
+                          showOverlay(
+                            context,
+                            "assets/Page14/Small.png",
+                          );
+                        },
+                        child: Image.asset(
+                          "assets/Page14/Small.png",
+                          width: 170,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

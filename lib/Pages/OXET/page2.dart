@@ -47,136 +47,140 @@ class _Page2State extends State<Page2> with SingleTickerProviderStateMixin {
     return Scaffold(
       key: _scaffoldKey,
       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/Page2/10.png"), fit: BoxFit.contain)),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                IconButton(
-                  onPressed: () {
-                    _scaffoldKey.currentState?.openDrawer();
-                  },
-                  icon: Image.asset(
-                    "assets/menu/5.png",
-                    height: 20,
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => MainPage()));
-                  },
-                  icon: Image.asset(
-                    "assets/menu/6.png",
-                    height: 25,
-                  ),
-                ),
-              ],
-            ),
-            Expanded(
-              child: Stack(
+      body: Center(
+        child: Container(
+          // width: MediaQuery.of(context).size.width,
+           height: 768,
+              width: 1024,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/Page2/10.png"), fit: BoxFit.contain)),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Row(
                 children: [
-                  Positioned(
-                      top: 47,
-                      right: 100,
-                      child: Image.asset(
-                        "assets/Page2/12.png",
-                      height: 100,
-                      ).animate().shimmer(
-                          duration: const Duration(milliseconds: 1500),
-                          size: 0.08)),
-                  Positioned(
-                    bottom: 5,
-                    right: 50,
-                    child: InkWell(
-                      onTap: () {
-                        showOverlay(context, "assets/Page2/15.png", 350);
-                      },
-                      child: Image.asset(
-                        "assets/Page2/15.png",
-                        width: 200,
-                      ),
+                  IconButton(
+                    onPressed: () {
+                      _scaffoldKey.currentState?.openDrawer();
+                    },
+                    icon: Image.asset(
+                      "assets/menu/5.png",
+                      height: 20,
                     ),
                   ),
-                  Positioned(
-                      bottom: 100,
-                      left: 67,
-                      child: InkWell(
-                          onTap: () {
-                            showOverlay(context, "assets/Page2/4.png", 450);
-                          },
-                          child: ScaleTransition(
-                            scale: _animation,
-                            child: Image.asset(
-                              "assets/Page2/4.png",
-                              width: 600,
-                              height: 310,
-                              fit: BoxFit.fill,
-                            ),
-                          ))),
-                  Positioned(
-                      bottom: 170,
-                      right: 110,
-                      child: ScaleTransition(
-                        scale: _animation,
-                        child: Image.asset(
-                          "assets/Page2/14.png",
-                          height: 170,
-                        ),
-                      )),
-                  Positioned(
-                      top: 170,
-                      right: 23,
-                      child: ScaleTransition(
-                        scale: _animation,
-                        child: Image.asset(
-                          "assets/Page2/9.png",
-                          height: 230,
-                        ),
-                      )),
-                  Stack(
-                    children: [
-                      Positioned(
-                        //  left: isOpen ? 25 :  30, // Adjust this value as needed
-                        left: 35,
-                        bottom: 5,
-                        child: Visibility(
-                          visible: isOpen,
-                          child: Image.asset(
-                            "assets/Page2/3.png",
-                            height: 40,
-                          ).animate().fade(begin: -5).slide(
-                              begin: Offset(-1, 0),
-                              curve: Curves.easeInOut,
-                              duration: Duration(milliseconds: 350)),
-                        ),
-                      ),
-                      Positioned(
-                        left: 20,
-                        bottom: 5,
-                        child: InkWell(
-                          onTap: () {
-                            setState(() {
-                              isOpen = !isOpen;
-                            });
-                          },
-                          child: Image.asset(
-                            "assets/menu/2.png",
-                            height: 45,
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => MainPage()));
+                    },
+                    icon: Image.asset(
+                      "assets/menu/6.png",
+                      height: 25,
+                    ),
+                  ),
                 ],
               ),
-            ),
-          ],
+              Expanded(
+                child: Stack(
+                  children: [
+                    Positioned(
+                        top: 47,
+                        right: 100,
+                        child: Image.asset(
+                          "assets/Page2/12.png",
+                        height: 100,
+                        ).animate().shimmer(
+                            duration: const Duration(milliseconds: 1500),
+                            size: 0.08)),
+                    Positioned(
+                      bottom: 5,
+                      right: 50,
+                      child: InkWell(
+                        onTap: () {
+                          showOverlay(context, "assets/Page2/15.png", 350);
+                        },
+                        child: Image.asset(
+                          "assets/Page2/15.png",
+                          width: 200,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                        bottom: 100,
+                        left: 67,
+                        child: InkWell(
+                            onTap: () {
+                              showOverlay(context, "assets/Page2/4.png", 450);
+                            },
+                            child: ScaleTransition(
+                              scale: _animation,
+                              child: Image.asset(
+                                "assets/Page2/4.png",
+                                width: 600,
+                                height: 310,
+                                fit: BoxFit.fill,
+                              ),
+                            ))),
+                    Positioned(
+                        bottom: 170,
+                        right: 110,
+                        child: ScaleTransition(
+                          scale: _animation,
+                          child: Image.asset(
+                            "assets/Page2/14.png",
+                            height: 170,
+                          ),
+                        )),
+                    Positioned(
+                        top: 170,
+                        right: 23,
+                        child: ScaleTransition(
+                          scale: _animation,
+                          child: Image.asset(
+                            "assets/Page2/9.png",
+                            height: 230,
+                          ),
+                        )),
+                    Stack(
+                      children: [
+                        Positioned(
+                          //  left: isOpen ? 25 :  30, // Adjust this value as needed
+                          left: 35,
+                          bottom: 5,
+                          child: Visibility(
+                            visible: isOpen,
+                            child: Image.asset(
+                              "assets/Page2/3.png",
+                              height: 40,
+                            ).animate().fade(begin: -5).slide(
+                                begin: Offset(-1, 0),
+                                curve: Curves.easeInOut,
+                                duration: Duration(milliseconds: 350)),
+                          ),
+                        ),
+                        Positioned(
+                          left: 20,
+                          bottom: 5,
+                          child: InkWell(
+                            onTap: () {
+                              setState(() {
+                                isOpen = !isOpen;
+                              });
+                            },
+                            child: Image.asset(
+                              "assets/menu/2.png",
+                              height: 45,
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

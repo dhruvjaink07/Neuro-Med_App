@@ -24,44 +24,49 @@ class _Page13State extends State<Page13> {
     return Scaffold(
       key: _scaffoldKey,
       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                IconButton(
-                  onPressed: () {
-                    _scaffoldKey.currentState?.openDrawer();
-                  },
-                  icon: Image.asset(
-                    "assets/menu/5.png",
-                    height: 20,
+      body: Center(
+        child: Container(
+          // width: MediaQuery.of(context).size.width,
+           height: 768,
+              width: 1024,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      _scaffoldKey.currentState?.openDrawer();
+                    },
+                    icon: Image.asset(
+                      "assets/menu/5.png",
+                      height: 20,
+                    ),
                   ),
-                ),
-                IconButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => MainPage()));
-                  },
-                  icon: Image.asset(
-                    "assets/menu/6.png",
-                    height: 25,
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => MainPage()));
+                    },
+                    icon: Image.asset(
+                      "assets/menu/6.png",
+                      height: 25,
+                    ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            Container(
-                // alignment: Alignment.center,
-                margin: const EdgeInsets.only(right: 100),
-                child: Image.asset(
-                  "assets/Page13/index.png",
-                ).animate().fade(duration: Duration(milliseconds: 1500)))
-          ],
+                ],
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Container(
+                
+                  // alignment: Alignment.center,
+                  margin: const EdgeInsets.only(right: 100),
+                  child: Image.asset(
+                    "assets/Page13/index.png",
+                  ).animate().fade(duration: Duration(milliseconds: 1500)))
+            ],
+          ),
         ),
       ),
     );

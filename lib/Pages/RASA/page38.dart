@@ -24,70 +24,74 @@ class _Page38State extends State<Page38> {
     return Scaffold(
       key: _scaffoldKey,
       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/Page38/BG.png"),
-                fit: BoxFit.contain)),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Row(children: [
-              IconButton(
-                onPressed: () {
-                  _scaffoldKey.currentState?.openDrawer();
-                },
-                icon: Image.asset(
-                  "assets/menu/5.png",
-                  height: 20,
+      body: Center(
+        child: Container(
+              height: 768,
+                width: 1024,
+          // width: MediaQuery.of(context).size.width,
+          // height: MediaQuery.of(context).size.height,
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/Page38/BG.png"),
+                  fit: BoxFit.contain)),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Row(children: [
+                IconButton(
+                  onPressed: () {
+                    _scaffoldKey.currentState?.openDrawer();
+                  },
+                  icon: Image.asset(
+                    "assets/menu/5.png",
+                    height: 20,
+                  ),
                 ),
-              ),
-              IconButton(
-                onPressed: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => MainPage()));
-                },
-                icon: Image.asset(
-                  "assets/menu/6.png",
-                  height: 25,
-                ),
-              ),
-            ]),
-            Expanded(
-              child: Stack(children: [
-                Positioned(
-                    top: 70,
-                    left: 290,
-                    child: Image.asset(
-                      "assets/Page38/Logo.png",
-                      height: 150,
-                    )
-                        .animate()
-                        .fade(duration: const Duration(milliseconds: 1500))),
-                Positioned(
-                  bottom: 80,
-                  left: 200,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        "assets/Page38/2.png",
-                        height: 300,
-                      ).animate()
-                        .fade(duration: const Duration(milliseconds: 1500)),
-                      Image.asset(
-                        "assets/Page38/3.png",
-                        height: 300,
-                      ).animate()
-                        .fade(duration: const Duration(milliseconds: 1500)),
-                    ],
+                IconButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => MainPage()));
+                  },
+                  icon: Image.asset(
+                    "assets/menu/6.png",
+                    height: 25,
                   ),
                 ),
               ]),
-            )
-          ],
+              Expanded(
+                child: Stack(children: [
+                  Positioned(
+                      top: 70,
+                      left: 290,
+                      child: Image.asset(
+                        "assets/Page38/Logo.png",
+                        height: 150,
+                      )
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500))),
+                  Positioned(
+                    bottom: 80,
+                    left: 200,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "assets/Page38/2.png",
+                          height: 300,
+                        ).animate()
+                          .fade(duration: const Duration(milliseconds: 1500)),
+                        Image.asset(
+                          "assets/Page38/3.png",
+                          height: 300,
+                        ).animate()
+                          .fade(duration: const Duration(milliseconds: 1500)),
+                      ],
+                    ),
+                  ),
+                ]),
+              )
+            ],
+          ),
         ),
       ),
     );

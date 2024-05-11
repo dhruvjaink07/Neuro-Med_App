@@ -20,42 +20,46 @@ class _Page34State extends State<Page34> {
     return Scaffold(
       key: _scaffoldKey,
       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        decoration:const BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/Page34/BG _3.png"),fit: BoxFit.contain)
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-          Row(
-              children: [
-                IconButton(
-                  onPressed: () {
-                    _scaffoldKey.currentState?.openDrawer();
-                  },
-                  icon: Image.asset(
-                    "assets/menu/5.png",
-                    height: 20,
+      body: Center(
+        child: Container(
+              height: 768,
+              width: 1024,
+          // width: MediaQuery.of(context).size.width,
+          decoration:const BoxDecoration(
+            image: DecorationImage(image: AssetImage("assets/Page34/BG _3.png"),fit: BoxFit.contain)
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+            Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      _scaffoldKey.currentState?.openDrawer();
+                    },
+                    icon: Image.asset(
+                      "assets/menu/5.png",
+                      height: 20,
+                    ),
                   ),
-                ),
-                IconButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
-                  },
-                  icon: Image.asset(
-                    "assets/menu/6.png",
-                    height: 25,
-                  ),
-                ),]),
-            Expanded(child: 
-            Center(
-              child: Container(
-                margin: EdgeInsets.only(bottom: 30),
-                child: Image.asset("assets/Page34/all mood .png").animate().scale(duration: const Duration(milliseconds: 1500))),
-            )
-            ),
-          ],
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                    },
+                    icon: Image.asset(
+                      "assets/menu/6.png",
+                      height: 25,
+                    ),
+                  ),]),
+              Expanded(child: 
+              Center(
+                child: Container(
+                  margin: EdgeInsets.only(bottom: 30),
+                  child: Image.asset("assets/Page34/all mood .png").animate().scale(duration: const Duration(milliseconds: 1500))),
+              )
+              ),
+            ],
+          ),
         ),
       ),
     );
