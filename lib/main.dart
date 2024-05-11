@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:neuro_app/Pages/main_page.dart';
+import 'package:neuro_app/StateManagement/selectedBrandModelProvider.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -9,7 +11,19 @@ void main() async{
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
 SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => SelectedBrandsModel(),
+      child: MaterialApp(
+        title: 'Your App Title',
+        home: Builder(
+          builder: (context) {
+            return MainPage();
+          },
+        ),
+      ),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

@@ -20,7 +20,7 @@ class _Page8State extends State<Page8> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
+       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height,selectedBrand: "LIOF",),
       body: Center(
         child: Container(
            height: 768,

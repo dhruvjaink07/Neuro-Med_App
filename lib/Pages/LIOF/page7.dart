@@ -1,56 +1,29 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page7 extends StatefulWidget {
-  const Page7({
-    super.key, required this.goToNextPage, required this.goToPreviousPage,
-  });
+  const Page7({super.key, required this.goToNextPage, required this.goToPreviousPage, required this.changePageIndex});
    final VoidCallback goToNextPage;
    final VoidCallback goToPreviousPage;
+     final Function(int) changePageIndex; // Callback to change page index
   @override
   State<Page7> createState() => _Page7State();
 }
 
-class _Page7State extends State<Page7> with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  final Duration _animationDuration = Duration(milliseconds: 1500);
-  final Curve _animationCurve = Curves.easeIn;
-
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-        vsync: this,
-        duration: _animationDuration,
-        animationBehavior: AnimationBehavior.preserve);
-
-    // Trigger the ease-in animation directly
-    _controller.forward();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
+class _Page7State extends State<Page7> {
+    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
+drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height, selectedBrand: 'LIOF',),
       body: Center(
         child: Container(
-           height: 768,
-              width: 1024,
+          width: 1024,
+          height: 768,
           // width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("assets/Page7/12.png"), fit: BoxFit.contain)),
+          decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page7/12.png"),fit: BoxFit.contain)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -67,8 +40,7 @@ class _Page7State extends State<Page7> with SingleTickerProviderStateMixin {
                   ),
                   IconButton(
                     onPressed: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => MainPage()));
+                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
                     },
                     icon: Image.asset(
                       "assets/menu/6.png",
@@ -78,45 +50,67 @@ class _Page7State extends State<Page7> with SingleTickerProviderStateMixin {
                 ],
               ),
               Expanded(
-                child: Stack(children: [
-                  Positioned(
-                    top: 230,
-                    left: 400,
-                    child: AnimatedBuilder(
-                      animation: _controller,
-                      builder: (context, child) {
-                        return Transform.scale(
-                          scale: _controller.value * 5,
-                          child: Image.asset(
-                            'assets/Page7/20.png', // Replace 'your_image.jpg' with your image asset path
-                            width: 200,
-                            height: 200,
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  Positioned(
-                      right: 0,
-                      bottom: 230,
+                child: Stack(
+                  children: [
+                    Positioned(child: Image.asset("assets/Page7/4.png")),
+                    Positioned(
+                      top: 40,
+                      left: 170,
                       child: InkWell(
-                          onTap: () {
-                            showOverlay(context, "assets/Page7/11.png");
-                          },
-                          child: Image.asset(
-                            "assets/Page7/10.png",
-                            height: 200,
-                          ))),
-                ]),
-              ),
+                        onTap: () {
+                         widget.changePageIndex(7);
+                          print("Test 1");
+                        },
+                        child: Image.asset("assets/Page7/2.png",height: 250,))),
+                        Positioned(
+                          left: 30,
+                          top: 200,
+                          child: Image.asset("assets/Page7/3.png",height: 150,)),
+                        Positioned(
+                          right: 143,
+                          top: 175,
+                          child: InkWell(
+                            onTap: (){
+                               widget.changePageIndex(9);
+                              print("Test 2");
+                            },
+                            child: Image.asset("assets/Page7/5.png",height: 280,))),
+                            Positioned(
+                            right: 120,
+                            bottom: 220,
+                              child: Image.asset("assets/Page7/7.png",height: 120,)),
+                              Positioned(
+                                right: 0,
+                                bottom: 300,
+                                child:InkWell(
+                                  onTap: (){
+                                    showOverlay(context, "assets/Page7/11.png");
+                                  },
+                                  child: Image.asset("assets/Page7/10.png",height: 200,))),
+                            Positioned(
+                              left: 225,
+                              bottom: 95,
+                              child: InkWell(
+                                onTap: (){
+                                   widget.changePageIndex(11);
+                                  print("Test 3");
+                                },
+                                child: Image.asset("assets/Page7/1.png",height: 240,))),
+                                Positioned(
+                                  bottom: 50,
+                                  left: 150,
+                                  child: Image.asset("assets/Page7/3.png",height: 170,))
+                  ],
+                ),
+              )
             ],
           ),
         ),
       ),
+
     );
   }
-
-  void showOverlay(BuildContext context, String overlayImagePath) {
+   void showOverlay(BuildContext context, String overlayImagePath) {
     OverlayEntry? overlayEntry;
 
     overlayEntry = OverlayEntry(
@@ -128,8 +122,7 @@ class _Page7State extends State<Page7> with SingleTickerProviderStateMixin {
           color: const Color.fromARGB(145, 0, 0, 0),
           child: Center(
             child: GestureDetector(
-              onTap:
-                  () {}, // To prevent taps on the image from closing the overlay
+              onTap: () {}, // To prevent taps on the image from closing the overlay
               child: Image(
                 image: AssetImage(overlayImagePath),
                 height: 550,

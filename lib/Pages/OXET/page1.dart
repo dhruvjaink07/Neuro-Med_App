@@ -55,7 +55,7 @@ class _Page1State extends State<Page1> with SingleTickerProviderStateMixin {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       key: _scaffoldKey,
-      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
+      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height, selectedBrand: 'OXET',),
       body: Center(
         child: Container(
            height: 768,
@@ -110,23 +110,32 @@ class _Page1State extends State<Page1> with SingleTickerProviderStateMixin {
                   Positioned(
                     bottom: 20,
                     left: 10,
-                    child: Image.asset("assets/Page1/2.png", height: 140)
-                        .animate()
-                        .fade(duration: const Duration(milliseconds: 1500)),
+                    child: InkWell(
+                      onTap: ()=>widget.changePageIndex(1),
+                      child: Image.asset("assets/Page1/2.png", height: 140)
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500)),
+                    ),
                   ),
                   Positioned(
                     bottom: 20,
                     left: 350,
-                    child: Image.asset("assets/Page1/3.png", height: 140)
-                        .animate()
-                        .fade(duration: const Duration(milliseconds: 1500)),
+                    child: InkWell(
+                      onTap: ()=>widget.changePageIndex(3),
+                      child: Image.asset("assets/Page1/3.png", height: 140)
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500)),
+                    ),
                   ),
                   Positioned(
                     bottom: 20,
                     right: 10,
-                    child: Image.asset("assets/Page1/4.png", height: 140)
-                        .animate()
-                        .fade(duration: const Duration(milliseconds: 1500)),
+                    child: InkWell(
+                      onTap: ()=>widget.changePageIndex(5),
+                      child: Image.asset("assets/Page1/4.png", height: 140)
+                          .animate()
+                          .fade(duration: const Duration(milliseconds: 1500)),
+                    ),
                   ),
                 ]),
               )

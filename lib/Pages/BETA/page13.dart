@@ -23,7 +23,7 @@ class _Page13State extends State<Page13> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
+      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height,selectedBrand: "BETA",),
       body: Center(
         child: Container(
           // width: MediaQuery.of(context).size.width,
@@ -58,13 +58,13 @@ class _Page13State extends State<Page13> {
               const SizedBox(
                 height: 50,
               ),
-              Container(
+              // Container(
                 
-                  // alignment: Alignment.center,
-                  margin: const EdgeInsets.only(right: 100),
-                  child: Image.asset(
-                    "assets/Page13/index.png",
-                  ).animate().fade(duration: Duration(milliseconds: 1500)))
+              //     // alignment: Alignment.center,
+              //     margin: const EdgeInsets.only(right: 100),
+              //     child: Image.asset(
+              //       "assets/Page13/index.png",
+              //     ).animate().fade(duration: Duration(milliseconds: 1500)))
             ],
           ),
         ),

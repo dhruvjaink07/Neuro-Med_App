@@ -19,7 +19,7 @@ class _Page31State extends State<Page31> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
+     drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height, selectedBrand: 'PANA',),
       body: Center(
         child: Container(
               height: 768,

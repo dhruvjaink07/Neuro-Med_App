@@ -19,7 +19,7 @@ class _Page59State extends State<Page59> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
+      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height,selectedBrand: "SIZO",),
       body: Center(
         child: Container(
               height: 768,
@@ -90,7 +90,7 @@ class _Page59State extends State<Page59> {
                   bottom: 80,
                   child: InkWell(
                     onTap: (){
-                      showOverlay(context,"assets/Page59/4.png",380);
+                      showOverlay(context,"assets/Page59/5.png",380);
                     },
                     child: Image.asset("assets/Page59/4.png",height: 330,))),
                   Positioned(

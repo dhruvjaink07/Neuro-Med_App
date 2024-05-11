@@ -7,9 +7,10 @@ import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page23 extends StatefulWidget {
-  const Page23({super.key, required this.goToPreviousPage, required this.goToNextPage, });
+  const Page23({super.key, required this.goToPreviousPage, required this.goToNextPage, required this.changePageIndex, });
    final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
+    final Function(int) changePageIndex;
 
   @override
   State<Page23> createState() => _Page23State();
@@ -22,7 +23,7 @@ class _Page23State extends State<Page23> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
+     drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height, selectedBrand: 'PARK',),
       body: Center(
         child: Container(
            height: 768,
@@ -30,7 +31,7 @@ class _Page23State extends State<Page23> {
           // width: MediaQuery.of(context).size.width,
           padding: EdgeInsets.all(0),
           decoration:const BoxDecoration(
-            image: DecorationImage(image: AssetImage("assets/Page23/BG .png"),fit: BoxFit.contain)
+            image: DecorationImage(image: AssetImage("assets/Page23/Bg .png"),fit: BoxFit.contain)
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -65,7 +66,7 @@ class _Page23State extends State<Page23> {
                      bottom: 180,
                      right: -8,
                      child: InkWell(
-                       onTap: (){},
+                       onTap: ()=>widget.changePageIndex(26),
                        child:Image.asset("assets/Page23/8.png",width: 430,height: 190,fit: BoxFit.fill).animate().fade(duration: const Duration(milliseconds: 1500)),
                      ),
                    ),
@@ -73,7 +74,7 @@ class _Page23State extends State<Page23> {
                     bottom: 180,
                     right: 280,
                     child: InkWell(
-                      onTap: (){},
+                      onTap: ()=>widget.changePageIndex(25),
                       child:Image.asset("assets/Page23/7.png",width: 450,height: 190,fit: BoxFit.fill).animate().fade(duration: const Duration(milliseconds: 1500)),
                     ),
                   ),
@@ -81,7 +82,7 @@ class _Page23State extends State<Page23> {
                     bottom: 180,
                     left: -15,
                     child: InkWell(
-                      onTap: (){},
+                      onTap: ()=>widget.changePageIndex(23),
                       child:Image.asset("assets/Page23/4.png",width: 430,height:190,fit: BoxFit.fill,).animate().fade(duration: const Duration(milliseconds: 1500)),
                     ),
                   ),

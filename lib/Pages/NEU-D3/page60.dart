@@ -21,7 +21,7 @@ class _Page60State extends State<Page60> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
+       drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height,selectedBrand: "NEU-D3",),
       body: Center(
         child: Container(
           // width: MediaQuery.of(context).size.width,

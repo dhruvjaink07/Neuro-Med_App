@@ -1,9 +1,7 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:neuro_app/StateManagement/selectedBrandModelProvider.dart';
 import 'package:neuro_app/controllers/oxet_page_controller.dart';
+import 'package:provider/provider.dart';
 
 int count = 0;
 
@@ -15,12 +13,10 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-    // bool oxetClicked = false; // Add a boolean flag to track Oxet image click
+
 
   List numbers = [];
-  // List<int> displayIndices = [];
     Set<int> displayIndices = Set<int>();
-     // Define a Set to track tapped images
   Set<String> tappedImages = Set<String>();
 
   //  Set<String> tappedImages = Set<String>();
@@ -31,8 +27,27 @@ class _MainPageState extends State<MainPage> {
   int currentNumber = 1; // Variable to track the current number
   int continueNumber = 1;
 
+    @override
+  void initState() {
+    super.initState();
+    // Select Oxet page by default when the page loads
+    displayIndices.addAll([0, 1, 2, 3, 4, 5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,]);
+    selectedImages['Oxet'] = 1; // Assuming 'Oxet' corresponds to number 1
+    selectedImages['Liof'] = 2;
+    selectedImages['Beta'] = 3;
+    selectedImages['Pira'] = 4;
+    selectedImages['Park'] = 5;
+
+    tappedImages.add('Oxet'); // Mark 'Oxet' as tapped
+    tappedImages.add('Liof');
+    tappedImages.add('Beta');
+    tappedImages.add('Pira');
+    tappedImages.add('Park');
+    currentNumber = 6; // Update currentNumber to the next available number
+  }
   @override
   Widget build(BuildContext context) {
+    var selectedBrands = Provider.of<SelectedBrandsModel>(context, listen: false);
     return Scaffold(
       body: GestureDetector(
         onHorizontalDragEnd: (details) {
@@ -80,11 +95,26 @@ class _MainPageState extends State<MainPage> {
                         child: InkWell(
                           onTap: () {
                             setState(() {
-                              displayIndices.clear();
+                               displayIndices.clear();
                               count = 0;
                               selectedImages.clear();
                               currentNumber =1; 
                               tappedImages.clear();
+                              //  Not To Clear even when clicked on refresh button
+                              displayIndices.addAll([0, 1, 2, 3, 4, 5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,]);
+                              selectedImages['Oxet'] = 1; // Assuming 'Oxet' corresponds to number 1
+                              selectedImages['Liof'] = 2;
+                              selectedImages['Beta'] = 3;
+                              selectedImages['Pira'] = 4;
+                              selectedImages['Park'] = 5;
+
+                              tappedImages.add('Oxet'); // Mark 'Oxet' as tapped
+                              tappedImages.add('Liof');
+                              tappedImages.add('Beta');
+                              tappedImages.add('Pira');
+                              tappedImages.add('Park');
+                              currentNumber = 6;
+                        
                             });
                           },
                           child: Image.asset(
@@ -101,6 +131,7 @@ class _MainPageState extends State<MainPage> {
                               bool oxetClicked = false;
                             // Check if the image is already tapped
                   if (!tappedImages.contains("Oxet")) {
+                    selectedBrands.addBrand("Oxet");
                               var imageName = "Oxet";
                               pages.add(imageName);
                               displayIndices.add(0);
@@ -538,13 +569,13 @@ class _MainPageState extends State<MainPage> {
                                 currentNumber++;
                                 tappedImages.add(imageName);
                               });
+                              displayIndices.add(20);
+                              displayIndices.add(21);
                               displayIndices.add(22);
                               displayIndices.add(23);
                               displayIndices.add(24);
                               displayIndices.add(25);
                               displayIndices.add(26);
-                              displayIndices.add(27);
-                              displayIndices.add(28);
                                  }
                             },
                             child: Brand(
@@ -641,8 +672,8 @@ class _MainPageState extends State<MainPage> {
                                 currentNumber++;
                                 tappedImages.add(imageName);
                               });
-                              displayIndices.add(20);
-                              displayIndices.add(21);
+                              displayIndices.add(27);
+                              displayIndices.add(28);
                                  }
                             },
                             child: Brand(

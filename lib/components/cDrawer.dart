@@ -4,8 +4,9 @@ import 'package:neuro_app/controllers/oxet_page_controller.dart';
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({
     super.key,
-    required this.screenHeight,
+    required this.screenHeight, required this.selectedBrand,
   });
+  final String selectedBrand;
 
   final double screenHeight;
  // Preload the images during initialization
@@ -73,16 +74,16 @@ class MenuDrawer extends StatelessWidget {
                 ),
               ),
               // SizedBox(height: 52,),
-              buildMenuItem("assets/menu/OXET.png", () {
+              buildMenuItem("assets/menu/OXET.png", "OXET",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [0, 1, 2, 3, 4, 5])));
+                            displayIndices: const [0, 1, 2, 3, 4, 5])),);
                   
               }),
               // SizedBox(height: 20,),
-              buildMenuItem("assets/menu/LIOF.png", () {
+              buildMenuItem("assets/menu/LIOF.png", "LIOF",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -90,7 +91,7 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [6,7,8,9,10,11])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/BETA.png", () {
+              buildMenuItem("assets/menu/BETA.png", "BETA",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -98,7 +99,7 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [12,13,14,15,16])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/PIRA.png", () {
+              buildMenuItem("assets/menu/PIRA.png", "PIRA",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -106,23 +107,23 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [17,18,19])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/PARK.png", () {
+              buildMenuItem("assets/menu/PARK.png", "PARK",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [22,23,24,25,26,27,28])));
+                            displayIndices: const [20,21,22,23,24,25,26])));
               }),
               //  SizedBox(height: 14,),
-              buildMenuItem("assets/menu/GAB-AT.png", () {
+              buildMenuItem("assets/menu/GAB-AT.png", "GAB-AT",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [20,21])));
+                            displayIndices: const [27,28])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/PANA.png", () {
+              buildMenuItem("assets/menu/PANA.png","PANA" ,() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -130,7 +131,7 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [29,30,31,32])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/PAXI.png", () {
+              buildMenuItem("assets/menu/PAXI.png", "PAXI",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -138,7 +139,7 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [33,34,35,36])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/RASA.png", () {
+              buildMenuItem("assets/menu/RASA.png","RASA", () {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -146,7 +147,7 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [37,38,39,40])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/SYNA.png", () {
+              buildMenuItem("assets/menu/SYNA.png", "SYNA",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -154,7 +155,7 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [41,42,43])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/TOPI.png", () {
+              buildMenuItem("assets/menu/TOPI.png", "TOPI",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -162,7 +163,7 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [44,45,46,47])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/VEN.png", () {
+              buildMenuItem("assets/menu/VEN.png", "VEN",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -170,7 +171,7 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [48,49])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/LAMO.png", () {
+              buildMenuItem("assets/menu/LAMO.png", "LAMO",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -178,7 +179,7 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [50])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/ZEFR.png", () {
+              buildMenuItem("assets/menu/ZEFR.png", "ZEFR",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -186,7 +187,7 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [51,52])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/ADES.png", () {
+              buildMenuItem("assets/menu/ADES.png", "ADES",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -194,7 +195,7 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [53])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/ATTE.png", () {
+              buildMenuItem("assets/menu/ATTE.png","ATTE",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -202,7 +203,7 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [54])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/IVE.png", () {
+              buildMenuItem("assets/menu/IVE.png", "IVE",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -210,7 +211,7 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [55])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/ETIR.png", () {
+              buildMenuItem("assets/menu/ETIR.png", "ETIR",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -218,7 +219,7 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [56])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/LURA.png", () {
+              buildMenuItem("assets/menu/LURA.png", "LURA",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -226,7 +227,7 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [57])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/SIZO.png", () {
+              buildMenuItem("assets/menu/SIZO.png", "SIZO",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -234,15 +235,15 @@ class MenuDrawer extends StatelessWidget {
                             displayIndices: const [58])));
               }),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/NEU-D3.png", () {
+              buildMenuItem("assets/menu/NEU-D3.png", "NEU-D3",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (context) => OxetPageControllerWidget(
                             displayIndices: const [59])));
-              }),
+              },),
               //  SizedBox(height: 18,),
-              buildMenuItem("assets/menu/CARI.png", () {
+              buildMenuItem("assets/menu/CARI.png","CARI", () {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -256,7 +257,12 @@ class MenuDrawer extends StatelessWidget {
     );
   }
 
-  Widget buildMenuItem(String assetsImage, VoidCallback onTap) {
+  Widget buildMenuItem(String assetsImage, String brandName,VoidCallback onTap, {bool isFirst5Brand = false}) {
+        bool isSelected = brandName == selectedBrand; // Check if this brand is selected
+List<String> is5Brand = ["OXET","LIOF","BETA","PIRA","PARK"];
+bool isFirst5Brand = is5Brand.contains(brandName);
+  Color itemColor = isSelected || isFirst5Brand ? Colors.white : Colors.grey;
+
     return InkWell(
       onTap: onTap,
       child: Container(
@@ -264,6 +270,7 @@ class MenuDrawer extends StatelessWidget {
         child: Image.asset(
           assetsImage,
           height: 15,
+          color: itemColor
         ),
       ),
     );

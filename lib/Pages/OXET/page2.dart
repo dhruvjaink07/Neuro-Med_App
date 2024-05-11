@@ -46,7 +46,7 @@ class _Page2State extends State<Page2> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height),
+     drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height, selectedBrand: 'OXET',),
       body: Center(
         child: Container(
           // width: MediaQuery.of(context).size.width,
