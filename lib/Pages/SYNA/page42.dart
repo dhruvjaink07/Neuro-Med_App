@@ -64,18 +64,16 @@ class _Page42State extends State<Page42> {
                             duration: const Duration(milliseconds: 1500),
                             size: 0.08)),
                           Positioned(
-                        top: 240,
-                        left: 90,
+                        top: 230,
+                        left: 80,
                         child: Image.asset(
                           "assets/Page42/text .png",
-                          height: 40,
-                          // width: 720,
-                          // fit: BoxFit.fill,
+                          height: 44,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                             Positioned(
-                              bottom: 100,
+                              bottom: 130,
                               right: 80,
                               child: Image.asset("assets/Page42/Indian Data.png",height: 180,) .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
@@ -86,7 +84,7 @@ class _Page42State extends State<Page42> {
                     onTap: (){
                       showOverlay(context,"assets/Page42/4.png",450);
                     },
-                    child: Image.asset("assets/Page42/gif.gif",width: 680,))),
+                    child: Image.asset("assets/Page42/gif.gif",width: 640,height: 330,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
             Positioned(
                       left: 35,
                       bottom: 5,

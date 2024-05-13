@@ -85,13 +85,13 @@ class _Page52State extends State<Page52> {
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                      Positioned(
-                  left: 75,
-                  bottom: 105,
+                  left: 70,
+                  bottom: 85,
                   child: InkWell(
                     onTap: (){
                       showOverlay(context,"assets/Page52/4.png");
                     },
-                    child: Image.asset("assets/Page52/gif.gif",height: 300,))),
+                    child: Image.asset("assets/Page52/gif.gif",height: 320,))),
                    Positioned(
                       left: 30,
                       bottom: 5,

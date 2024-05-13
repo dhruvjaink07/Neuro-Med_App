@@ -53,20 +53,20 @@ class _Page41State extends State<Page41> {
                   ),]),
                     Expanded(child: Stack(children: [
                        Positioned(
-                        top: 35,
-                        right: 150,
+                        top: 20,
+                        right: 125,
                         child: Image.asset(
                           "assets/Page38/Logo.png",
-                          height: 110,
+                          height: 120,
                         ).animate().shimmer(
                             duration: const Duration(milliseconds: 1500),
                             size: 0.08)),
                         Positioned(
-                        top: 240,
-                        left: 100,
+                        top: 230,
+                        left: 80,
                         child: Image.asset(
                           "assets/Page41/text .png",
-                          height: 50,
+                          height: 53,
                           // width: 720,
                           // fit: BoxFit.fill,
                         )
@@ -77,7 +77,7 @@ class _Page41State extends State<Page41> {
                         right: 20,
                         child: Image.asset(
                           "assets/Page39/once a day .png",
-                          height: 110,
+                          height: 100,
                           // width: 720,
                           // fit: BoxFit.fill,
                         )
@@ -85,18 +85,18 @@ class _Page41State extends State<Page41> {
                             .fade(duration: const Duration(milliseconds: 1500))),
                             Positioned(
                               top: 320,
-                              left: 100,
-                              child: Image.asset("assets/Page41/Strong .png",height: 70,) .animate()
+                              left: 80,
+                              child: Image.asset("assets/Page41/Strong .png",height: 77,) .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                               Positioned(
                               top: 420,
-                              left: 100,
-                              child: Image.asset("assets/Page41/Good level .png",height: 70,) .animate()
+                              left: 80,
+                              child: Image.asset("assets/Page41/Good level .png",height: 77,) .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                               Positioned(
                               top: 520,
-                              left: 100,
-                              child: Image.asset("assets/Page41/Wear.png",width: 680,) .animate()
+                              left: 80,
+                              child: Image.asset("assets/Page41/Wear.png",width: 747,) .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                            Positioned(
                       left: 35,

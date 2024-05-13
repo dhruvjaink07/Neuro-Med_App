@@ -86,7 +86,7 @@ class _Page62State extends State<Page62> {
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                              Positioned(
-                        top: 365,
+                        top: 440,
                         left: 80,
                         child: Image.asset(
                           "assets/Page62/2 2.png",
@@ -98,7 +98,7 @@ class _Page62State extends State<Page62> {
                             .fade(duration: const Duration(milliseconds: 1500))),
         
                                  Positioned(
-                        top: 420,
+                        top: 365,
                         left: 80,
                         child: Image.asset(
                           "assets/Page62/3 2.png",

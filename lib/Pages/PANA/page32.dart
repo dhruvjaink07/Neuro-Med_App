@@ -64,7 +64,7 @@ class _Page32State extends State<Page32> {
                             size: 0.08)),
                        
                          Positioned(
-                        top: 240,
+                        top: 230,
                         left: 80,
                         child: Image.asset(
                           "assets/Page32/text .png",
@@ -75,24 +75,24 @@ class _Page32State extends State<Page32> {
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                             Positioned(
-                        top: 280,
+                        top: 270,
                         left: 80,
                         child: Image.asset(
                           "assets/Page32/text 2.png",
-                          height: 15,
-                          // width: 720,
-                          // fit: BoxFit.fill,
+                          height: 17,
+                          width: 750,
+                          fit: BoxFit.fill,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                  Positioned(
                   left: 70,
-                  bottom: 60,
+                  bottom: 50,
                   child: InkWell(
                     onTap: (){
                       showOverlay(context,"assets/Page32/4.png",400);
                     },
-                    child: Image.asset("assets/Page32/gif.gif",height: 400,))),
+                    child: Image.asset("assets/Page32/gif.gif",height: 410,width: 710,filterQuality: FilterQuality.high,fit: BoxFit.fill,))),
                    Positioned(
                       left: 35,
                       bottom: 5,

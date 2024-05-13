@@ -63,34 +63,40 @@ class _Page21State extends State<Page21> {
                         right: 30,
                         child: Image.asset(
                           "assets/Page21/Logo.png",
-                          height: 70,
+                         height: 70,
                         ).animate().shimmer(
                             duration: const Duration(milliseconds: 1500),
                             size: 0.08)),
                     Positioned(
-                        top: 240,
-                        left: 90,
+                        top: 230,
+                        left: 80,
                         child: Image.asset(
                           "assets/Page21/Efficacy .png",
-                          height: 120,
+                          height: 130,
+                          width: 790,
+                          fit: BoxFit.fill,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                                   Positioned(
-                        top: 380,
-                        left: 90,
+                        top: 370,
+                        left: 80,
                         child: Image.asset(
                           "assets/Page21/Tolerability.png",
-                          height: 120,
+                           height: 130,
+                          width: 790,
+                          fit: BoxFit.fill
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                                   Positioned(
-                        bottom: 90,
-                        left: 90,
+                        bottom: 70,
+                        left: 80,
                         child: Image.asset(
                           "assets/Page21/Covenience.png",
-                          height: 120,
+                            height: 130,
+                          width: 790,
+                          fit: BoxFit.fill
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),

@@ -66,7 +66,7 @@ class _Page40State extends State<Page40> {
                         left: 200,
                         child: Image.asset(
                           "assets/Page40/text .png",
-                          height: 20,
+                          height: 21,
                           // width: 720,
                           // fit: BoxFit.fill,
                         )
@@ -77,7 +77,7 @@ class _Page40State extends State<Page40> {
                         right: 20,
                         child: Image.asset(
                           "assets/Page39/once a day .png",
-                          height: 110,
+                          height: 100,
                           // width: 720,
                           // fit: BoxFit.fill,
                         )
@@ -85,14 +85,14 @@ class _Page40State extends State<Page40> {
                             .fade(duration: const Duration(milliseconds: 1500))),
                          
                              Positioned(
-                              top: 530,
-                              left: 230,
-                              child: Image.asset("assets/Page40/87.3%.png",height: 80,).animate()
+                              top: 570,
+                              left: 200,
+                              child: Image.asset("assets/Page40/87.3%.png",height: 85,width: 650,filterQuality: FilterQuality.high,fit: BoxFit.fill,).animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                                Positioned(
                               top: 295,
-                              left: 350,
-                              child: Image.asset("assets/Page40/arrow .png",height: 250,).animate()
+                              left: 320,
+                              child: Image.asset("assets/Page40/arrow .png",height: 290,width: 380,fit: BoxFit.fill,filterQuality: FilterQuality.high,).animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                          Positioned(
                       left: 35,

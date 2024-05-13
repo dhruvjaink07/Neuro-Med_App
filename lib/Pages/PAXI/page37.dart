@@ -75,23 +75,23 @@ class _Page37State extends State<Page37> {
                             .fade(duration: const Duration(milliseconds: 1500))),
                             Positioned(
                         top: 285,
-                        left: 70,
+                        left: 80,
                         child: Image.asset(
                           "assets/Page37/text 2.png",
-                          height: 16,
-                          // width: 720,
-                          // fit: BoxFit.fill,
+                          height: 18,
+                          width: 770,
+                          fit: BoxFit.fill,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
             Positioned(
                   left: 80,
-                  bottom: 100,
+                  bottom: 80,
                   child: InkWell(
                     onTap: (){
                       showOverlay(context,"assets/Page37/4.png");
                     },
-                    child: Image.asset("assets/Page37/gif.gif",height: 300,))),
+                    child: Image.asset("assets/Page37/gif.gif",height: 310,width: 750,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
                   Positioned(
                       left: 35,
                       bottom: 5,

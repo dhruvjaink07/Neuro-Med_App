@@ -68,8 +68,8 @@ class _Page8State extends State<Page8> {
                             duration: const Duration(milliseconds: 1500),
                             size: 0.08)),
                     Positioned(
-                        top: 240,
-                        left: 100,
+                        top: 220,
+                        left: 80,
                         child: Image.asset(
                           "assets/Page8/text .png",
                           height: 25,
@@ -77,11 +77,11 @@ class _Page8State extends State<Page8> {
                           fit: BoxFit.fill,
                         ).animate().fade(duration: const Duration(milliseconds: 1500))),
                     Positioned(
-                        top: 280,
-                        left: 90,
+                        top: 260,
+                        left: 80,
                         child: Image.asset(
                           "assets/Page8/text 2.png",
-                          height: 16,
+                          height: 17,
                         ).animate().fade(duration: const Duration(milliseconds: 1500))),
                     Positioned(
                         right: 0,
@@ -103,8 +103,9 @@ class _Page8State extends State<Page8> {
                             },
                             child: Image.asset(
                               "assets/Page8/gif.gif",
-                              // width: 830,
+                              width: 830,
                               height:480,
+                              filterQuality: FilterQuality.high,
                               // fit: BoxFit.fill,
                             ))),
                     Stack(

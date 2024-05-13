@@ -83,7 +83,7 @@ class _Page25State extends State<Page25> {
                         left: 70,
                         child: InkWell(
                             onTap: () {
-                              showOverlay(context, "assets/Page25/4.png", 400);
+                              showOverlay(context, "assets/Page25/4.png", 420);
                             },
                             child: Image.asset(
                               "assets/Page25/gif.gif",
@@ -91,6 +91,14 @@ class _Page25State extends State<Page25> {
                               width: 750,
                               fit: BoxFit.fill,
                             ))),
+                            Positioned(
+                        right: 20,
+                        top: 230,
+                        child: Image.asset(
+                          "assets/Page24/Once a day .png",
+                          height: 70,
+                        ).animate().scale(
+                            duration: const Duration(milliseconds: 1200))),
                     Positioned(
                         right: 60,
                         bottom: 130,

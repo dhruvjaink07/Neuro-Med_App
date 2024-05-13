@@ -77,16 +77,16 @@ class _Page39State extends State<Page39> {
                         right: 20,
                         child: Image.asset(
                           "assets/Page39/once a day .png",
-                          height: 110,
+                          height: 100,
                           // width: 720,
                           // fit: BoxFit.fill,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                             Positioned(
-                              top: 260,
+                              top: 265,
                               left: 80,
-                              child: Image.asset("assets/Page39/Object .png",height: 380,).animate()
+                              child: Image.asset("assets/Page39/Object .png",height: 390,width: 780,fit: BoxFit.fill,filterQuality: FilterQuality.high,).animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                           Positioned(
                       left: 35,

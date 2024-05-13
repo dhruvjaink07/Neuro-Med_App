@@ -80,7 +80,7 @@ class _Page53State extends State<Page53> {
                     onTap: (){
                       showOverlay(context,"assets/Page53/4.png");
                     },
-                    child: Image.asset("assets/Page53/gif.gif",height: 330,))),
+                    child: Image.asset("assets/Page53/gif.gif",height: 335,))),
                    Positioned(
                       left: 30,
                       bottom: 5,

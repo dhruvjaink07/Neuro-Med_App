@@ -73,8 +73,8 @@ class _Page56State extends State<Page56> {
                         top: 240,
                         left: 80,
                         child: Image.asset(
-                          "assets/Page56/Text 1.png",
-                          height: 17,
+                          "assets/Page56/Text1.png",
+                          height: 18,
                           // width: 720,
                           // fit: BoxFit.fill,
                         )
@@ -84,8 +84,8 @@ class _Page56State extends State<Page56> {
                         top: 280,
                         left: 80,
                         child: Image.asset(
-                          "assets/Page56/text 2.png",
-                          height: 17,
+                          "assets/Page56/text2.png",
+                          height: 18,
                           // width: 720,
                           // fit: BoxFit.fill,
                         )

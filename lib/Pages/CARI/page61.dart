@@ -79,7 +79,7 @@ class _Page61State extends State<Page61> {
                         left: 80,
                         child: Image.asset(
                           "assets/Page61/1_1.png",
-                          height: 28,
+                          height: 30,
                           // width: 720,
                           // fit: BoxFit.fill,
                         )
@@ -90,7 +90,7 @@ class _Page61State extends State<Page61> {
                         left: 80,
                         child: Image.asset(
                           "assets/Page61/2 2.png",
-                          height: 57,
+                          height: 65,
                           // width: 720,
                           // fit: BoxFit.fill,
                         )
@@ -102,7 +102,7 @@ class _Page61State extends State<Page61> {
                         left: 80,
                         child: Image.asset(
                           "assets/Page61/3 2.png",
-                          height:28,
+                          height:30,
                           // width: 720,
                           // fit: BoxFit.fill,
                         )
@@ -114,7 +114,7 @@ class _Page61State extends State<Page61> {
                         left: 80,
                         child: Image.asset(
                           "assets/Page61/4.png",
-                          height:58,
+                          height:65,
                           // width: 720,
                           // fit: BoxFit.fill,
                         )

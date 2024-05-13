@@ -64,24 +64,24 @@ class _Page22State extends State<Page22> {
                             size: 0.08)),
         
                          Positioned(
-                        top: 240,
-                        left: 70,
+                        top: 230,
+                        left: 80,
                         child: Image.asset(
                           "assets/Page22/Text .png",
-                          // height: 25,
-                          width: 750,
+                          height: 20,
+                          width: 730,
                           fit: BoxFit.fill,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                    Positioned(
-                                bottom: 100,
+                                bottom: 50,
                                 left: 65,
                                 child: InkWell(
                                   onTap: (){
                                     showOverlay(context, "assets/Page22/4.png");
                                   },
-                                  child: Image.asset("assets/Page22/gif.gif",height: 400,))),
+                                  child: Image.asset("assets/Page22/gif.gif",height: 460,width: 830,fit: BoxFit.fill,))),
                    Positioned(
                       left: 35,
                       bottom: 5,

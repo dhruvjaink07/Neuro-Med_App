@@ -75,21 +75,21 @@ class _Page49State extends State<Page49> {
                             .fade(duration: const Duration(milliseconds: 1500))),
                             Positioned(
                               right: 20,
-                              top: 170,
+                              top: 160,
                               child: Image.asset("assets/Page49/Map .png",height: 200,) .animate()
                             .scale(duration: const Duration(milliseconds: 1500))),
                      Positioned(
                   left: 70,
-                  bottom: 140,
+                  bottom: 100,
                   child: InkWell(
                     onTap: (){
                       showOverlay(context,"assets/Page49/4.png");
                     },
-                    child: Image.asset("assets/Page49/gif.gif",width: 660,))),
+                    child: Image.asset("assets/Page49/gif.gif",height: 330,width: 700,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
                     Positioned(
-                      top: 350,
+                      top: 400,
                       right: 80,
-                      child: Image.asset("assets/Page49/Object .png",height: 170,).animate().scale(duration: const Duration(milliseconds: 1500))),
+                      child: Image.asset("assets/Page49/Object .png",height: 150,).animate().scale(duration: const Duration(milliseconds: 1500))),
                    Positioned(
                       left: 30,
                       bottom: 5,

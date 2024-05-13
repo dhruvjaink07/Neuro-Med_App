@@ -75,12 +75,12 @@ class _Page35State extends State<Page35> {
                             .fade(duration: const Duration(milliseconds: 1500))),
                      Positioned(
                   left: 80,
-                  bottom: 140,
+                  bottom: 110,
                   child: InkWell(
                     onTap: (){
                       showOverlay(context,"assets/Page35/4.png");
                     },
-                    child: Image.asset("assets/Page35/gif.gif",height: 300,))),
+                    child: Image.asset("assets/Page35/gif.gif",height: 325,width: 820,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
                    Positioned(
                       left: 35,
                       bottom: 5,

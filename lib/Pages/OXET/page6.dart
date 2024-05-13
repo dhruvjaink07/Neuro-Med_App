@@ -49,7 +49,7 @@ class _Page6State extends State<Page6> {
                       },
                       icon: Image.asset(
                         "assets/menu/5.png",
-                        height: 20,
+                        height: 10,
                       )),
                   IconButton(
                       onPressed: () {
@@ -58,7 +58,7 @@ class _Page6State extends State<Page6> {
                       },
                       icon: Image.asset(
                         "assets/menu/6.png",
-                        height: 25,
+                        height: 20,
                       ))
                 ],
               ),
@@ -67,12 +67,12 @@ class _Page6State extends State<Page6> {
                   children: [
                     Positioned(
                         top: 30,
-                        right: 80,
+                        right: 150,
                         child: Image.asset(
                           "assets/Page6/11.png",
-                          width: 450,
-                          height: 130,
-                          fit: BoxFit.fill,
+                          // width: 450,
+                          height: 110,
+                          // fit: BoxFit.fill,
                         ).animate().shimmer(
                             duration: const Duration(milliseconds: 1500),
                             size: 0.08)),

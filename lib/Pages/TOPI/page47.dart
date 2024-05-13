@@ -80,7 +80,7 @@ class _Page47State extends State<Page47> {
                     onTap: (){
                       showOverlay(context,"assets/Page47/4.png");
                     },
-                    child: Image.asset("assets/Page47/gif1.gif",width: 420,))),
+                    child: Image.asset("assets/Page47/gif1.gif",height: 300,width: 430,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
                     Positioned(
                   right: 70,
                   bottom: 160,
@@ -88,7 +88,7 @@ class _Page47State extends State<Page47> {
                     onTap: (){
                       showOverlay(context,"assets/Page47/7.png");
                     },
-                    child: Image.asset("assets/Page47/gif2.gif",width: 420,))),
+                    child: Image.asset("assets/Page47/gif2.gif",height: 300,width: 430,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
                    Positioned(
                       left: 30,
                       bottom: 5,

@@ -72,7 +72,7 @@ class _Page46State extends State<Page46> {
                         left: 180,
                         child: Image.asset(
                           "assets/Page46/Proven .png",
-                          height: 50,
+                          height: 47,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
@@ -81,13 +81,13 @@ class _Page46State extends State<Page46> {
                         left: 180,
                         child: Image.asset(
                           "assets/Page46/Novel .png",
-                          height: 50,
+                          height: 47,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                     Positioned(
                         top: 400,
-                        left: 250,
+                        left: 245,
                         child: Image.asset(
                           "assets/Page46/Recommended.png",
                           height: 20,
@@ -97,20 +97,20 @@ class _Page46State extends State<Page46> {
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                     Positioned(
-                        bottom: 180,
-                        left: 248,
+                        bottom: 190,
+                        left: 270,
                         child: Image.asset(
                           "assets/Page46/AAN.png",
-                          height: 100,
+                          height: 90,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                     Positioned(
-                        bottom: 180,
-                        right: 245,
+                        bottom: 190,
+                        right: 277,
                         child: Image.asset(
                           "assets/Page46/AHS.png",
-                          height: 100,
+                          height: 90,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),

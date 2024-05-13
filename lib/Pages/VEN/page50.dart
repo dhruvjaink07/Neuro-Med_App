@@ -30,7 +30,7 @@ class _Page50State extends State<Page50> {
           // width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("assets/Page49/BG _14.png"),
+                  image: AssetImage("assets/Page50/Bg.png"),
                   fit: BoxFit.contain)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -70,24 +70,24 @@ class _Page50State extends State<Page50> {
                             size: 0.08)),
                     Positioned(
                         top: 230,
-                        left: 100,
+                        left: 90,
                         child: Image.asset(
                           "assets/Page50/1 .png",
-                          height: 370,
+                          height: 380,
                         ).animate().scale(duration: const Duration(milliseconds: 1500))),
                          Positioned(
                         top: 230,
-                        left: 400,
+                        left: 390,
                         child: Image.asset(
                           "assets/Page50/2 2.png",
-                          height: 370,
+                          height: 380,
                         ).animate().scale(duration: const Duration(milliseconds: 1500))),
                         Positioned(
                         top: 230,
-                        right: 60,
+                        right: 70,
                         child: Image.asset(
                           "assets/Page50/3 2.png",
-                          height: 370,
+                          height: 380,
                         ).animate().scale(duration: const Duration(milliseconds: 1500))),
                     Positioned(
                       left: 30,
