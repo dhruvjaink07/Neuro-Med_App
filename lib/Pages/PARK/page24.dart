@@ -60,11 +60,13 @@ class _Page24State extends State<Page24> {
                 child: Stack(
                   children: [
                     Positioned(
-                        top: 40,
-                        right: 57,
+                        top: 35,
+                        right: 30,
                         child: Image.asset(
                           "assets/Page23/Logo.png",
-                          height: 80,
+                          height: 90,
+                          width: 470,
+                          fit: BoxFit.fill,
                         ).animate().shimmer(
                             duration: const Duration(milliseconds: 1500),
                             size: 0.08)),
@@ -82,12 +84,17 @@ class _Page24State extends State<Page24> {
                     Positioned(
                         right: 20,
                         top: 230,
-                        child: Image.asset(
-                          "assets/Page24/Once a day .png",
-                          height: 70,
-                        )
-                            .animate()
-                            .scale(duration: const Duration(milliseconds: 1200))),
+                        child: InkWell(
+                          onTap: (){
+                            showOverlay(context, "assets/Page24/popOnce.png" , 200);
+                          },
+                          child: Image.asset(
+                            "assets/Page24/Once a day .png",
+                            height: 70,
+                          )
+                              .animate()
+                              .scale(duration: const Duration(milliseconds: 1200)),
+                        )),
                     Positioned(
                         bottom: 100,
                         left: 70,

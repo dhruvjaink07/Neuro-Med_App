@@ -74,21 +74,21 @@ class _Page47State extends State<Page47> {
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                      Positioned(
-                  left: 70,
-                  bottom: 160,
+                  left: 40,
+                  bottom: 140,
                   child: InkWell(
                     onTap: (){
                       showOverlay(context,"assets/Page47/4.png");
                     },
-                    child: Image.asset("assets/Page47/gif1.gif",height: 300,width: 430,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
+                    child: Image.asset("assets/Page47/gif1.gif",height: 310,width: 480,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
                     Positioned(
                   right: 70,
-                  bottom: 160,
+                  bottom: 140,
                   child: InkWell(
                     onTap: (){
                       showOverlay(context,"assets/Page47/7.png");
                     },
-                    child: Image.asset("assets/Page47/gif2.gif",height: 300,width: 430,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
+                    child: Image.asset("assets/Page47/gif2.gif",height: 310,width: 500,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
                    Positioned(
                       left: 30,
                       bottom: 5,

@@ -27,7 +27,7 @@ class _Page10State extends State<Page10> {
            height: 768,
             width: 1024,
           // width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/Page10/bg.png"),
                   fit: BoxFit.contain)),
@@ -48,7 +48,7 @@ class _Page10State extends State<Page10> {
                   IconButton(
                     onPressed: () {
                       Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => MainPage()));
+                          MaterialPageRoute(builder: (context) => const MainPage()));
                     },
                     icon: Image.asset(
                       "assets/menu/6.png",
@@ -60,29 +60,31 @@ class _Page10State extends State<Page10> {
               Expanded(
                 child: Stack(
                   children: [
-                    Positioned(
-                        top: 28,
+                   Positioned(
+                        top: 20,
                         right: 150,
                         child: Image.asset(
                           "assets/Page10/Logo.png",
-                          width: 330,
+                          width: 370,
+                          height: 120,
+                          fit: BoxFit.fill,
                         ).animate().shimmer(
                             duration: const Duration(milliseconds: 1500),
                             size: 0.08)),
                     Positioned(
                         top: 240,
-                        left: 100,
+                        left: 80,
                         child: Image.asset(
                           "assets/Page10/text .png",
-                          height: 20,
-                          width: 680,
+                          height:20,
+                          width: 810,
                           fit: BoxFit.fill,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                     Positioned(
                         top: 350,
-                        right: 140,
+                        right: 120,
                         child: Image.asset(
                           "assets/Page10/remarkable .png",
                           width: 250,
@@ -99,18 +101,20 @@ class _Page10State extends State<Page10> {
                             child: Image.asset(
                               "assets/Page10/10.png",
                               height: 170,
-                              width: 80,
+                              width: 60,
                             ))),
                     Positioned(
-                      left: 90,
-                      top: 290,
+                      left: 50,
+                      top: 280,
                       child: InkWell(
                         onTap: (){
                           showOverlay(context, "assets/Page10/4.png", 550);
                         },
                         child: Image.asset(
                           "assets/Page10/gif.gif",
-                          height: 330,
+                          height: 360,
+                          width: 640,
+                          fit: BoxFit.fill,
                         ),
                       ),
                     ),
@@ -126,9 +130,9 @@ class _Page10State extends State<Page10> {
                               "assets/Page10/3.png",
                               height: 40,
                             ).animate().fade(begin: -5).slide(
-                                begin: Offset(-1, 0),
+                                begin: const Offset(-1, 0),
                                 curve: Curves.easeInOut,
-                                duration: Duration(milliseconds: 350)),
+                                duration: const Duration(milliseconds: 350)),
                           ),
                         ),
                         Positioned(

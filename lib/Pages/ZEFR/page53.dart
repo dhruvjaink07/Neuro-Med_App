@@ -68,19 +68,19 @@ class _Page53State extends State<Page53> {
                         child: Image.asset(
                           "assets/Page53/Text .png",
                           height: 21,
-                          // width: 720,
-                          // fit: BoxFit.fill,
+                          width: 850,
+                          fit: BoxFit.fill,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                      Positioned(
                   left: 75,
-                  bottom: 105,
+                  bottom: 75,
                   child: InkWell(
                     onTap: (){
                       showOverlay(context,"assets/Page53/4.png");
                     },
-                    child: Image.asset("assets/Page53/gif.gif",height: 335,))),
+                    child: Image.asset("assets/Page53/gif.gif",height: 460,width: 830,fit: BoxFit.fill,))),
                    Positioned(
                       left: 30,
                       bottom: 5,

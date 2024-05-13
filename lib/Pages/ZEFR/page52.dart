@@ -86,12 +86,12 @@ class _Page52State extends State<Page52> {
                             .fade(duration: const Duration(milliseconds: 1500))),
                      Positioned(
                   left: 70,
-                  bottom: 85,
+                  bottom: 40,
                   child: InkWell(
                     onTap: (){
                       showOverlay(context,"assets/Page52/4.png");
                     },
-                    child: Image.asset("assets/Page52/gif.gif",height: 320,))),
+                    child: Image.asset("assets/Page52/gif.gif",height:390,width: 840,fit: BoxFit.fill,))),
                    Positioned(
                       left: 30,
                       bottom: 5,

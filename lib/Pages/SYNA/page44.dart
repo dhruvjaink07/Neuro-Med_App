@@ -80,19 +80,19 @@ class _Page44State extends State<Page44> {
                         child: Image.asset(
                           "assets/Page44/text 2.png",
                           height: 16,
-                          // width: 720,
-                          // fit: BoxFit.fill,
+                          width: 750,
+                          fit: BoxFit.fill,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                      Positioned(
-                  left: 70,
+                  left: 30,
                   bottom: 120,
                   child: InkWell(
                     onTap: (){
                       showOverlay(context,"assets/Page44/4.png",450);
                     },
-                    child: Image.asset("assets/Page44/gif1.gif",height: 300,))),
+                    child: Image.asset("assets/Page44/gif1.gif",height: 300,width: 500,fit: BoxFit.fill,))),
                     Positioned(
                   right: 70,
                   bottom: 120,
@@ -100,7 +100,7 @@ class _Page44State extends State<Page44> {
                     onTap: (){
                       showOverlay(context,"assets/Page44/7.png",450);
                     },
-                    child: Image.asset("assets/Page44/gif2.gif",height: 300,))),
+                    child: Image.asset("assets/Page44/gif2.gif",height: 300,width: 500,fit: BoxFit.fill,))),
                    Positioned(
                       left: 35,
                       bottom: 5,

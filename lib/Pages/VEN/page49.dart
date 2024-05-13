@@ -80,12 +80,12 @@ class _Page49State extends State<Page49> {
                             .scale(duration: const Duration(milliseconds: 1500))),
                      Positioned(
                   left: 70,
-                  bottom: 100,
+                  bottom: 80,
                   child: InkWell(
                     onTap: (){
                       showOverlay(context,"assets/Page49/4.png");
                     },
-                    child: Image.asset("assets/Page49/gif.gif",height: 330,width: 700,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
+                    child: Image.asset("assets/Page49/gif.gif",height: 400,width: 700,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
                     Positioned(
                       top: 400,
                       right: 80,

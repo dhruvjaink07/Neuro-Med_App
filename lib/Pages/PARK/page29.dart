@@ -54,31 +54,33 @@ class _Page29State extends State<Page29> {
                   ),]),
               Expanded(child: Stack(
                 children: [
-                   Positioned(
-                        top: 40,
-                        right: 57,
+                    Positioned(
+                        top: 35,
+                        right: 30,
                         child: Image.asset(
                           "assets/Page23/Logo.png",
-                          height: 80,
+                          height: 90,
+                          width: 470,
+                          fit: BoxFit.fill,
                         ).animate().shimmer(
                             duration: const Duration(milliseconds: 1500),
                             size: 0.08)),
                    Positioned(
                                 bottom: 90,
-                                left: 90,
+                                left: 120,
                                 child: InkWell(
                                   onTap: (){
                                     showOverlay(context, "assets/Page29/8.png",650);
                                   },
-                                  child: Image.asset("assets/Page29/4.png",height: 400,width: 500,fit: BoxFit.fill,))),
+                                  child: Image.asset("assets/Page29/4.png",height: 400,width: 450,fit: BoxFit.fill,))),
                                   Positioned(
-                                bottom:100,
-                                left:500,
+                                bottom:95,
+                                left:360,
                                 child: InkWell(
                                   onTap: (){
                                     showOverlay(context, "assets/Page29/9.png",650);
                                   },
-                                  child: Image.asset("assets/Page29/gif.gif",height: 400,width: 500,fit: BoxFit.fill,))),
+                                  child: Image.asset("assets/Page29/gif.gif",height: 400,width: 700,fit: BoxFit.fill,))),
                     Positioned(
                       left: 35,
                       bottom: 5,

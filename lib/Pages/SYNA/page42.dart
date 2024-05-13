@@ -73,18 +73,18 @@ class _Page42State extends State<Page42> {
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                             Positioned(
-                              bottom: 130,
-                              right: 80,
-                              child: Image.asset("assets/Page42/Indian Data.png",height: 180,) .animate()
+                              bottom: 120,
+                              right: 60,
+                              child: Image.asset("assets/Page42/Indian Data.png",height: 160,) .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                      Positioned(
                   left: 80,
-                  bottom: 100,
+                  bottom: 80,
                   child: InkWell(
                     onTap: (){
                       showOverlay(context,"assets/Page42/4.png",450);
                     },
-                    child: Image.asset("assets/Page42/gif.gif",width: 640,height: 330,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
+                    child: Image.asset("assets/Page42/gif.gif",width: 630,height: 360,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
             Positioned(
                       left: 35,
                       bottom: 5,
@@ -123,7 +123,7 @@ class _Page42State extends State<Page42> {
                         },
                         child: Image.asset(
                           "assets/Page42/logo2.png",
-                          width: 170,
+                          width: 150,
                         ),
                       ),
                     ),

@@ -67,20 +67,20 @@ class _Page20State extends State<Page20> {
                         left: 80,
                         child: Image.asset(
                           "assets/Page20/Text .png",
-                          // height: 25,
-                          width: 750,
+                          height: 20,
+                          width: 700,
                           fit: BoxFit.fill,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                    Positioned(
-                                bottom: 100,
+                                bottom: 30,
                                 left: 70,
                                 child: InkWell(
                                   onTap: (){
                                     showOverlay(context, "assets/Page20/4.png");
                                   },
-                                  child: Image.asset("assets/Page20/gif.gif",height: 350,width: 800,fit: BoxFit.fill,))),
+                                  child: Image.asset("assets/Page20/gif.gif",height: 450,width: 800,fit: BoxFit.fill,))),
                    Positioned(
                                      left: isOpen ? 20 :  10, // Adjust this value as needed
                                      bottom: 5,
@@ -131,8 +131,8 @@ class _Page20State extends State<Page20> {
               child: Image(
                 image: AssetImage(overlayImagePath),
                 height: 430,
-                width: 800,
-                fit: BoxFit.fill,
+                // width: 800,
+                // fit: BoxFit.fill,
               ),
             ),
           ),

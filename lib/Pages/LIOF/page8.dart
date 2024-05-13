@@ -59,7 +59,7 @@ class _Page8State extends State<Page8> {
                 child: Stack(
                   children: [
                     Positioned(
-                        top: 28,
+                        top: 20,
                         right: 190,
                         child: Image.asset(
                           "assets/Page8/Logo.png",
@@ -77,25 +77,28 @@ class _Page8State extends State<Page8> {
                           fit: BoxFit.fill,
                         ).animate().fade(duration: const Duration(milliseconds: 1500))),
                     Positioned(
-                        top: 260,
+                        top: 265,
                         left: 80,
                         child: Image.asset(
                           "assets/Page8/text 2.png",
                           height: 17,
+                          width: 810,
+                          fit: BoxFit.fill,
                         ).animate().fade(duration: const Duration(milliseconds: 1500))),
                     Positioned(
                         right: 0,
-                        bottom: 200,
+                        bottom: 230,
                         child: InkWell(
                             onTap: () {
-                              showOverlay(context, "assets/Page8/11.png", 450,800);
+                              showOverlay(context, "assets/Page8/11.png", 350,800);
                             },
                             child: Image.asset(
                               "assets/Page8/10.png",
-                              height: 200,
+                              // height: 200,
+                              width: 70,
                             ).animate().animate().fade(duration: const Duration(milliseconds: 1500)))),
                     Positioned(
-                        bottom: 10,
+                        bottom: 5,
                         left: 70,
                         child: InkWell(
                             onTap: () {
@@ -103,15 +106,14 @@ class _Page8State extends State<Page8> {
                             },
                             child: Image.asset(
                               "assets/Page8/gif.gif",
-                              width: 830,
-                              height:480,
+                              width: 860,
+                              height:490,
                               filterQuality: FilterQuality.high,
-                              // fit: BoxFit.fill,
+                              fit: BoxFit.fill,
                             ))),
                     Stack(
                       children: [
                         Positioned(
-                          //  left: isOpen ? 25 :  30, // Adjust this value as needed
                           left: 35,
                           bottom: 5,
                           child: Visibility(
@@ -152,7 +154,7 @@ class _Page8State extends State<Page8> {
                         },
                         child: Image.asset(
                           "assets/Page8/Small logo .png",
-                          width: 170,
+                          width: 150,
                         ),
                       ),
                     ),

@@ -58,12 +58,14 @@ class _Page25State extends State<Page25> {
               Expanded(
                 child: Stack(
                   children: [
-                    Positioned(
-                        top: 40,
-                        right: 57,
+                     Positioned(
+                        top: 35,
+                        right: 30,
                         child: Image.asset(
                           "assets/Page23/Logo.png",
-                          height: 80,
+                          height: 90,
+                          width: 470,
+                          fit: BoxFit.fill,
                         ).animate().shimmer(
                             duration: const Duration(milliseconds: 1500),
                             size: 0.08)),
@@ -79,26 +81,32 @@ class _Page25State extends State<Page25> {
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                     Positioned(
-                        bottom: 100,
-                        left: 70,
+                        bottom: 55,
+                        left: 60,
                         child: InkWell(
                             onTap: () {
                               showOverlay(context, "assets/Page25/4.png", 420);
                             },
                             child: Image.asset(
                               "assets/Page25/gif.gif",
-                              height: 350,
+                              height: 420,
                               width: 750,
                               fit: BoxFit.fill,
                             ))),
-                            Positioned(
+                        Positioned(
                         right: 20,
-                        top: 230,
-                        child: Image.asset(
-                          "assets/Page24/Once a day .png",
-                          height: 70,
-                        ).animate().scale(
-                            duration: const Duration(milliseconds: 1200))),
+                        top: 210,
+                        child: InkWell(
+                          onTap: (){
+                            showOverlay(context, "assets/Page24/popOnce.png" , 200);
+                          },
+                          child: Image.asset(
+                            "assets/Page24/Once a day .png",
+                            height: 70,
+                          )
+                              .animate()
+                              .scale(duration: const Duration(milliseconds: 1200)),
+                        )),
                     Positioned(
                         right: 60,
                         bottom: 130,

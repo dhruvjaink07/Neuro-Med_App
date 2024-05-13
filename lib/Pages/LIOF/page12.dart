@@ -61,7 +61,7 @@ class _Page12State extends State<Page12> {
                 child: Stack(
                   children: [
                     Positioned(
-                        top: 28,
+                        top: 20,
                         right: 150,
                         child: Image.asset(
                           "assets/Page12/Logo.png",

@@ -64,42 +64,50 @@ class _Page27State extends State<Page27> {
                 child: Stack(
                   children: [
                     Positioned(
-                        top: 40,
-                        right: 57,
+                        top: 35,
+                        right: 30,
                         child: Image.asset(
                           "assets/Page23/Logo.png",
-                          height: 80,
+                          height: 90,
+                          width: 470,
+                          fit: BoxFit.fill,
                         ).animate().shimmer(
                             duration: const Duration(milliseconds: 1500),
                             size: 0.08)),
                     Positioned(
                         top: 240,
-                        left: 70,
+                        left: 80,
                         child: Image.asset(
                           "assets/Page27/Text .png",
                           height: 20,
-                          // width: 720,
-                          // fit: BoxFit.fill,
+                          width: 530,
+                          fit: BoxFit.fill,
                         ).animate().fade(
                             duration: const Duration(milliseconds: 1500))),
                     Positioned(
                         top: 280,
-                        left: 70,
+                        left: 80,
                         child: Image.asset(
                           "assets/Page27/text 2.png",
-                          height: 19,
-                          // width: 720,
-                          // fit: BoxFit.fill,
+                          height: 16,
+                          width: 500,
+                          fit: BoxFit.fill,
                         ).animate().fade(
                             duration: const Duration(milliseconds: 1500))),
-                    Positioned(
+            Positioned(
                         right: 20,
                         top: 230,
-                        child: Image.asset(
-                          "assets/Page24/Once a day .png",
-                          height: 70,
-                        ).animate().scale(
-                            duration: const Duration(milliseconds: 1500))),
+                        child: InkWell(
+                          onTap: (){
+                            showOverlay(context, "assets/Page24/popOnce.png" , 200);
+                          },
+                          child: Image.asset(
+                            "assets/Page24/Once a day .png",
+                            height: 70,
+                          )
+                              .animate()
+                              .scale(duration: const Duration(milliseconds: 1200)),
+                        )),
                     Positioned(
                         right: 60,
                         bottom: 130,
@@ -109,14 +117,14 @@ class _Page27State extends State<Page27> {
                         ).animate().fade(
                             duration: const Duration(milliseconds: 1500))),
                     Positioned(
-                        bottom: 80,
+                        bottom: 30,
                         left: 70,
                         child: InkWell(
                             onTap: () {
                               showOverlay(context, "assets/Page27/4.png", 400);
                             },
                             child: Image.asset("assets/Page27/gif.gif",
-                                height: 330))),
+                                height: 400,width: 730,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
                     Positioned(
                       left: 35,
                       bottom: 5,
@@ -155,7 +163,7 @@ class _Page27State extends State<Page27> {
                         },
                         child: Image.asset(
                           "assets/Page24/Small.png",
-                          width: 170,
+                          width: 150,
                         ),
                       ),
                     ),

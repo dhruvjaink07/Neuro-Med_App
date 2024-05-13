@@ -20,10 +20,9 @@ class _Page7State extends State<Page7> {
 drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height, selectedBrand: 'LIOF',),
       body: Center(
         child: Container(
-          width: 1024,
-          height: 768,
-          // width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page7/12.png"),fit: BoxFit.contain)),
+        width: 1024,
+        height: 768,
+          decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page7/111.png"),fit: BoxFit.contain)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -52,7 +51,6 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height, selectedBra
               Expanded(
                 child: Stack(
                   children: [
-                    Positioned(child: Image.asset("assets/Page7/4.png")),
                     Positioned(
                       top: 40,
                       left: 170,
@@ -63,8 +61,8 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height, selectedBra
                         },
                         child: Image.asset("assets/Page7/2.png",height: 250,))),
                         Positioned(
-                          left: 30,
-                          top: 200,
+                          left: 29,
+                          top: 170,
                           child: Image.asset("assets/Page7/3.png",height: 150,)),
                         Positioned(
                           right: 143,
@@ -74,19 +72,19 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height, selectedBra
                                widget.changePageIndex(9);
                               print("Test 2");
                             },
-                            child: Image.asset("assets/Page7/5.png",height: 280,))),
+                            child: Image.asset("assets/Page7/4.png",height: 280,))),
                             Positioned(
-                            right: 120,
-                            bottom: 220,
+                            right: 110,
+                            bottom: 260,
                               child: Image.asset("assets/Page7/7.png",height: 120,)),
                               Positioned(
                                 right: 0,
-                                bottom: 300,
+                                bottom: 200,
                                 child:InkWell(
                                   onTap: (){
                                     showOverlay(context, "assets/Page7/11.png");
                                   },
-                                  child: Image.asset("assets/Page7/10.png",height: 200,))),
+                                  child: Image.asset("assets/Page7/10.png",width: 70,))),
                             Positioned(
                               left: 225,
                               bottom: 95,
@@ -95,11 +93,11 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height, selectedBra
                                    widget.changePageIndex(11);
                                   print("Test 3");
                                 },
-                                child: Image.asset("assets/Page7/1.png",height: 240,))),
+                                child: Image.asset("assets/Page7/8.png",height: 240,))),
                                 Positioned(
                                   bottom: 50,
                                   left: 150,
-                                  child: Image.asset("assets/Page7/3.png",height: 170,))
+                                  child: Image.asset("assets/Page7/9.png",height: 170,))
                   ],
                 ),
               )

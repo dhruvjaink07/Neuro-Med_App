@@ -58,35 +58,42 @@ class _Page26State extends State<Page26> {
               Expanded(
                 child: Stack(
                   children: [
-                    Positioned(
-                        top: 40,
-                        right: 57,
+                     Positioned(
+                        top: 35,
+                        right: 30,
                         child: Image.asset(
                           "assets/Page23/Logo.png",
-                          height: 80,
+                          height: 90,
+                          width: 470,
+                          fit: BoxFit.fill,
                         ).animate().shimmer(
                             duration: const Duration(milliseconds: 1500),
                             size: 0.08)),
                     Positioned(
-                        top: 240,
+                        top: 230,
                         left: 70,
                         child: Image.asset(
                           "assets/Page26/Text .png",
                           // height: 20,
-                          width: 720,
-                          // fit: BoxFit.fill,
+                          width: 650,
+                          fit: BoxFit.fill,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
-                    Positioned(
+                     Positioned(
                         right: 20,
-                        top: 230,
-                        child: Image.asset(
-                          "assets/Page24/Once a day .png",
-                          height: 70,
-                        )
-                            .animate()
-                            .scale(duration: const Duration(milliseconds: 1200))),
+                        top: 210,
+                        child: InkWell(
+                          onTap: (){
+                            showOverlay(context, "assets/Page24/popOnce.png" , 200);
+                          },
+                          child: Image.asset(
+                            "assets/Page24/Once a day .png",
+                            height: 70,
+                          )
+                              .animate()
+                              .scale(duration: const Duration(milliseconds: 1200)),
+                        )),
                     Positioned(
                         right: 60,
                         bottom: 130,
@@ -97,7 +104,7 @@ class _Page26State extends State<Page26> {
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                     Positioned(
-                        bottom: 100,
+                        bottom: 40,
                         left: 60,
                         child: InkWell(
                             onTap: () {
@@ -105,8 +112,8 @@ class _Page26State extends State<Page26> {
                             },
                             child: Image.asset(
                               "assets/Page26/gif.gif",
-                              height: 330,
-                              width: 750,
+                              height: 430,
+                              width: 730,
                               fit: BoxFit.fill,
                             ))),
                     Positioned(

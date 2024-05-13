@@ -63,7 +63,7 @@ class _Page37State extends State<Page37> {
                             duration: const Duration(milliseconds: 1500),
                             size: 0.08)),
                         Positioned(
-                        top: 240,
+                        top: 230,
                         left: 80,
                         child: Image.asset(
                           "assets/Page37/text .png",
@@ -74,7 +74,7 @@ class _Page37State extends State<Page37> {
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                             Positioned(
-                        top: 285,
+                        top: 275,
                         left: 80,
                         child: Image.asset(
                           "assets/Page37/text 2.png",
@@ -86,12 +86,12 @@ class _Page37State extends State<Page37> {
                             .fade(duration: const Duration(milliseconds: 1500))),
             Positioned(
                   left: 80,
-                  bottom: 80,
+                  bottom: 20,
                   child: InkWell(
                     onTap: (){
                       showOverlay(context,"assets/Page37/4.png");
                     },
-                    child: Image.asset("assets/Page37/gif.gif",height: 310,width: 750,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
+                    child: Image.asset("assets/Page37/gif1.gif",height: 450,width: 750,fit: BoxFit.fill,filterQuality: FilterQuality.high,))),
                   Positioned(
                       left: 35,
                       bottom: 5,

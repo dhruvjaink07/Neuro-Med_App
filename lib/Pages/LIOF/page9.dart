@@ -60,7 +60,7 @@ class _Page9State extends State<Page9> {
                 child: Stack(
                   children: [
                     Positioned(
-                        top: 28,
+                        top: 20,
                         right: 190,
                         child: Image.asset(
                           "assets/Page9/Logo.png",
@@ -73,8 +73,8 @@ class _Page9State extends State<Page9> {
                         left: 100,
                         child: Image.asset(
                           "assets/Page9/text .png",
-                          height: 25,
-                          width: 650,
+                          height: 20,
+                          // width: 650,
                           fit: BoxFit.fill,
                         )
                             .animate()
@@ -83,22 +83,26 @@ class _Page9State extends State<Page9> {
                         top: 280,
                         left: 90,
                         child: Image.asset(
-                          "assets/Page8/text 2.png",
-                          height: 16,
+                          "assets/Page9/text 2.png",
+                          height: 18,
+                          width: 850,
+                          fit: BoxFit.fill,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                     Positioned(
                         right: 0,
-                        bottom: 200,
+                        bottom: 230,
                         child: InkWell(
                             onTap: () {
                               showOverlay(context, "assets/Page9/11.png",550);
                             },
                             child: Image.asset(
                               "assets/Page9/10.png",
-                              height: 200,
+                              // height: 200,
+                              width: 70 ,
                             ))),
+
                     Positioned(
                       left: 40,
                       top: 310,
@@ -109,12 +113,14 @@ class _Page9State extends State<Page9> {
                             child: Image.asset(
                               "assets/Page9/gif1.gif",
                               height: 300,
+                              width: 520,
+                              fit: BoxFit.fill,
                             ),
                           ),
                     ),
                     Positioned(
                       
-                           right: 30,
+                           right: 50,
                       top: 313,child: 
                     InkWell(
                       onTap: (){
@@ -123,6 +129,8 @@ class _Page9State extends State<Page9> {
                       child: Image.asset(
                               "assets/Page9/gif2.gif",
                               height: 300,
+                              width: 520,
+                              fit: BoxFit.fill,
                             ),
                     )),
                     Stack(

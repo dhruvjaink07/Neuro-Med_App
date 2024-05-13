@@ -54,16 +54,18 @@ class _Page28State extends State<Page28> {
               Expanded(child: Stack(
                 children: [
                    Positioned(
-                        top: 40,
-                        right: 57,
+                        top: 35,
+                        right: 30,
                         child: Image.asset(
                           "assets/Page23/Logo.png",
-                          height: 80,
+                          height: 90,
+                          width: 470,
+                          fit: BoxFit.fill,
                         ).animate().shimmer(
                             duration: const Duration(milliseconds: 1500),
                             size: 0.08)),
                           Positioned(
-                        top: 240,
+                        top: 230,
                         left: 70,
                         child: Image.asset(
                           "assets/Page28/Text.png",
@@ -74,33 +76,38 @@ class _Page28State extends State<Page28> {
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
                             Positioned(
-                        top: 280,
+                        top: 270,
                         left: 70,
                         child: Image.asset(
                           "assets/Page28/Text 2 .png",
-                          height: 15,
-                          // width: 720,
-                          // fit: BoxFit.fill,
+                          height: 18,
+                          width: 720,
+                          fit: BoxFit.fill,
                         )
                             .animate()
                             .fade(duration: const Duration(milliseconds: 1500))),
-                              Positioned(
+                            Positioned(
                         right: 20,
-                        top: 230,
-                        child: Image.asset(
-                          "assets/Page24/Once a day .png",
-                          height: 70,
-                        )
-                            .animate()
-                            .scale(duration: const Duration(milliseconds: 1200))),
+                        top: 210,
+                        child: InkWell(
+                          onTap: (){
+                            showOverlay(context, "assets/Page24/popOnce.png" , 200);
+                          },
+                          child: Image.asset(
+                            "assets/Page24/Once a day .png",
+                            height: 70,
+                          )
+                              .animate()
+                              .scale(duration: const Duration(milliseconds: 1200)),
+                        )),
                    Positioned(
-                                bottom: 90,
-                                left: 70,
+                                bottom: 30,
+                                left: 60,
                                 child: InkWell(
                                   onTap: (){
                                     showOverlay(context, "assets/Page28/4.png",400);
                                   },
-                                  child: Image.asset("assets/Page28/gif.gif",height: 330,width: 750,fit: BoxFit.fill,))),
+                                  child: Image.asset("assets/Page28/gif.gif",height: 430,width: 750,fit: BoxFit.fill,))),
                                   Positioned(
                         right: 60,
                         bottom: 130,

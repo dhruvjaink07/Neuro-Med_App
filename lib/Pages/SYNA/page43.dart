@@ -80,14 +80,17 @@ class _Page43State extends State<Page43> {
                             .fade(duration: const Duration(milliseconds: 1500))),
                     Positioned(
                         left: 70,
-                        bottom: 120,
+                        bottom: 70,
                         child: InkWell(
                             onTap: () {
                               showOverlay(context, "assets/Page43/4.png", 380);
                             },
                             child: Image.asset(
                               "assets/Page43/gif.gif",
-                              height: 350,
+                              height: 450,
+                              width: 810,
+                              fit: BoxFit.fill,
+                                 
                             ))),
                     Positioned(
                       left: 35,
@@ -127,7 +130,7 @@ class _Page43State extends State<Page43> {
                         },
                         child: Image.asset(
                           "assets/Page42/logo2.png",
-                          width: 170,
+                          width: 150,
                         ),
                       ),
                     ),

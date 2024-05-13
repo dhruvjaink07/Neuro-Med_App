@@ -109,7 +109,7 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
     }
   }
 
-  void changePageIndex(int index) {
+void changePageIndex(int index) {
     if (index >= 0 && index < widget.displayIndices.length) {
       _pageController.animateToPage(
         widget.displayIndices[index],
@@ -121,7 +121,6 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
       print('Error: Invalid index provided for page navigation.');
     }
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -196,7 +195,7 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
             case 12:
               return Page13(
                 goToPreviousPage: goToPreviousPage,
-                goToNextPage: goToNextPage,
+                goToNextPage: goToNextPage, changePageIndex: changePageIndex,
               );
 
             case 13:
@@ -229,11 +228,13 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
               return Page20(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-           
+
             case 20:
               return Page23(
-                  goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage, changePageIndex: changePageIndex,);
+                goToPreviousPage: goToPreviousPage,
+                goToNextPage: goToNextPage,
+                changePageIndex: changePageIndex,
+              );
             case 21:
               return Page24(
                   goToPreviousPage: goToPreviousPage,
@@ -258,7 +259,7 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
               return Page29(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                   case 27:
+            case 27:
               return Page21(
                 goToPreviousPage: goToPreviousPage,
                 goToNextPage: goToNextPage,
@@ -299,103 +300,103 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
               return Page37(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                    case 37:
+            case 37:
               return Page38(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-  case 38:
+            case 38:
               return Page39(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                    case 39:
+            case 39:
               return Page40(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                    case 40:
+            case 40:
               return Page41(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                  case 41:
+            case 41:
               return Page42(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                  case 42:
+            case 42:
               return Page43(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                  case 43:
+            case 43:
               return Page44(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                   case 44:
+            case 44:
               return Page45(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);  
-                     case 45:
+                  goToNextPage: goToNextPage);
+            case 45:
               return Page46(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                     case 46:
+            case 46:
               return Page47(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                     case 47:
+            case 47:
               return Page48(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                     case 48:
+            case 48:
               return Page49(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                     case 49:
+            case 49:
               return Page50(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                            case 50:
+            case 50:
               return Page51(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                            case 51:
+            case 51:
               return Page52(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                            case 52:
+            case 52:
               return Page53(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                  case 53:
+            case 53:
               return Page54(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                  case 54:
+            case 54:
               return Page55(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                  case 55:
+            case 55:
               return Page56(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                   case 56:
+            case 56:
               return Page57(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                   case 57:
+            case 57:
               return Page58(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                   case 58:
+            case 58:
               return Page59(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                  case 59:
+            case 59:
               return Page60(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                  case 60:
+            case 60:
               return Page61(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);
-                  case 61:
+            case 61:
               return Page62(
                   goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage);

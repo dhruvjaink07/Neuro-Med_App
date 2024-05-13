@@ -27,7 +27,7 @@ class _Page11State extends State<Page11> {
            height: 768,
               width: 1024,
           // width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
+          decoration:const  BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/Page11/bg.png"),
                   fit: BoxFit.contain)),
@@ -61,17 +61,19 @@ class _Page11State extends State<Page11> {
                 child: Stack(
                   children: [
                     Positioned(
-                        top: 28,
-                        right: 150,
+                        top: 20,
+                        right: 160,
                         child: Image.asset(
                           "assets/Page11/Logo.png",
-                          width: 330,
+                          width: 350,
+                          height: 120,
+                          fit: BoxFit.fill,
                         ).animate().shimmer(
                             duration: const Duration(milliseconds: 1500),
                             size: 0.08)),
                     Positioned(
                         top: 240,
-                        left: 100,
+                        left: 70,
                         child: Image.asset(
                           "assets/Page11/Text .png",
                           height: 20,
@@ -82,14 +84,14 @@ class _Page11State extends State<Page11> {
                             .fade(duration: const Duration(milliseconds: 1500))),
                     Positioned(
                         right: 0,
-                        bottom: 200,
+                        bottom: 220,
                         child: InkWell(
                             onTap: () {
                               showOverlay(context, "assets/Page11/11.png", 550);
                             },
                             child: Image.asset(
                               "assets/Page11/10.png",
-                              height: 190,
+                              height: 180,
                               width: 70,
                             ))),
                     Positioned(
@@ -99,18 +101,15 @@ class _Page11State extends State<Page11> {
                           onTap: () {
                             showOverlay(context, "assets/Page11/4.png", 550);
                           },
-                          child: Image.asset("assets/Page11/4.png")),
-                      height: 300,
-                    ),
+                          child: Image.asset("assets/Page11/4.png",height: 315,width: 480,fit: BoxFit.fill)),                    ),
                     Positioned(
                       top: 280,
-                      right: 120,
+                      right: 105,
                       child: InkWell(
                           onTap: () {
                             showOverlay(context, "assets/Page11/7.png", 550);
                           },
-                          child: Image.asset("assets/Page11/7.png")),
-                      height: 300,
+                          child: Image.asset("assets/Page11/7.png",height: 320,width: 350,fit: BoxFit.fill,)),
                     ),
                     Stack(
                       children: [
