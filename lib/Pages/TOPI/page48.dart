@@ -5,10 +5,14 @@ import 'package:neuro_app/components/cDrawer.dart';
 
 class Page48 extends StatefulWidget {
   const Page48({
-    super.key, required this.goToPreviousPage, required this.goToNextPage,
+    super.key,
+    required this.goToPreviousPage,
+    required this.goToNextPage,
+    required this.changePageIndex,
   });
-   final VoidCallback goToPreviousPage;
-    final VoidCallback goToNextPage;
+  final VoidCallback goToPreviousPage;
+  final VoidCallback goToNextPage;
+  final Function(int) changePageIndex; // Callback to change page index
 
   @override
   State<Page48> createState() => _Page48State();
@@ -21,11 +25,14 @@ class _Page48State extends State<Page48> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-     drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height,selectedBrand: "TOPI",),
+      drawer: MenuDrawer(
+        screenHeight: MediaQuery.of(context).size.height,
+        selectedBrand: "TOPI",
+      ),
       body: Center(
         child: Container(
-              height: 768,
-              width: 1024,
+          height: 768,
+          width: 1024,
           // width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
               image: DecorationImage(
@@ -46,8 +53,10 @@ class _Page48State extends State<Page48> {
                 ),
                 IconButton(
                   onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => const MainPage()));
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MainPage()));
                   },
                   icon: Image.asset(
                     "assets/menu/6.png",
@@ -61,29 +70,33 @@ class _Page48State extends State<Page48> {
                     Positioned(
                         top: 30,
                         right: 40,
-                        child: Image.asset(
-                          "assets/Page46/Logo.png",
-                          height: 110,
-                        ).animate().shimmer(
-                            duration: const Duration(milliseconds: 1500),
-                            size: 0.08)),
+                        child: InkWell(
+                          onTap: () {
+                            widget.changePageIndex(44);
+                          },
+                          child: Image.asset(
+                            "assets/Page46/Logo.png",
+                            height: 110,
+                          ).animate().shimmer(
+                              duration: const Duration(milliseconds: 1500),
+                              size: 0.08),
+                        )),
                     Positioned(
                         top: 240,
                         left: 230,
                         child: Image.asset(
                           "assets/Page48/Monotherapy.png",
                           height: 400,
-                        )
-                            .animate()
-                            .scale(duration: const Duration(milliseconds: 1500))),
+                        ).animate().scale(
+                            duration: const Duration(milliseconds: 1500))),
                     Positioned(
                         top: 240,
                         right: 230,
                         child: Image.asset(
                           "assets/Page48/AS an add on .png",
                           height: 400,
-                        ) .animate()
-                            .scale(duration: const Duration(milliseconds: 1500))),
+                        ).animate().scale(
+                            duration: const Duration(milliseconds: 1500))),
                     Positioned(
                       left: 30,
                       bottom: 5,

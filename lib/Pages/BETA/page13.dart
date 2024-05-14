@@ -6,7 +6,7 @@ class Page13 extends StatefulWidget {
   const Page13({super.key, required this.goToNextPage, required this.goToPreviousPage, required this.changePageIndex,});
   final VoidCallback goToNextPage;
    final VoidCallback goToPreviousPage;
-     final Function(int) changePageIndex; // C
+     final Function(int) changePageIndex; // Change Page Index
   @override
   State<Page13> createState() => _Page13State();
 }

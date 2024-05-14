@@ -5,9 +5,11 @@ import 'package:neuro_app/components/cDrawer.dart';
 
 class Page2 extends StatefulWidget {
   const Page2(
-      {super.key, required this.goToPreviousPage, required this.goToNextPage,  });
+      {super.key, required this.goToPreviousPage, required this.goToNextPage, required this.changePageIndex,  });
   final VoidCallback goToPreviousPage;
   final VoidCallback goToNextPage;
+    final Function(int) changePageIndex; // Callback to change page index
+
   @override
   State<Page2> createState() => _Page2State();
 }
@@ -86,12 +88,17 @@ class _Page2State extends State<Page2> with SingleTickerProviderStateMixin {
                     Positioned(
                         top: 47,
                         right: 100,
-                        child: Image.asset(
-                          "assets/Page2/12.png",
-                        height: 100,
-                        ).animate().shimmer(
-                            duration: const Duration(milliseconds: 1500),
-                            size: 0.08)),
+                        child: InkWell(
+                          onTap: (){
+                            widget.changePageIndex(0);
+                          },
+                          child: Image.asset(
+                            "assets/Page2/12.png",
+                          height: 100,
+                          ).animate().shimmer(
+                              duration: const Duration(milliseconds: 1500),
+                              size: 0.08),
+                        )),
                     Positioned(
                       bottom: 5,
                       right: 50,

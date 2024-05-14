@@ -5,11 +5,11 @@ import 'package:neuro_app/components/cDrawer.dart';
 
 class Page26 extends StatefulWidget {
   const Page26({
-    super.key, required this.goToPreviousPage, required this.goToNextPage, 
+    super.key, required this.goToPreviousPage, required this.goToNextPage, required this.changePageIndex, 
   });
    final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
-
+  final Function(int) changePageIndex;
   @override
   State<Page26> createState() => _Page26State();
 }
@@ -61,14 +61,19 @@ class _Page26State extends State<Page26> {
                      Positioned(
                         top: 35,
                         right: 30,
-                        child: Image.asset(
-                          "assets/Page23/Logo.png",
-                          height: 90,
-                          width: 470,
-                          fit: BoxFit.fill,
-                        ).animate().shimmer(
-                            duration: const Duration(milliseconds: 1500),
-                            size: 0.08)),
+                        child: InkWell(
+                          onTap: (){
+                            widget.changePageIndex(20);
+                          },
+                          child: Image.asset(
+                            "assets/Page23/Logo.png",
+                            height: 90,
+                            width: 470,
+                            fit: BoxFit.fill,
+                          ).animate().shimmer(
+                              duration: const Duration(milliseconds: 1500),
+                              size: 0.08),
+                        )),
                     Positioned(
                         top: 230,
                         left: 70,

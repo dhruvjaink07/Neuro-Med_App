@@ -87,18 +87,18 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
     super.dispose();
   }
 
-void goToNextPage() {
-  if (_currentPageIndex < widget.displayIndices.length - 1) {
-    _currentPageIndex++;
-    _pageController.animateToPage(
-      widget.displayIndices[_currentPageIndex],
-      duration: const Duration(milliseconds: 100),
-      curve: Curves.easeInOut,
-    );
-  } else {
-    print('Warning: Already at the last page.');
+  void goToNextPage() {
+    if (_currentPageIndex < widget.displayIndices.length - 1) {
+      _currentPageIndex++;
+      _pageController.animateToPage(
+        widget.displayIndices[_currentPageIndex],
+        duration: const Duration(milliseconds: 100),
+        curve: Curves.easeInOut,
+      );
+    } else {
+      print('Warning: Already at the last page.');
+    }
   }
-}
 
   void goToPreviousPage() {
     if (_currentPageIndex > 0) {
@@ -111,27 +111,28 @@ void goToNextPage() {
     }
   }
 
-void changePageIndex(int newPageIndex) {
-  int? pageIndex = calculatePageIndex(newPageIndex);
-  if (pageIndex != null && pageIndex != _currentPageIndex) {
-    _pageController.animateToPage(
-      pageIndex,
-      duration: const Duration(milliseconds: 100),
-      curve: Curves.easeInOut,
-    );
-    _currentPageIndex = pageIndex; // Update the current index
-  } else {
-    print('Warning: Page not found for navigation or already at the same page.');
+  void changePageIndex(int newPageIndex) {
+    int? pageIndex = calculatePageIndex(newPageIndex);
+    if (pageIndex != null && pageIndex != _currentPageIndex) {
+      _pageController.animateToPage(
+        pageIndex,
+        duration: const Duration(milliseconds: 100),
+        curve: Curves.easeInOut,
+      );
+      _currentPageIndex = pageIndex; // Update the current index
+    } else {
+      print(
+          'Warning: Page not found for navigation or already at the same page.');
+    }
   }
-}
 
-int? calculatePageIndex(int newPageIndex) {
-  int pageIndex = widget.displayIndices.indexOf(newPageIndex);
-  if (pageIndex != -1) {
-    return pageIndex;
+  int? calculatePageIndex(int newPageIndex) {
+    int pageIndex = widget.displayIndices.indexOf(newPageIndex);
+    if (pageIndex != -1) {
+      return pageIndex;
+    }
+    return null;
   }
-  return null;
-}
 
   @override
   Widget build(BuildContext context) {
@@ -145,7 +146,8 @@ int? calculatePageIndex(int newPageIndex) {
           });
         },
         itemBuilder: (context, index) {
-        final pageIndex = widget.displayIndices[index % widget.displayIndices.length];
+          final pageIndex =
+              widget.displayIndices[index % widget.displayIndices.length];
           switch (pageIndex) {
             case 0:
               return Page1(
@@ -156,26 +158,31 @@ int? calculatePageIndex(int newPageIndex) {
               return Page2(
                 goToPreviousPage: goToPreviousPage,
                 goToNextPage: goToNextPage,
+                changePageIndex: changePageIndex,
               );
             case 2:
               return Page3(
                 goToPreviousPage: goToPreviousPage,
                 goToNextPage: goToNextPage,
+                changePageIndex: changePageIndex,
               );
             case 3:
               return Page4(
                 goToPreviousPage: goToPreviousPage,
                 goToNextPage: goToNextPage,
+                changePageIndex: changePageIndex,
               );
             case 4:
               return Page5(
                 goToPreviousPage: goToPreviousPage,
                 goToNextPage: goToNextPage,
+                changePageIndex: changePageIndex,
               );
             case 5:
               return Page6(
                 goToPreviousPage: goToPreviousPage,
                 goToNextPage: goToNextPage,
+                changePageIndex: changePageIndex,
               );
             case 6:
               return Page7(
@@ -187,46 +194,57 @@ int? calculatePageIndex(int newPageIndex) {
               return Page8(
                 goToPreviousPage: goToPreviousPage,
                 goToNextPage: goToNextPage,
+                changePageIndex: changePageIndex,
               );
             case 8:
               return Page9(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,
+                  );
             case 9:
               return Page10(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 10:
               return Page11(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 11:
               return Page12(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 12:
               return Page13(
                 goToPreviousPage: goToPreviousPage,
-                goToNextPage: goToNextPage, changePageIndex: changePageIndex,
+                goToNextPage: goToNextPage,
+                changePageIndex: changePageIndex,
               );
 
             case 13:
               return Page14(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 14:
               return Page15(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 15:
               return Page16(
                 goToPreviousPage: goToPreviousPage,
                 goToNextPage: goToNextPage,
+                changePageIndex: changePageIndex,
               );
             case 16:
               return Page17(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 17:
               return Page18(
                   goToPreviousPage: goToPreviousPage,
@@ -250,27 +268,33 @@ int? calculatePageIndex(int newPageIndex) {
             case 21:
               return Page24(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 22:
               return Page25(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 23:
               return Page26(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 24:
               return Page27(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 25:
               return Page28(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 26:
               return Page29(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 27:
               return Page21(
                 goToPreviousPage: goToPreviousPage,
@@ -298,38 +322,46 @@ int? calculatePageIndex(int newPageIndex) {
                   goToNextPage: goToNextPage);
             case 33:
               return Page34(
-                  goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage,
-                  changePageIndex: changePageIndex,);
+                goToPreviousPage: goToPreviousPage,
+                goToNextPage: goToNextPage,
+                changePageIndex: changePageIndex,
+              );
             case 34:
               return Page35(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 35:
               return Page36(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 36:
               return Page37(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
-            case 37:
-              return Page38(
-                  goToPreviousPage: goToPreviousPage,
                   goToNextPage: goToNextPage,
                   changePageIndex: changePageIndex,);
+            case 37:
+              return Page38(
+                goToPreviousPage: goToPreviousPage,
+                goToNextPage: goToNextPage,
+                changePageIndex: changePageIndex,
+              );
             case 38:
               return Page39(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 39:
               return Page40(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 40:
               return Page41(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 41:
               return Page42(
                   goToPreviousPage: goToPreviousPage,
@@ -344,21 +376,25 @@ int? calculatePageIndex(int newPageIndex) {
                   goToNextPage: goToNextPage);
             case 44:
               return Page45(
-                  goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage,
-                  changePageIndex: changePageIndex,);
+                goToPreviousPage: goToPreviousPage,
+                goToNextPage: goToNextPage,
+                changePageIndex: changePageIndex,
+              );
             case 45:
               return Page46(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 46:
               return Page47(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 47:
               return Page48(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 48:
               return Page49(
                   goToPreviousPage: goToPreviousPage,

@@ -7,10 +7,11 @@ class Page27 extends StatefulWidget {
   const Page27({
     super.key,
     required this.goToPreviousPage,
-    required this.goToNextPage,
+    required this.goToNextPage, required this.changePageIndex,
   });
   final VoidCallback goToPreviousPage;
   final VoidCallback goToNextPage;
+    final Function(int) changePageIndex;
 
   @override
   State<Page27> createState() => _Page27State();
@@ -66,14 +67,19 @@ class _Page27State extends State<Page27> {
                     Positioned(
                         top: 35,
                         right: 30,
-                        child: Image.asset(
-                          "assets/Page23/Logo.png",
-                          height: 90,
-                          width: 470,
-                          fit: BoxFit.fill,
-                        ).animate().shimmer(
-                            duration: const Duration(milliseconds: 1500),
-                            size: 0.08)),
+                        child: InkWell(
+                          onTap: (){
+                            widget.changePageIndex(20);
+                          },
+                          child: Image.asset(
+                            "assets/Page23/Logo.png",
+                            height: 90,
+                            width: 470,
+                            fit: BoxFit.fill,
+                          ).animate().shimmer(
+                              duration: const Duration(milliseconds: 1500),
+                              size: 0.08),
+                        )),
                     Positioned(
                         top: 240,
                         left: 80,

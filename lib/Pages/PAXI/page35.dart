@@ -4,9 +4,10 @@ import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
 
 class Page35 extends StatefulWidget {
-  const Page35({super.key, required this.goToPreviousPage, required this.goToNextPage,});
+  const Page35({super.key, required this.goToPreviousPage, required this.goToNextPage, required this.changePageIndex,});
    final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
+     final Function(int) changePageIndex; // Callback to change page index
 
   @override
   State<Page35> createState() => _Page35State();
@@ -56,12 +57,17 @@ class _Page35State extends State<Page35> {
                   Positioned(
                         top: 40,
                         right: 30,
-                        child: Image.asset(
-                          "assets/Page35/Logo.png",
-                          height: 80,
-                        ).animate().shimmer(
-                            duration: const Duration(milliseconds: 1500),
-                            size: 0.08)),
+                        child: InkWell(
+                          onTap: (){
+                            widget.changePageIndex(33);
+                          },
+                          child: Image.asset(
+                            "assets/Page35/Logo.png",
+                            height: 80,
+                          ).animate().shimmer(
+                              duration: const Duration(milliseconds: 1500),
+                              size: 0.08),
+                        )),
                          Positioned(
                         top: 240,
                         left: 80,
