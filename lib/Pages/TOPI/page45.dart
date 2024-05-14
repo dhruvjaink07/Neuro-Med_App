@@ -5,10 +5,12 @@ import 'package:neuro_app/components/cDrawer.dart';
 
 class Page45 extends StatefulWidget {
   const Page45({
-    super.key, required this.goToPreviousPage, required this.goToNextPage,
+    super.key, required this.goToPreviousPage, required this.goToNextPage, required this.changePageIndex,
   });
    final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
+      final Function(int) changePageIndex; // Callback to change page index
+
 
   @override
   State<Page45> createState() => _Page45State();
@@ -60,24 +62,39 @@ class _Page45State extends State<Page45> {
                     Positioned(
                         top: 260,
                         left: 150,
-                        child: Image.asset(
-                          "assets/Page45/2.png",
-                          height: 350,
-                        )
-                            .animate()
-                            .scale(duration: const Duration(milliseconds: 1500))),
+                        child: InkWell(
+                          onTap: (){
+                            widget.changePageIndex(45);
+                          },
+                          child: Image.asset(
+                            "assets/Page45/2.png",
+                            height: 350,
+                          )
+                              .animate()
+                              .scale(duration: const Duration(milliseconds: 1500)),
+                        )),
                     Positioned(
                         top: 260,
                         left: 400,
-                        child: Image.asset("assets/Page45/3.png", height: 350)
-                            .animate()
-                            .scale(duration: const Duration(milliseconds: 1500))),
+                        child: InkWell(
+                          onTap: (){
+                            widget.changePageIndex(46);
+                          },
+                          child: Image.asset("assets/Page45/3.png", height: 350)
+                              .animate()
+                              .scale(duration: const Duration(milliseconds: 1500)),
+                        )),
                     Positioned(
                         top: 260,
                         left: 650,
-                        child: Image.asset("assets/Page45/4.png", height: 305)
-                            .animate()
-                            .scale(duration: const Duration(milliseconds: 1500)))
+                        child: InkWell(
+                          onTap: (){
+                            widget.changePageIndex(47);
+                          },
+                          child: Image.asset("assets/Page45/4.png", height: 305)
+                              .animate()
+                              .scale(duration: const Duration(milliseconds: 1500)),
+                        ))
                   ],
                 ),
               ),

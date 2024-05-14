@@ -5,10 +5,12 @@ import 'package:neuro_app/components/cDrawer.dart';
 
 class Page38 extends StatefulWidget {
   const Page38({
-    super.key, required this.goToPreviousPage, required this.goToNextPage,
+    super.key, required this.goToPreviousPage, required this.goToNextPage, required this.changePageIndex,
   });
    final VoidCallback goToPreviousPage;
     final VoidCallback goToNextPage;
+      final Function(int) changePageIndex; // Callback to change page index
+
 
   @override
   State<Page38> createState() => _Page38State();
@@ -73,16 +75,26 @@ class _Page38State extends State<Page38> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          "assets/Page38/2.png",
-                          height: 300,
-                        ).animate()
-                          .fade(duration: const Duration(milliseconds: 1500)),
-                        Image.asset(
-                          "assets/Page38/3.png",
-                          height: 300,
-                        ).animate()
-                          .fade(duration: const Duration(milliseconds: 1500)),
+                        InkWell(
+                          onTap: (){
+                            widget.changePageIndex(38);
+                          },
+                          child: Image.asset(
+                            "assets/Page38/2.png",
+                            height: 300,
+                          ).animate()
+                            .fade(duration: const Duration(milliseconds: 1500)),
+                        ),
+                        InkWell(
+                          onTap: (){
+                            widget.changePageIndex(40);
+                          },
+                          child: Image.asset(
+                            "assets/Page38/3.png",
+                            height: 300,
+                          ).animate()
+                            .fade(duration: const Duration(milliseconds: 1500)),
+                        ),
                       ],
                     ),
                   ),

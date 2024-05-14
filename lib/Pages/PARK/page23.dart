@@ -80,7 +80,7 @@ class _Page23State extends State<Page23> {
                     bottom: 180,
                     left: -15,
                     child: InkWell(
-                      onTap: ()=>widget.changePageIndex(23),
+                      onTap: ()=>widget.changePageIndex(24),
                       child:Image.asset("assets/Page23/4.png",width: 430,height:190,fit: BoxFit.fill,).animate().fade(duration: const Duration(milliseconds: 1500)),
                     ),
                   ),

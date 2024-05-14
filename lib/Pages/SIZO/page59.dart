@@ -90,7 +90,7 @@ class _Page59State extends State<Page59> {
                   bottom: 80,
                   child: InkWell(
                     onTap: (){
-                      showOverlay(context,"assets/Page59/5.png",380);
+                      showOverlay(context,"assets/Page59/5.png",500);
                     },
                     child: Image.asset("assets/Page59/4.png",height: 330,))),
                   Positioned(

@@ -87,16 +87,18 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
     super.dispose();
   }
 
-  void goToNextPage() {
-    if (_currentPageIndex < widget.displayIndices.length - 1) {
-      _currentPageIndex++;
-      _pageController.animateToPage(
-        widget.displayIndices[_currentPageIndex],
-        duration: const Duration(milliseconds: 100),
-        curve: Curves.easeInOut,
-      );
-    }
+void goToNextPage() {
+  if (_currentPageIndex < widget.displayIndices.length - 1) {
+    _currentPageIndex++;
+    _pageController.animateToPage(
+      widget.displayIndices[_currentPageIndex],
+      duration: const Duration(milliseconds: 100),
+      curve: Curves.easeInOut,
+    );
+  } else {
+    print('Warning: Already at the last page.');
   }
+}
 
   void goToPreviousPage() {
     if (_currentPageIndex > 0) {
@@ -109,18 +111,28 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
     }
   }
 
-void changePageIndex(int index) {
-    if (index >= 0 && index < widget.displayIndices.length) {
-      _pageController.animateToPage(
-        widget.displayIndices[index],
-        duration: const Duration(milliseconds: 100),
-        curve: Curves.easeInOut,
-      );
-    } else {
-      // Handle out-of-range index error here
-      print('Error: Invalid index provided for page navigation.');
-    }
+void changePageIndex(int newPageIndex) {
+  int? pageIndex = calculatePageIndex(newPageIndex);
+  if (pageIndex != null && pageIndex != _currentPageIndex) {
+    _pageController.animateToPage(
+      pageIndex,
+      duration: const Duration(milliseconds: 100),
+      curve: Curves.easeInOut,
+    );
+    _currentPageIndex = pageIndex; // Update the current index
+  } else {
+    print('Warning: Page not found for navigation or already at the same page.');
   }
+}
+
+int? calculatePageIndex(int newPageIndex) {
+  int pageIndex = widget.displayIndices.indexOf(newPageIndex);
+  if (pageIndex != -1) {
+    return pageIndex;
+  }
+  return null;
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -133,7 +145,7 @@ void changePageIndex(int index) {
           });
         },
         itemBuilder: (context, index) {
-          final pageIndex = widget.displayIndices[index];
+        final pageIndex = widget.displayIndices[index % widget.displayIndices.length];
           switch (pageIndex) {
             case 0:
               return Page1(
@@ -287,7 +299,8 @@ void changePageIndex(int index) {
             case 33:
               return Page34(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 34:
               return Page35(
                   goToPreviousPage: goToPreviousPage,
@@ -303,7 +316,8 @@ void changePageIndex(int index) {
             case 37:
               return Page38(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 38:
               return Page39(
                   goToPreviousPage: goToPreviousPage,
@@ -331,7 +345,8 @@ void changePageIndex(int index) {
             case 44:
               return Page45(
                   goToPreviousPage: goToPreviousPage,
-                  goToNextPage: goToNextPage);
+                  goToNextPage: goToNextPage,
+                  changePageIndex: changePageIndex,);
             case 45:
               return Page46(
                   goToPreviousPage: goToPreviousPage,
