@@ -250,7 +250,7 @@ Set<String> tappedImages = Set<String>();
                             },
                             child: Brand(
                                 assetName: "assets/MainPage/ETIR.png",
-                                imageName: "Etr",
+                                imageName: "Etir",
                                 selectedImages: selectedImages,
                                 ))),
                     // LIOF
