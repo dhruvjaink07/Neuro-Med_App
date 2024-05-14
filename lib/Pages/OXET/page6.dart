@@ -183,6 +183,6 @@ class _Page6State extends State<Page6> {
         ),
       ),
     );
-    Overlay.of(context)!.insert(overlayEntry);
+    Overlay.of(context).insert(overlayEntry);
   }
 }

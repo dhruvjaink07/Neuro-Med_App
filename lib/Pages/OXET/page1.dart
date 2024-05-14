@@ -20,7 +20,6 @@ class Page1 extends StatefulWidget {
 class _Page1State extends State<Page1> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   final Duration _animationDuration = const Duration(seconds: 1);
-  final Curve _animationCurve = Curves.easeIn;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

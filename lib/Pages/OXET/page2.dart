@@ -210,6 +210,6 @@ class _Page2State extends State<Page2> with SingleTickerProviderStateMixin {
         ),
       ),
     );
-    Overlay.of(context)!.insert(overlayEntry);
+    Overlay.of(context).insert(overlayEntry);
   }
 }

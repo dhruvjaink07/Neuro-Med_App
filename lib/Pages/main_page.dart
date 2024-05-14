@@ -661,7 +661,6 @@ class _MainPageState extends State<MainPage> {
                         left: 460,
                         child: InkWell(
                             onTap: () {
-                              bool oxetClicked = false;
                                   if (!tappedImages.contains("Gab-At")) {
                               print("21");
                                     var imageName = "Gab-At";

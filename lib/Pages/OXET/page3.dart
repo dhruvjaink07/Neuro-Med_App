@@ -186,7 +186,7 @@ class _Page3State extends State<Page3> with SingleTickerProviderStateMixin{
         ),
       ),
     );
-    Overlay.of(context)!.insert(overlayEntry);
+    Overlay.of(context).insert(overlayEntry);
   }
 }
 
