@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:neuro_app/StateManagement/selectedBrandModelProvider.dart';
 import 'package:neuro_app/controllers/oxet_page_controller.dart';
-import 'package:provider/provider.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
+
 
 int count = 0;
 
@@ -13,11 +15,16 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-
+  late Box tappedImagesBox;
+// Clear tappedImages data in Hive
+void clearTappedImages() {
+  Box tappedImagesBox = Hive.box('tappedImages');
+  tappedImagesBox.delete('tappedImages');
+}
 
   List numbers = [];
     Set<int> displayIndices = Set<int>();
-  Set<String> tappedImages = Set<String>();
+Set<String> tappedImages = Set<String>();
 
   //  Set<String> tappedImages = Set<String>();
   Set<String> pages = Set<String>();
@@ -30,6 +37,8 @@ class _MainPageState extends State<MainPage> {
     @override
   void initState() {
     super.initState();
+     // Open the Hive box for tappedImages
+    tappedImagesBox = Hive.box('tappedImages');
     // Select Oxet page by default when the page loads
     displayIndices.addAll([0, 1, 2, 3, 4, 5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,]);
     selectedImages['Oxet'] = 1; // Assuming 'Oxet' corresponds to number 1
@@ -47,16 +56,19 @@ class _MainPageState extends State<MainPage> {
   }
   @override
   Widget build(BuildContext context) {
-    var selectedBrands = Provider.of<SelectedBrandsModel>(context, listen: false);
+// clearTappedImages();
     return Scaffold(
       body: GestureDetector(
         onHorizontalDragEnd: (details) {
           if (details.primaryVelocity != null) {
             if (details.primaryVelocity! < 0) {
+              debugPrint("$tappedImages");
               // Swiped Right
               setState(() {
                 count = 0;
               });
+               // User right swiped, store tappedImages in Hive
+            tappedImagesBox.put('tappedImages', tappedImages.toList());
               if(displayIndices.isNotEmpty){
               Navigator.pushReplacement(
                   context,
@@ -130,7 +142,7 @@ class _MainPageState extends State<MainPage> {
                             onTap: () {
                             // Check if the image is already tapped
                   if (!tappedImages.contains("Oxet")) {
-                    selectedBrands.addBrand("Oxet");
+                    // selectedBrands.addBrand("Oxet");
                               var imageName = "Oxet";
                               pages.add(imageName);
                               displayIndices.add(0);
