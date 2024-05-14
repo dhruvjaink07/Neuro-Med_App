@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
@@ -50,7 +48,7 @@ class _Page38State extends State<Page38> {
                 IconButton(
                   onPressed: () {
                     Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => MainPage()));
+                        MaterialPageRoute(builder: (context) => const MainPage()));
                   },
                   icon: Image.asset(
                     "assets/menu/6.png",
@@ -106,7 +104,7 @@ class _Page38State extends State<Page38> {
           overlayEntry!.remove();
         },
         child: Material(
-          color: Color.fromARGB(196, 0, 0, 0),
+          color: const Color.fromARGB(196, 0, 0, 0),
           child: Center(
             child: GestureDetector(
               onTap:

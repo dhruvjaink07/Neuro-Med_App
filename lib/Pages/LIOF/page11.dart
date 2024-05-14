@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
@@ -48,7 +47,7 @@ class _Page11State extends State<Page11> {
                   IconButton(
                     onPressed: () {
                       Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => MainPage()));
+                          MaterialPageRoute(builder: (context) => const MainPage()));
                     },
                     icon: Image.asset(
                       "assets/menu/6.png",
@@ -123,9 +122,9 @@ class _Page11State extends State<Page11> {
                               "assets/Page11/3.png",
                               height: 40,
                             ).animate().fade(begin: -15).slide(
-                                begin: Offset(-1, 0),
+                                begin: const Offset(-1, 0),
                                 curve: Curves.easeInOut,
-                                duration: Duration(milliseconds: 300)),
+                                duration: const Duration(milliseconds: 300)),
                           ),
                         ),
                         Positioned(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
@@ -23,7 +22,7 @@ class _Page3State extends State<Page3> with SingleTickerProviderStateMixin{
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1500), // Adjust the duration as needed
+      duration: const Duration(milliseconds: 1500), // Adjust the duration as needed
     );
 
     _animation = Tween<double>(
@@ -68,7 +67,7 @@ class _Page3State extends State<Page3> with SingleTickerProviderStateMixin{
                       )),
                   IconButton(
                       onPressed: () {
-                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const MainPage()));
                       },
                       icon: Image.asset(
                         "assets/menu/6.png",
@@ -99,10 +98,10 @@ class _Page3State extends State<Page3> with SingleTickerProviderStateMixin{
                             height: 230,
                           ),
                         )),
-                        Positioned(top:266,left:185,child: Image.asset("assets/Page3/7.png",height: 50,width: 600,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 1500))),
-                        Positioned(top: 360,left: 330,child: Image.asset("assets/Page3/8.png",height: 50,width: 500,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 1500))),
-                        Positioned(top: 455,left: 327,child: Image.asset("assets/Page3/9.png",height: 50,width: 500,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds: 1500),)),
-                        Positioned(top: 548,left: 185,child: Image.asset("assets/Page3/10.png",height: 50,width: 600,fit: BoxFit.fill,).animate().fade(duration: Duration(milliseconds:1500))),
+                        Positioned(top:266,left:185,child: Image.asset("assets/Page3/7.png",height: 50,width: 600,fit: BoxFit.fill,).animate().fade(duration: const Duration(milliseconds: 1500))),
+                        Positioned(top: 360,left: 330,child: Image.asset("assets/Page3/8.png",height: 50,width: 500,fit: BoxFit.fill,).animate().fade(duration: const Duration(milliseconds: 1500))),
+                        Positioned(top: 455,left: 327,child: Image.asset("assets/Page3/9.png",height: 50,width: 500,fit: BoxFit.fill,).animate().fade(duration: const Duration(milliseconds: 1500),)),
+                        Positioned(top: 548,left: 185,child: Image.asset("assets/Page3/10.png",height: 50,width: 600,fit: BoxFit.fill,).animate().fade(duration: const Duration(milliseconds:1500))),
                     Positioned(
                       left: 70,
                       bottom: 130,
@@ -119,9 +118,9 @@ class _Page3State extends State<Page3> with SingleTickerProviderStateMixin{
                               "assets/Page3/3.png",
                               height: 40,
                             ).animate().fade(begin: -5).slide(
-                                begin: Offset(-1, 0),
+                                begin: const Offset(-1, 0),
                                 curve: Curves.easeInOut,
-                                duration: Duration(milliseconds: 350)),
+                                duration: const Duration(milliseconds: 350)),
                           ),
                         ),
                      Positioned(

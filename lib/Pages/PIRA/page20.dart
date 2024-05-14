@@ -44,7 +44,7 @@ class _Page20State extends State<Page20> {
                   ),
                   IconButton(
                     onPressed: () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const MainPage()));
                     },
                     icon: Image.asset(
                       "assets/menu/6.png",
@@ -124,7 +124,7 @@ class _Page20State extends State<Page20> {
           overlayEntry!.remove();
         },
         child: Material(
-          color: Color.fromARGB(196, 0, 0, 0),
+          color: const Color.fromARGB(196, 0, 0, 0),
           child: Center(
             child: GestureDetector(
               onTap: () {}, // To prevent taps on the image from closing the overlay

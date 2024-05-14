@@ -18,7 +18,7 @@ SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
         title: 'Your App Title',
         home: Builder(
           builder: (context) {
-            return MainPage();
+            return const MainPage();
           },
         ),
       ),

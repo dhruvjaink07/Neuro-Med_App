@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
@@ -10,10 +8,10 @@ class Page1 extends StatefulWidget {
   final Function(int) changePageIndex; // Callback to change page index
 
   const Page1({
-    Key? key,
+    super.key,
     required this.goToNextPage,
     required this.changePageIndex,
-  }) : super(key: key);
+  });
 
   @override
   State<Page1> createState() => _Page1State();
@@ -21,7 +19,7 @@ class Page1 extends StatefulWidget {
 
 class _Page1State extends State<Page1> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  final Duration _animationDuration = Duration(seconds: 1);
+  final Duration _animationDuration = const Duration(seconds: 1);
   final Curve _animationCurve = Curves.easeIn;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -83,7 +81,7 @@ class _Page1State extends State<Page1> with SingleTickerProviderStateMixin {
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => MainPage()),
+                        MaterialPageRoute(builder: (context) => const MainPage()),
                       );
                     },
                     icon: Image.asset(

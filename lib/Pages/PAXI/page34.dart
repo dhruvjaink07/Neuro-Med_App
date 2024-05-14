@@ -44,7 +44,7 @@ class _Page34State extends State<Page34> {
                   ),
                   IconButton(
                     onPressed: () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const MainPage()));
                     },
                     icon: Image.asset(
                       "assets/menu/6.png",
@@ -54,7 +54,7 @@ class _Page34State extends State<Page34> {
               Expanded(child: 
               Center(
                 child: Container(
-                  margin: EdgeInsets.only(bottom: 30),
+                  margin: const EdgeInsets.only(bottom: 30),
                   child: Image.asset("assets/Page34/all mood .png").animate().scale(duration: const Duration(milliseconds: 1500))),
               )
               ),
@@ -73,7 +73,7 @@ class _Page34State extends State<Page34> {
           overlayEntry!.remove();
         },
         child: Material(
-          color: Color.fromARGB(196, 0, 0, 0),
+          color: const Color.fromARGB(196, 0, 0, 0),
           child: Center(
             child: GestureDetector(
               onTap: () {}, // To prevent taps on the image from closing the overlay

@@ -41,7 +41,7 @@ class _Page15State extends State<Page15> {
                   ),
                   IconButton(
                     onPressed: () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const MainPage()));
                     },
                     icon: Image.asset(
                       "assets/menu/6.png",
@@ -75,9 +75,9 @@ class _Page15State extends State<Page15> {
                                      "assets/Page15/3.png",
                                      height: 40,
                                    ).animate().fade(begin: -5).slide(
-                                begin: Offset(-1, 0),
+                                begin: const Offset(-1, 0),
                                 curve: Curves.easeInOut,
-                                duration: Duration(milliseconds: 320)),
+                                duration: const Duration(milliseconds: 320)),
                                  ),
                                ),
                                Positioned(
@@ -129,6 +129,6 @@ class _Page15State extends State<Page15> {
         ),
       ),
     );
-    Overlay.of(context)!.insert(overlayEntry);
+    Overlay.of(context).insert(overlayEntry);
   }
 }

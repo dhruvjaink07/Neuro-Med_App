@@ -128,7 +128,6 @@ class _MainPageState extends State<MainPage> {
                         left: 460,
                         child: InkWell(
                             onTap: () {
-                              bool oxetClicked = false;
                             // Check if the image is already tapped
                   if (!tappedImages.contains("Oxet")) {
                     selectedBrands.addBrand("Oxet");
@@ -146,7 +145,7 @@ class _MainPageState extends State<MainPage> {
                                 currentNumber++;
                                 continueNumber++;
                                 tappedImages.add("Oxet");
-                                oxetClicked = true; // Mark Oxet image as clicked
+// Mark Oxet image as clicked
                               });
                               print("Item Added 1");
                               }
@@ -722,12 +721,12 @@ class _MainPageState extends State<MainPage> {
 
 
 class Brand extends StatefulWidget {
-  Brand({
-    Key? key,
+  const Brand({
+    super.key,
     required this.assetName,
     required this.imageName,
     required this.selectedImages,
-  }) : super(key: key);
+  });
 
   final String assetName;
   final String imageName;
@@ -745,15 +744,17 @@ class _BrandState extends State<Brand> {
     int? selectionNumber = widget.selectedImages[widget.imageName]; // Get the number for this image
     return Stack(
       children: [
-        Image.asset(
-          widget.assetName,
-          height: 70,
-          // color: isTapped ? Colors.grey : null, // Color image when tapped
+        SizedBox(
+          height: 75,
+          child: Image.asset(
+            widget.assetName,
+            height: 70,
+            // color: isTapped ? Colors.grey : null, // Color image when tapped
+          ),
         ),
         if (selectionNumber != null && selectionNumber > 0)
           Positioned(
-            bottom: 34,
-            left: 2,
+            bottom: 42,
             child: InkWell(
               onTap: () {
                 // setState(() {
@@ -762,8 +763,8 @@ class _BrandState extends State<Brand> {
                 // Handle tap action here if needed
               },
               child: Container(
-                padding: EdgeInsets.only(top: 3, bottom: 7, right: 5, left: 5),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.only(top: 3, bottom: 7, right: 5, left: 5),
+                decoration: const BoxDecoration(
                   image: DecorationImage(image: AssetImage("assets/MainPage/numberBg.png")),
                 ),
                 child: Center(
@@ -771,7 +772,7 @@ class _BrandState extends State<Brand> {
                     fit: BoxFit.contain,
                     child: Text(
                       (selectionNumber >= 10) ? '$selectionNumber' : '0$selectionNumber',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w800,

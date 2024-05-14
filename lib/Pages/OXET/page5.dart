@@ -45,7 +45,7 @@ class _Page5State extends State<Page5> {
                   IconButton(
                       onPressed: () {
                         Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => MainPage()));
+                            MaterialPageRoute(builder: (context) => const MainPage()));
                       },
                       icon: Image.asset(
                         "assets/menu/6.png",
@@ -75,14 +75,14 @@ class _Page5State extends State<Page5> {
                           width: 650,
                           height: 30,
                           fit: BoxFit.fill,
-                        ).animate().fade(duration: Duration(milliseconds: 1500))),
+                        ).animate().fade(duration: const Duration(milliseconds: 1500))),
                     Positioned(
                         top: 270,
                         left: 150,
                         child: Image.asset(
                           "assets/Page5/7.png",
                           height: 45,
-                        ).animate().fade(duration: Duration(milliseconds: 1500))),
+                        ).animate().fade(duration: const Duration(milliseconds: 1500))),
                         Positioned(
                           top: 330,
                           left: 120,
@@ -95,7 +95,7 @@ class _Page5State extends State<Page5> {
                           height: 140,
                           width: 400,
                           fit: BoxFit.fill,
-                        ).animate().fade(duration: Duration(milliseconds: 1500))),
+                        ).animate().fade(duration: const Duration(milliseconds: 1500))),
                     Positioned(
                       left: 35,
                       bottom: 5, // Slide down when isOpen is false

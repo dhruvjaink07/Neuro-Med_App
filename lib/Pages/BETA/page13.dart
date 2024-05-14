@@ -42,7 +42,7 @@ class _Page13State extends State<Page13> {
                     ),
                     IconButton(
                       onPressed: () {
-                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const MainPage()));
                       },
                       icon: Image.asset(
                         "assets/menu/6.png",

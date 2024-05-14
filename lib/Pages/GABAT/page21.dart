@@ -47,7 +47,7 @@ class _Page21State extends State<Page21> {
                 IconButton(
                   onPressed: () {
                     Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => MainPage()));
+                        MaterialPageRoute(builder: (context) => const MainPage()));
                   },
                   icon: Image.asset(
                     "assets/menu/6.png",
@@ -109,9 +109,9 @@ class _Page21State extends State<Page21> {
                           "assets/Page21/3.png",
                           height: 40,
                         ).animate().fade(begin: -5).slide(
-                            begin: Offset(-1, 0),
+                            begin: const Offset(-1, 0),
                             curve: Curves.easeInOut,
-                            duration: Duration(milliseconds: 300)),
+                            duration: const Duration(milliseconds: 300)),
                       ),
                     ),
                     Positioned(

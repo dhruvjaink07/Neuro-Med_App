@@ -63,7 +63,7 @@ import 'package:neuro_app/Pages/ZEFR/page52.dart';
 import 'package:neuro_app/Pages/ZEFR/page53.dart';
 
 class OxetPageControllerWidget extends StatefulWidget {
-  OxetPageControllerWidget({Key? key, required this.displayIndices});
+  const OxetPageControllerWidget({super.key, required this.displayIndices});
   final List<int> displayIndices;
   @override
   _OxetPageControllerWidgetState createState() =>
@@ -92,7 +92,7 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
       _currentPageIndex++;
       _pageController.animateToPage(
         widget.displayIndices[_currentPageIndex],
-        duration: Duration(milliseconds: 100),
+        duration: const Duration(milliseconds: 100),
         curve: Curves.easeInOut,
       );
     }
@@ -103,7 +103,7 @@ class _OxetPageControllerWidgetState extends State<OxetPageControllerWidget> {
       _currentPageIndex--;
       _pageController.animateToPage(
         widget.displayIndices[_currentPageIndex],
-        duration: Duration(milliseconds: 100),
+        duration: const Duration(milliseconds: 100),
         curve: Curves.easeInOut,
       );
     }
@@ -113,7 +113,7 @@ void changePageIndex(int index) {
     if (index >= 0 && index < widget.displayIndices.length) {
       _pageController.animateToPage(
         widget.displayIndices[index],
-        duration: Duration(milliseconds: 100),
+        duration: const Duration(milliseconds: 100),
         curve: Curves.easeInOut,
       );
     } else {

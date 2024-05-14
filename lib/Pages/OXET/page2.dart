@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
@@ -23,7 +22,7 @@ class _Page2State extends State<Page2> with SingleTickerProviderStateMixin {
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1500), // Adjust the duration as needed
+      duration: const Duration(milliseconds: 1500), // Adjust the duration as needed
     );
 
     _animation = Tween<double>(
@@ -52,7 +51,7 @@ class _Page2State extends State<Page2> with SingleTickerProviderStateMixin {
           // width: MediaQuery.of(context).size.width,
            height: 768,
               width: 1024,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/Page2/10.png"), fit: BoxFit.contain)),
           child: Column(
@@ -72,7 +71,7 @@ class _Page2State extends State<Page2> with SingleTickerProviderStateMixin {
                   IconButton(
                     onPressed: () {
                       Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => MainPage()));
+                          MaterialPageRoute(builder: (context) => const MainPage()));
                     },
                     icon: Image.asset(
                       "assets/menu/6.png",
@@ -154,9 +153,9 @@ class _Page2State extends State<Page2> with SingleTickerProviderStateMixin {
                               "assets/Page2/3.png",
                               height: 40,
                             ).animate().fade(begin: -5).slide(
-                                begin: Offset(-1, 0),
+                                begin: const Offset(-1, 0),
                                 curve: Curves.easeInOut,
-                                duration: Duration(milliseconds: 350)),
+                                duration: const Duration(milliseconds: 350)),
                           ),
                         ),
                         Positioned(

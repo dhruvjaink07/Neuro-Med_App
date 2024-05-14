@@ -1,7 +1,5 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
@@ -29,7 +27,7 @@ class _Page23State extends State<Page23> {
            height: 768,
               width: 1024,
           // width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.all(0),
+          padding: const EdgeInsets.all(0),
           decoration:const BoxDecoration(
             image: DecorationImage(image: AssetImage("assets/Page23/Bg .png"),fit: BoxFit.contain)
           ),
@@ -49,7 +47,7 @@ class _Page23State extends State<Page23> {
                   ),
                   IconButton(
                     onPressed: () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const MainPage()));
                     },
                     icon: Image.asset(
                       "assets/menu/6.png",

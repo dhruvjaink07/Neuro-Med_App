@@ -78,8 +78,8 @@ class MenuDrawer extends StatelessWidget {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [0, 1, 2, 3, 4, 5])),);
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [0, 1, 2, 3, 4, 5])),);
                   
               }),
               // SizedBox(height: 20,),
@@ -87,168 +87,168 @@ class MenuDrawer extends StatelessWidget {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [6,7,8,9,10,11])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [6,7,8,9,10,11])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/BETA.png", "BETA",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [12,13,14,15,16])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [12,13,14,15,16])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/PIRA.png", "PIRA",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [17,18,19])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [17,18,19])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/PARK.png", "PARK",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [20,21,22,23,24,25,26])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [20,21,22,23,24,25,26])));
               }),
               //  SizedBox(height: 14,),
               buildMenuItem("assets/menu/GAB-AT.png", "GAB-AT",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [27,28])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [27,28])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/PANA.png","PANA" ,() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [29,30,31,32])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [29,30,31,32])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/PAXI.png", "PAXI",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [33,34,35,36])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [33,34,35,36])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/RASA.png","RASA", () {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [37,38,39,40])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [37,38,39,40])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/SYNA.png", "SYNA",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [41,42,43])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [41,42,43])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/TOPI.png", "TOPI",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [44,45,46,47])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [44,45,46,47])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/VEN.png", "VEN",() {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [48,49])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [48,49])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/LAMO.png", "LAMO",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [50])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [50])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/ZEFR.png", "ZEFR",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [51,52])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [51,52])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/ADES.png", "ADES",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [53])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [53])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/ATTE.png","ATTE",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [54])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [54])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/IVE.png", "IVE",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [55])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [55])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/ETIR.png", "ETIR",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [56])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [56])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/LURA.png", "LURA",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [57])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [57])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/SIZO.png", "SIZO",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [58])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [58])));
               }),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/NEU-D3.png", "NEU-D3",() {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [59])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [59])));
               },),
               //  SizedBox(height: 18,),
               buildMenuItem("assets/menu/CARI.png","CARI", () {
                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OxetPageControllerWidget(
-                            displayIndices: const [60,61])));
+                        builder: (context) => const OxetPageControllerWidget(
+                            displayIndices: [60,61])));
               }),
             ],
           ),

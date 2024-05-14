@@ -22,7 +22,7 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height, selectedBra
         child: Container(
         width: 1024,
         height: 768,
-          decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page7/111.png"),fit: BoxFit.contain)),
+          decoration: const BoxDecoration(image: DecorationImage(image: AssetImage("assets/Page7/111.png"),fit: BoxFit.contain)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -39,7 +39,7 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height, selectedBra
                   ),
                   IconButton(
                     onPressed: () {
-                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const MainPage()));
                     },
                     icon: Image.asset(
                       "assets/menu/6.png",
@@ -57,7 +57,6 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height, selectedBra
                       child: InkWell(
                         onTap: () {
                          widget.changePageIndex(7);
-                          print("Test 1");
                         },
                         child: Image.asset("assets/Page7/2.png",height: 250,))),
                         Positioned(
@@ -70,7 +69,6 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height, selectedBra
                           child: InkWell(
                             onTap: (){
                                widget.changePageIndex(9);
-                              print("Test 2");
                             },
                             child: Image.asset("assets/Page7/4.png",height: 280,))),
                             Positioned(
@@ -91,7 +89,6 @@ drawer: MenuDrawer(screenHeight: MediaQuery.of(context).size.height, selectedBra
                               child: InkWell(
                                 onTap: (){
                                    widget.changePageIndex(11);
-                                  print("Test 3");
                                 },
                                 child: Image.asset("assets/Page7/8.png",height: 240,))),
                                 Positioned(

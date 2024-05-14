@@ -44,7 +44,7 @@ class _Page40State extends State<Page40> {
                   ),
                   IconButton(
                     onPressed: () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const MainPage()));
                     },
                     icon: Image.asset(
                       "assets/menu/6.png",
@@ -103,9 +103,9 @@ class _Page40State extends State<Page40> {
                           "assets/Page40/3.png",
                           height: 40,
                         ).animate().fade(begin: -5).slide(
-                            begin: Offset(-1, 0),
+                            begin: const Offset(-1, 0),
                             curve: Curves.easeInOut,
-                            duration: Duration(milliseconds: 300)),
+                            duration: const Duration(milliseconds: 300)),
                       ),
                     ),
                                    Positioned(
@@ -139,7 +139,7 @@ class _Page40State extends State<Page40> {
           overlayEntry!.remove();
         },
         child: Material(
-          color: Color.fromARGB(196, 0, 0, 0),
+          color: const Color.fromARGB(196, 0, 0, 0),
           child: Center(
             child: GestureDetector(
               onTap: () {}, // To prevent taps on the image from closing the overlay

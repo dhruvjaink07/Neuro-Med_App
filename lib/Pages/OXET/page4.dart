@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:neuro_app/Pages/main_page.dart';
 import 'package:neuro_app/components/cDrawer.dart';
@@ -27,7 +26,7 @@ class _Page4State extends State<Page4> with SingleTickerProviderStateMixin {
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1500), // Adjust the duration as needed
+      duration: const Duration(milliseconds: 1500), // Adjust the duration as needed
     );
 
     _animation = Tween<double>(
@@ -73,7 +72,7 @@ class _Page4State extends State<Page4> with SingleTickerProviderStateMixin {
                   IconButton(
                       onPressed: () {
                         Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => MainPage()));
+                            MaterialPageRoute(builder: (context) => const MainPage()));
                       },
                       icon: Image.asset(
                         "assets/menu/6.png",
